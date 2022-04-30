@@ -1,0 +1,33 @@
+﻿<navigation:Page x:Class="BusinessSystemsApp.Views.IssueDomain" 
+           xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+           xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+           xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+           xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+           mc:Ignorable="d"
+           xmlns:navigation="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Navigation"
+           d:DesignWidth="640" d:DesignHeight="480"
+           Title="IssueDomain Page" xmlns:riaControls="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.DomainServices" xmlns:my="clr-namespace:BusinessSystemsApp.Web" xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk"
+                 xmlns:resrc="clr-namespace:BusinessSystemsApp.Resources" >
+
+    <UserControl.Resources>
+        <resrc:CustomResources x:Key="BS_RES" />
+    </UserControl.Resources>
+    
+    <Grid x:Name="LayoutRoot">
+        <riaControls:DomainDataSource AutoLoad="True" d:DesignData="{d:DesignInstance my:IssueDomain, CreateList=true}" Height="0" LoadedData="issueDomainDomainDataSource_LoadedData" Name="issueDomainDomainDataSource" QueryName="GetIssueDomainQuery" Width="0">
+            <riaControls:DomainDataSource.DomainContext>
+                <my:BusinessSystemsDomainContext />
+            </riaControls:DomainDataSource.DomainContext>
+        </riaControls:DomainDataSource>
+        <sdk:DataGrid AutoGenerateColumns="False" Height="480" HorizontalAlignment="Left" ItemsSource="{Binding ElementName=issueDomainDomainDataSource, Path=Data}" Name="issueDomainDataGrid" RowDetailsVisibilityMode="VisibleWhenSelected" VerticalAlignment="Top" Width="496" CellStyle="{Binding Source={StaticResource DataGridCellStyle1}}">
+            <sdk:DataGrid.Columns>
+                <sdk:DataGridTextColumn x:Name="idColumn" Binding="{Binding Path=Id, Mode=OneWay}" Header="Id" IsReadOnly="True" Width="SizeToHeader" />
+                <sdk:DataGridTextColumn x:Name="nameColumn" Binding="{Binding Path=Name}" Header="Name" Width="SizeToHeader" />
+                <sdk:DataGridTextColumn x:Name="descriptionColumn" Binding="{Binding Path=Description}" Header="Description" Width="SizeToHeader" />
+            </sdk:DataGrid.Columns>
+        </sdk:DataGrid>
+        <Button Content="{Binding Source={StaticResource BS_RES}, Path=LocalizedStrings.IssueDomain_Button_New}" Height="23" HorizontalAlignment="Left" Margin="535,12,0,0" Name="btn_new" VerticalAlignment="Top" Width="75" Click="btn_new_Click" />
+        <Button Content="{Binding Source={StaticResource BS_RES}, Path=LocalizedStrings.IssueDomain_Button_Edit}" Height="23" HorizontalAlignment="Left" Margin="535,41,0,0" Name="btn_edit" VerticalAlignment="Top" Width="75" Click="btn_edit_Click" />
+        <Button Content="{Binding Source={StaticResource BS_RES}, Path=LocalizedStrings.IssueDomain_Button_Delete}" Height="23" HorizontalAlignment="Left" Margin="535,70,0,0" Name="btn_delete" VerticalAlignment="Top" Width="75" Click="btn_delete_Click" />
+    </Grid>
+</navigation:Page>

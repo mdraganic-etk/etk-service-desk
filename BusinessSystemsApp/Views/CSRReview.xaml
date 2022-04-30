@@ -1,0 +1,569 @@
+﻿<navigation:Page x:Class="BusinessSystemsApp.Views.CSRReview" 
+           xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+           xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+           xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+           xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+           
+           xmlns:ria="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.DomainServices"
+           xmlns:riaData="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.DomainServices"
+                 
+           mc:Ignorable="d"
+           xmlns:navigation="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Navigation" Title="CSRReview Page" xmlns:riaControls="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.DomainServices" xmlns:my="clr-namespace:BusinessSystemsApp.Web" xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk" xmlns:toolkit="http://schemas.microsoft.com/winfx/2006/xaml/presentation/toolkit" xmlns:my1="clr-namespace:Vci.Silverlight.FileUploader;assembly=SilverlightFileUploader"
+                 xmlns:resrc="clr-namespace:BusinessSystemsApp.Resources" d:DesignHeight="1287" d:DesignWidth="670">
+
+    <UserControl.Resources>
+        <resrc:CustomResources x:Key="BS_RES" />
+    </UserControl.Resources>
+
+    <Grid x:Name="LayoutRoot" Height="1230" Width="Auto" HorizontalAlignment="Left">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="16*" />
+            <RowDefinition Height="1087*" />
+        </Grid.RowDefinitions>
+        <sdk:TabControl Margin="5,244,0,0" Name="tabControl1" Width="Auto" Grid.Row="1" VerticalContentAlignment="Top" VerticalAlignment="Top" Height="996">
+            <sdk:TabItem Header="{Binding Source={StaticResource BS_RES}, Path=LocalizedStrings.CSRReview_TabItem_CSRDetails}" Name="CSRReview_TabItem_CSRDetails">
+                <Grid HorizontalAlignment="Left" Width="644" VerticalAlignment="Top" Height="963">
+                    <TextBox Height="23" HorizontalAlignment="Right" Margin="0,192,254,0" Name="CsrProductTextBox" VerticalAlignment="Top" Width="208" IsReadOnly="True" Visibility="Collapsed" />
+                    <TextBox Height="23" HorizontalAlignment="Right" IsReadOnly="True" Margin="0,222,254,0" Name="CsrLocationTextBox" VerticalAlignment="Top" Width="208" Visibility="Collapsed" />
+                    <ComboBox Height="23" ItemsSource="{Binding ElementName=siteDomainDataSource, Path=Data}" Margin="182,222,247,0" Name="siteComboBox" VerticalAlignment="Top" DisplayMemberPath="SiteName" IsEnabled="False">
+                        <ComboBox.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <VirtualizingStackPanel />
+                            </ItemsPanelTemplate>
+                        </ComboBox.ItemsPanel>
+                    </ComboBox>
+                    <ComboBox Height="23" HorizontalAlignment="Right" ItemsSource="{Binding ElementName=productsInCompanyDomainDataSource, Path=Data}" Margin="0,192,247,0" Name="productsInCompanyComboBox" VerticalAlignment="Top" Width="215" DisplayMemberPath="Product.ProductName" IsEnabled="False">
+                        <ComboBox.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <VirtualizingStackPanel />
+                            </ItemsPanelTemplate>
+                        </ComboBox.ItemsPanel>
+                    </ComboBox>
+                    <ComboBox Height="23" HorizontalAlignment="Left" ItemsSource="{Binding ElementName=companyStatusesDomainDataSource, Path=Data}" Margin="182,133,0,0" Name="companyStatusesComboBox" VerticalAlignment="Top" Width="208" SelectedValuePath="Csr_Status.Id" DisplayMemberPath="Csr_Status.StatusName" IsEnabled="False" LayoutUpdated="companyStatusesComboBox_LayoutUpdated">
+                        <ComboBox.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <VirtualizingStackPanel />
+                            </ItemsPanelTemplate>
+                        </ComboBox.ItemsPanel>
+                    </ComboBox>
+                    <ComboBox Height="23" HorizontalAlignment="Left" ItemsSource="{Binding ElementName=companyPrioritiesDomainDataSource, Path=Data}" Margin="182,163,0,0" Name="companyPrioritiesComboBox" VerticalAlignment="Top" Width="207" SelectedValuePath="Priority.Id" DisplayMemberPath="Priority.PriorityName" IsEnabled="False"  LayoutUpdated="companyPrioritiesComboBox_LayoutUpdated">
+                        <ComboBox.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <VirtualizingStackPanel />
+                            </ItemsPanelTemplate>
+                        </ComboBox.ItemsPanel>
+                    </ComboBox>
+                    <sdk:Label Content="{Binding Source={StaticResource BS_RES}, Path=LocalizedStrings.CSRReview_Label_CSRId}" Height="19" HorizontalAlignment="Left" HorizontalContentAlignment="Left" Margin="10,14,0,0" Name="CSRReview_Label_CSRId" VerticalAlignment="Top" Width="137" />
+                    <TextBox Height="23" HorizontalAlignment="Right" Margin="0,10,254,0" Name="CsrIdTextBox" VerticalAlignment="Top" Width="208" HorizontalContentAlignment="Left" IsReadOnly="True" />
+                    <sdk:Label Content="{Binding Source={StaticResource BS_RES}, Path=LocalizedStrings.CSRReview_Label_Heading}" Height="19" HorizontalAlignment="Left" HorizontalContentAlignment="Left" Margin="10,76,0,0" Name="CSRReview_Label_Heading" VerticalAlignment="Top" Width="137" />
+                    <TextBox Height="23" HorizontalAlignment="Right" Margin="0,72,23,0" Name="CsrTitleTextBox" VerticalAlignment="Top" Width="439" IsReadOnly="True" />
+                    <sdk:Label Content="{Binding Source={StaticResource BS_RES}, Path=LocalizedStrings.CSRReview_Label_Company}" Height="19" HorizontalAlignment="Left" HorizontalContentAlignment="Left" Margin="10,45,0,0" Name="CSRReview_Label_Company" VerticalAlignment="Top" Width="137" />
+                    <TextBox Height="23" HorizontalAlignment="Left" Margin="182,41,0,0" Name="CsrCompanyTextBox" VerticalAlignment="Top" Width="208" IsReadOnly="True" Visibility="Collapsed" />
+                    <sdk:Label Content="{Binding Source={StaticResource BS_RES}, Path=LocalizedStrings.CSRReview_Label_ReportedBy}" Height="19" HorizontalAlignment="Left" HorizontalContentAlignment="Left" Margin="10,107,0,0" Name="CSRReview_Label_ReportedBy" VerticalAlignment="Top" Width="137" />
+                    <TextBox Height="23" HorizontalAlignment="Right" Margin="0,103,254,0" Name="CsrAuthorTextBox" VerticalAlignment="Top" Width="208" IsReadOnly="True" MouseEnter="CsrAuthorTextBox_MouseEnter" MouseLeave="CsrAuthorTextBox_MouseLeave" />
+                    <sdk:Label Content="{Binding Source={StaticResource BS_RES}, Path=LocalizedStrings.CSRReview_Label_Status}" Height="19" HorizontalAlignment="Left" HorizontalContentAlignment="Left" Margin="10,137,0,0" Name="CSRReview_Label_Status" VerticalAlignment="Top" Width="137" />
+                    <sdk:Label Content="{Binding Source={StaticResource BS_RES}, Path=LocalizedStrings.CSRReview_Label_Priority}" Height="19" HorizontalAlignment="Left" HorizontalContentAlignment="Left" Margin="10,167,0,0" Name="CSRReview_Label_Priority" VerticalAlignment="Top" Width="137" />
+                    <sdk:Label Content="{Binding Source={StaticResource BS_RES}, Path=LocalizedStrings.CSRReview_Label_Product}" Height="19" HorizontalAlignment="Left" HorizontalContentAlignment="Left" Margin="10,197,0,0" Name="CSRReview_Label_Product" VerticalAlignment="Top" Width="137" />
+                    <sdk:Label Content="{Binding Source={StaticResource BS_RES}, Path=LocalizedStrings.CSRReview_Label_Location}" Height="19" HorizontalAlignment="Left" HorizontalContentAlignment="Left" Margin="10,225,0,0" Width="137" Name="CSRReview_Label_Location" VerticalAlignment="Top" />
+                    <sdk:Label Content="{Binding Source={StaticResource BS_RES}, Path=LocalizedStrings.CSRReview_Label_LastUser}" HorizontalAlignment="Left" HorizontalContentAlignment="Left" Margin="10,314,0,0" Name="CSRReview_Label_LastUser" Width="137" Height="19" VerticalAlignment="Top" />
+                    <TextBox Height="23" HorizontalAlignment="Right" Margin="0,312,254,0" Name="CsrUserTextBox" VerticalAlignment="Top" Width="208" IsReadOnly="True" />
+                    <sdk:Label Content="{Binding Source={StaticResource BS_RES}, Path=LocalizedStrings.CSRReview_Label_CallTime}" Height="19" HorizontalAlignment="Left" HorizontalContentAlignment="Left" Margin="10,343,0,0" Name="CSRReview_Label_CallTime" VerticalAlignment="Top" Width="137" />
+                    <TextBox Height="23" HorizontalAlignment="Right" Margin="0,341,254,0" Name="CsrCallTimeTextBox" VerticalAlignment="Top" Width="208" IsReadOnly="True" />
+                    <sdk:Label Content="{Binding Source={StaticResource BS_RES}, Path=LocalizedStrings.CSRReview_Label_RegisterTime}" Height="19" HorizontalAlignment="Left" HorizontalContentAlignment="Left" Margin="10,374,0,0" Name="CSRReview_Label_RegisterTime" VerticalAlignment="Top" Width="137" />
+                    <TextBox Height="23" HorizontalAlignment="Right" Margin="0,370,254,0" Name="CsrRegisteredTimeTextBox" VerticalAlignment="Top" Width="208" IsReadOnly="True" />
+                    <sdk:Label Content="{Binding Source={StaticResource BS_RES}, Path=LocalizedStrings.CSRReview_Label_FinishedTime}" Height="19" HorizontalAlignment="Left" HorizontalContentAlignment="Left" Margin="10,404,0,0" Name="CSRReview_Label_FinishedTime" VerticalAlignment="Top" Width="137" />
+                    <TextBox Height="23" HorizontalAlignment="Right" Margin="0,400,254,0" Name="CsrFinishedTextBox" VerticalAlignment="Top" Width="208" IsReadOnly="True" />
+                    <sdk:Label Content="{Binding Source={StaticResource BS_RES}, Path=LocalizedStrings.CSRReview_Label_Description}" Height="19" HorizontalAlignment="Left" HorizontalContentAlignment="Left" Margin="10,588,0,0" Name="CSRReview_Label_Description" VerticalAlignment="Top" Width="137" />
+                    <sdk:Label Content="{Binding Source={StaticResource BS_RES}, Path=LocalizedStrings.CSRReview_Label_Attachments}" Height="19" HorizontalAlignment="Left" HorizontalContentAlignment="Right" Margin="10,719,0,0" Name="CSRReview_Label_Attachments" VerticalAlignment="Top" Width="137" />
+                    <sdk:Label Content="{Binding Source={StaticResource BS_RES}, Path=LocalizedStrings.CSRReview_Label_Answer}" Height="19" HorizontalAlignment="Left" HorizontalContentAlignment="Right" Margin="10,790,0,0" Name="CSRReview_Label_Answer" VerticalAlignment="Top" Width="137" />
+                    <sdk:Label Content="{Binding Source={StaticResource BS_RES}, Path=LocalizedStrings.CSRReview_Label_TroubleTicket}" Height="19" HorizontalAlignment="Left" HorizontalContentAlignment="Right" Margin="10,907,0,0" Name="CSRReview_Label_TroubleTicket" VerticalAlignment="Top" Width="137" />
+                    <TextBox Height="23" HorizontalAlignment="Right" Margin="0,905,254,0" Name="textBox13" VerticalAlignment="Top" Width="208" IsReadOnly="True" />
+                    <Button Content="Edit" Height="23" HorizontalAlignment="Right" Margin="0,6,6,0" Name="CSRReview_Button_Edit" VerticalAlignment="Top" Width="53" Click="btnEditCsr_Click" IsEnabled="False" />
+                    <Button Content="Save" Height="23" HorizontalAlignment="Left" Margin="524,6,0,0" Name="CSRReview_Button_Save" VerticalAlignment="Top" Width="52" Visibility="Collapsed" Click="btnSaveCsr_Click" />
+                    <riaControls:DomainDataSource AutoLoad="False" d:DesignData="{d:DesignInstance my:Csr_Status, CreateList=true}" Height="0" LoadedData="csr_StatusDomainDataSource_LoadedData" Name="csr_StatusDomainDataSource" QueryName="GetCsr_StatusQuery" Width="0">
+                        <riaControls:DomainDataSource.DomainContext>
+                            <my:BusinessSystemsDomainContext />
+                        </riaControls:DomainDataSource.DomainContext>
+                    </riaControls:DomainDataSource>
+                    <riaControls:DomainDataSource AutoLoad="True" d:DesignData="{d:DesignInstance my:Priority, CreateList=true}" Height="0"  Name="priorityDomainDataSource" QueryName="GetPriorityQuery" Width="0">
+                        <riaControls:DomainDataSource.DomainContext>
+                            <my:BusinessSystemsDomainContext />
+                        </riaControls:DomainDataSource.DomainContext>
+                    </riaControls:DomainDataSource>
+                    <Button Content="Cancel" Height="23" HorizontalAlignment="Left" Margin="464,6,0,0" Name="CSRReview_Button_Cancel" VerticalAlignment="Top" Width="52" Visibility="Collapsed" Click="btnCsrUpdateCancel_Click" />
+                    <ScrollViewer Height="128" HorizontalAlignment="Left" Margin="182,587,0,0" Name="scrollViewer1" VerticalAlignment="Top" Width="458" Padding="0" VerticalScrollBarVisibility="Auto" BorderBrush="{x:Null}">
+                        <TextBox Name="CsrDescriptionTextBox" Width="438" IsReadOnly="True" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" HorizontalContentAlignment="Left" KeyDown="CsrDescriptionTextBox_KeyDown" UseLayoutRounding="False" Cursor="IBeam" MouseLeftButtonDown="CsrDescriptionTextBox_MouseLeftButtonDown" AcceptsReturn="True" HorizontalAlignment="Left" MinWidth="2" KeyUp="CsrDescriptionTextBox_KeyUp" TextChanged="CsrDescriptionTextBox_TextChanged" />
+                    </ScrollViewer>
+                    <ScrollViewer Height="109" HorizontalAlignment="Left" Margin="182,789,0,0" Name="scrollViewer2" VerticalAlignment="Top" Width="459" Padding="0" VerticalScrollBarVisibility="Auto" BorderBrush="{x:Null}" Cursor="IBeam" >
+                        <TextBox Name="CsrAnswerTextBox" Width="441" IsReadOnly="False" HorizontalAlignment="Left" HorizontalContentAlignment="Left" VerticalAlignment="Stretch" TextWrapping="Wrap" KeyDown="CsrAnswerTextBox_KeyDown" VerticalScrollBarVisibility="Auto" AcceptsReturn="True" MouseLeftButtonDown="CsrAnswerTextBox_MouseLeftButtonDown" KeyUp="CsrAnswerTextBox_KeyUp" />
+                    </ScrollViewer>
+                    <riaControls:DomainDataSource AutoLoad="False" d:DesignData="{d:DesignInstance my:AttachmenttAssign, CreateList=true}" Height="0" Name="attachmenttAssignDomainDataSource" QueryName="GetAttachmenttAssignCsrQuery" Width="0" LoadedData="attachmenttAssignDomainDataSource_LoadedData">
+                        <riaControls:DomainDataSource.DomainContext>
+                            <my:BusinessSystemsDomainContext />
+                        </riaControls:DomainDataSource.DomainContext>
+                        <riaControls:DomainDataSource.QueryParameters>
+                            <riaControls:Parameter ParameterName="_csrId" Value="{Binding ElementName=_csrIdTextBox1, Path=Text}" />
+                        </riaControls:DomainDataSource.QueryParameters>
+                    </riaControls:DomainDataSource>
+                    <ListBox Height="64" HorizontalAlignment="Left" Margin="183,719,0,0" Name="AttachmentsListBox" VerticalAlignment="Top" Width="412" SelectionChanged="AttachmentsListBox_SelectionChanged" MouseLeftButtonDown="AttachmentsListBox_MouseLeftButtonDown" />
+                    <Grid Height="142" HorizontalAlignment="Left" Margin="209,105,0,0" Name="UserDetailsGrid" VerticalAlignment="Top" Width="323" Visibility="Collapsed" ShowGridLines="False">
+                        <sdk:Label Height="20" HorizontalAlignment="Left" Margin="13,6,0,0" Name="CSRReview_PopUp_Email_Label" VerticalAlignment="Top" Width="60" Content="{Binding Source={StaticResource BS_RES}, Path=LocalizedStrings.CSRReview_PopUp_Email_Label}" Foreground="#FFE3EBF6" FontWeight="Bold" />
+                        <sdk:Label Content="{Binding Source={StaticResource BS_RES}, Path=LocalizedStrings.CSRReview_PopUp_Phones_Label}" Height="20" HorizontalAlignment="Left" Margin="7,32,0,0" Name="CSRReview_PopUp_Phones_Label" VerticalAlignment="Top" Width="60" Foreground="#FFE3EBF6" FontWeight="Bold" />
+                        <sdk:Label Content="-" Height="20" HorizontalAlignment="Left" Margin="76,6,0,0" Name="CSRReview_PopUp_Email" VerticalAlignment="Top" Width="241" Foreground="#9D171819" FontWeight="Bold" />
+                        <sdk:Label Content="-" Foreground="#9D171819" Height="20" HorizontalAlignment="Left" Margin="76,32,0,0" Name="CSRReview_PopUp_Fix1" VerticalAlignment="Top" Width="241" FontWeight="Bold" />
+                        <sdk:Label Content="-" Foreground="#9D171819" Height="20" HorizontalAlignment="Left" Margin="76,56,0,0" Name="CSRReview_PopUp_Fix2" VerticalAlignment="Top" Width="241" FontWeight="Bold" />
+                        <sdk:Label Content="{Binding Source={StaticResource BS_RES}, Path=LocalizedStrings.CSRReview_PopUp_Mobiles_Label}" FontWeight="Bold" Foreground="#FFE3EBF6" Height="20" HorizontalAlignment="Left" Margin="6,81,0,0" Name="CSRReview_PopUp_Mobiles_Label" VerticalAlignment="Top" Width="60" />
+                        <sdk:Label Content="-" Foreground="#9D171819" Height="20" HorizontalAlignment="Left" Margin="76,82,0,0" Name="CSRReview_PopUp_Mobile1" VerticalAlignment="Top" Width="241" FontWeight="Bold" />
+                        <sdk:Label Content="-" Foreground="#9D171819" Height="20" HorizontalAlignment="Left" Margin="76,109,0,0" Name="CSRReview_PopUp_Mobile2" VerticalAlignment="Top" Width="241" FontWeight="Bold" />
+                       
+                        <Rectangle HorizontalAlignment="Stretch" Margin="-1,-1,-1,0" Name="rectangle2" Stroke="#FFFB9F23" StrokeThickness="1" VerticalAlignment="Stretch" />
+                        <Grid.Background>
+                            <LinearGradientBrush EndPoint="1,0.5" StartPoint="0,0.5">
+                                <GradientStop Color="#AF0A68CD" Offset="0" />
+                                <GradientStop Color="White" Offset="0.947" />
+                            </LinearGradientBrush>
+                        </Grid.Background>
+                    </Grid>
+                    <riaControls:DomainDataSource AutoLoad="False" d:DesignData="{d:DesignInstance my:Contact, CreateList=true}" Height="0" LoadedData="contactDomainDataSource_LoadedData" Name="contactDomainDataSource" QueryName="GetContactWithIdQuery" Width="0">
+                        <riaControls:DomainDataSource.DomainContext>
+                            <my:BusinessSystemsDomainContext />
+                        </riaControls:DomainDataSource.DomainContext>
+                        <riaControls:DomainDataSource.QueryParameters>
+                            <riaControls:Parameter ParameterName="_contactId" />
+                        </riaControls:DomainDataSource.QueryParameters>
+                    </riaControls:DomainDataSource>
+                    <riaControls:DomainDataSource AutoLoad="False" d:DesignData="{d:DesignInstance my:User, CreateList=true}" Height="0" LoadedData="userDomainDataSource_LoadedData" Name="userDomainDataSource" QueryName="GetUserWithUsernameQuery" Width="0">
+                        <riaControls:DomainDataSource.DomainContext>
+                            <my:BusinessSystemsDomainContext />
+                        </riaControls:DomainDataSource.DomainContext>
+                        <riaControls:DomainDataSource.QueryParameters>
+                            <riaControls:Parameter ParameterName="_userName" />
+                        </riaControls:DomainDataSource.QueryParameters>
+                    </riaControls:DomainDataSource>
+                    <riaControls:DomainDataSource AutoLoad="False" d:DesignData="{d:DesignInstance my:UserNotifications, CreateList=true}" Height="0" LoadedData="userNotificationsDomainDataSource_LoadedData" Name="userNotificationsDomainDataSource" QueryName="GetUserNotificationsQuery" Width="0">
+                        <riaControls:DomainDataSource.DomainContext>
+                            <my:BusinessSystemsDomainContext />
+                        </riaControls:DomainDataSource.DomainContext>
+                        <riaControls:DomainDataSource.QueryParameters>
+                            <riaControls:Parameter ParameterName="_companyId" />
+                        </riaControls:DomainDataSource.QueryParameters>
+                    </riaControls:DomainDataSource>
+                    <riaControls:DomainDataSource AutoLoad="False" d:DesignData="{d:DesignInstance my:Contact, CreateList=true}" Height="0" LoadedData="contactDomainDataSource1_LoadedData" Name="contactDomainDataSource1" QueryName="GetContactWithContactList" Width="0">
+                        <riaControls:DomainDataSource.QueryParameters>
+                            <riaControls:Parameter ParameterName="_contactList" />
+                        </riaControls:DomainDataSource.QueryParameters>
+                        <riaControls:DomainDataSource.DomainContext>
+                            <my:BusinessSystemsDomainContext />
+                        </riaControls:DomainDataSource.DomainContext>
+                    </riaControls:DomainDataSource>
+                    <riaControls:DomainDataSource AutoLoad="False" d:DesignData="{d:DesignInstance my:CompanyStatuses, CreateList=true}" Height="0" LoadedData="companyStatusesDomainDataSource_LoadedData" Name="companyStatusesDomainDataSource" QueryName="GetCompanyStatusesQuery" Width="0">
+                        <riaControls:DomainDataSource.DomainContext>
+                            <my:BusinessSystemsDomainContext />
+                        </riaControls:DomainDataSource.DomainContext>
+                        <riaControls:DomainDataSource.QueryParameters>
+                            <riaControls:Parameter ParameterName="_companyId" />
+                        </riaControls:DomainDataSource.QueryParameters>
+                    </riaControls:DomainDataSource>
+                    <riaControls:DomainDataSource AutoLoad="False" d:DesignData="{d:DesignInstance my:CompanyStatuses, CreateList=true}" Height="0" Name="companyStatusesDomainDataSource1" QueryName="GetCompanyStatusesQuery" Width="0" LoadedData="companyStatusesDomainDataSource1_LoadedData">
+                        <riaControls:DomainDataSource.DomainContext>
+                            <my:BusinessSystemsDomainContext />
+                        </riaControls:DomainDataSource.DomainContext>
+                        <riaControls:DomainDataSource.QueryParameters>
+                            <riaControls:Parameter ParameterName="_companyId" />
+                        </riaControls:DomainDataSource.QueryParameters>
+                    </riaControls:DomainDataSource>
+                    <riaControls:DomainDataSource AutoLoad="False" d:DesignData="{d:DesignInstance my:CompanyPriorities, CreateList=true}" Height="0" LoadedData="companyPrioritiesDomainDataSource_LoadedData" Name="companyPrioritiesDomainDataSource" QueryName="GetCompanyPrioritiesQuery" Width="0">
+                        <riaControls:DomainDataSource.DomainContext>
+                            <my:BusinessSystemsDomainContext />
+                        </riaControls:DomainDataSource.DomainContext>
+                        <riaControls:DomainDataSource.QueryParameters>
+                            <riaControls:Parameter ParameterName="_companyId" />
+                        </riaControls:DomainDataSource.QueryParameters>
+                    </riaControls:DomainDataSource>
+                    <riaControls:DomainDataSource AutoLoad="False" d:DesignData="{d:DesignInstance my:ProductsInCompany, CreateList=true}" Height="0" LoadedData="productsInCompanyDomainDataSource_LoadedData" Name="productsInCompanyDomainDataSource" QueryName="GetProductsInCompanyQuery" Width="0">
+                        <riaControls:DomainDataSource.DomainContext>
+                            <my:BusinessSystemsDomainContext />
+                        </riaControls:DomainDataSource.DomainContext>
+                        <riaControls:DomainDataSource.QueryParameters>
+                            <riaControls:Parameter ParameterName="_companyId" />
+                        </riaControls:DomainDataSource.QueryParameters>
+                    </riaControls:DomainDataSource>
+                    <riaControls:DomainDataSource AutoLoad="False" d:DesignData="{d:DesignInstance my:IssueDomainInCompany, CreateList=true}" Height="0" LoadedData="issueDomainInCompanyDomainDataSource_LoadedData" Name="issueDomainInCompanyDomainDataSource" QueryName="GetIssueDomainInCompanyQuery" Width="0">
+                        <riaControls:DomainDataSource.DomainContext>
+                            <my:BusinessSystemsDomainContext />
+                        </riaControls:DomainDataSource.DomainContext>
+                        <riaControls:DomainDataSource.QueryParameters>
+                            <riaControls:Parameter ParameterName="_companyId" Value="{Binding ElementName=_companyIdTextBox, Path=Text}" />
+                        </riaControls:DomainDataSource.QueryParameters>
+                    </riaControls:DomainDataSource>
+                    <ComboBox Height="23" HorizontalAlignment="Left" ItemsSource="{Binding ElementName=issueDomainInCompanyDomainDataSource, Path=Data}" Margin="182,281,0,0" Name="issueDomainInCompanyComboBox" VerticalAlignment="Top" Width="207" DisplayMemberPath="IssueDomain.Name" SelectedValuePath="IssueDomain.Id" LayoutUpdated="issueDomainInCompanyComboBox_LayoutUpdated" IsEnabled="False">
+                        <ComboBox.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <VirtualizingStackPanel />
+                            </ItemsPanelTemplate>
+                        </ComboBox.ItemsPanel>
+                    </ComboBox>
+                    <riaControls:DomainDataSource AutoLoad="False" d:DesignData="{d:DesignInstance my:RequesterTypeInCompany, CreateList=true}" Height="0" LoadedData="requesterTypeInCompanyDomainDataSource_LoadedData" Name="requesterTypeInCompanyDomainDataSource" QueryName="GetRequesterTypeInCompanyQuery" Width="0">
+                        <riaControls:DomainDataSource.DomainContext>
+                            <my:BusinessSystemsDomainContext />
+                        </riaControls:DomainDataSource.DomainContext>
+                        <riaControls:DomainDataSource.QueryParameters>
+                            <riaControls:Parameter ParameterName="_companyId" Value="{Binding ElementName=_companyIdTextBox1, Path=Text}" />
+                        </riaControls:DomainDataSource.QueryParameters>
+                    </riaControls:DomainDataSource>
+                    <ComboBox Height="23" HorizontalAlignment="Left" ItemsSource="{Binding ElementName=requesterTypeInCompanyDomainDataSource, Path=Data}" Margin="182,251,0,0" Name="requesterTypeInCompanyComboBox" VerticalAlignment="Top" Width="207" SelectedValuePath="RequesterType.Id" DisplayMemberPath="RequesterType.Name" LayoutUpdated="requesterTypeInCompanyComboBox_LayoutUpdated" IsEnabled="False" SelectionChanged="requesterTypeInCompanyComboBox_SelectionChanged">
+                        <ComboBox.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <VirtualizingStackPanel />
+                            </ItemsPanelTemplate>
+                        </ComboBox.ItemsPanel>
+                    </ComboBox>
+                    <sdk:Label Content="{Binding Source={StaticResource BS_RES}, Path=LocalizedStrings.CSRReview_TypeOfRequester_Label}" Height="19" HorizontalAlignment="Left" HorizontalContentAlignment="Left" Margin="10,254,0,0" Name="label1" Width="137" VerticalAlignment="Top" />
+                    <sdk:Label Content="{Binding Source={StaticResource BS_RES}, Path=LocalizedStrings.CSRReview_IssueDomain_Label}" Height="19" HorizontalAlignment="Left" HorizontalContentAlignment="Left" Margin="10,283,0,0" Name="label2" Width="137" VerticalAlignment="Top" />
+                    <riaControls:DomainDataSource AutoLoad="True" d:DesignData="{d:DesignInstance my:Site, CreateList=true}" Height="0" LoadedData="siteDomainDataSource_LoadedData" Name="siteDomainDataSource" QueryName="GetSitesForCompanyQuery" Width="0">
+                        <riaControls:DomainDataSource.QueryParameters>
+                            <riaControls:Parameter ParameterName="_companyId" />
+                        </riaControls:DomainDataSource.QueryParameters>
+                        <riaControls:DomainDataSource.DomainContext>
+                            <my:BusinessSystemsDomainContext />
+                        </riaControls:DomainDataSource.DomainContext>
+                    </riaControls:DomainDataSource>
+                    <ComboBox Height="23" HorizontalAlignment="Left" ItemsSource="{Binding ElementName=companyDomainDataSource, Path=Data}" Margin="181,41,0,0" Name="companyComboBox1" VerticalAlignment="Top" Width="215" DisplayMemberPath="CompanyName" SelectedValuePath="Id" SelectionChanged="companyComboBox1_SelectionChanged" IsEnabled="False">
+                        <ComboBox.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <VirtualizingStackPanel />
+                            </ItemsPanelTemplate>
+                        </ComboBox.ItemsPanel>
+                    </ComboBox>
+                    <riaControls:DomainDataSource AutoLoad="False" d:DesignData="{d:DesignInstance my:ProductsInCompany, CreateList=true}" Height="0" LoadedData="productsInCompanyDomainDataSource1_LoadedData" Name="productsInCompanyDomainDataSource1" QueryName="GetProductsForAllCompaniesQuery" Width="0">
+                        <riaControls:DomainDataSource.DomainContext>
+                            <my:BusinessSystemsDomainContext />
+                        </riaControls:DomainDataSource.DomainContext>
+                        <riaControls:DomainDataSource.QueryParameters>
+                            <riaControls:Parameter ParameterName="_companiesList" Value="{Binding ElementName=_companiesListTextBox, Path=Text}" />
+                        </riaControls:DomainDataSource.QueryParameters>
+                    </riaControls:DomainDataSource>
+                    <sdk:Label Content="{Binding Source={StaticResource BS_RES}, Path=LocalizedStrings.CSRReview_Label_RemedyTime}" Height="19" HorizontalAlignment="Left" HorizontalContentAlignment="Left" Margin="10,433,0,0" Name="CSRReview_Label_RemedyTime" VerticalAlignment="Top" Width="166" />
+                    <TextBox Height="23" HorizontalAlignment="Right" IsReadOnly="True" Margin="0,431,254,0" Name="RemedyTimeTextBox" VerticalAlignment="Top" Width="208" />
+                    <ScrollViewer BorderBrush="{x:Null}" Height="117" HorizontalAlignment="Left" Margin="182,462,0,0" Name="scrollViewer7" Padding="0" VerticalAlignment="Top" VerticalScrollBarVisibility="Auto" Width="458">
+                        <TextBox AcceptsReturn="True" Cursor="IBeam" HorizontalAlignment="Left" HorizontalContentAlignment="Left" MinWidth="2" MouseLeftButtonDown="CsrDescriptionTextBox_MouseLeftButtonDown" Name="RemedyTextBox" TextWrapping="Wrap" UseLayoutRounding="False" VerticalScrollBarVisibility="Auto" Width="438" IsReadOnly="True" />
+                    </ScrollViewer>
+                    <sdk:Label Content="{Binding Source={StaticResource BS_RES}, Path=LocalizedStrings.CSRReview_Label_Remedy}" Height="19" HorizontalAlignment="Left" HorizontalContentAlignment="Left" Margin="10,464,0,0" Name="CSRReview_Label_Remedy" VerticalAlignment="Top" Width="166" />
+                </Grid>
+            </sdk:TabItem>
+            <sdk:TabItem Header="{Binding Source={StaticResource BS_RES}, Path=LocalizedStrings.CSRReview_TabItem_Notes}" Name="CSRReview_TabItem_Notes">
+                <Grid Height="841" Name="grid1" Width="659">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="2*" />
+                        <RowDefinition Height="839*" />
+                    </Grid.RowDefinitions>
+                    <riaControls:DomainDataSource AutoLoad="False" d:DesignData="{d:DesignInstance my:Notes, CreateList=true}" Height="0" LoadedData="notesDomainDataSource_LoadedData" Name="notesDomainDataSource" QueryName="GetNotesQuery" Width="0" Margin="0,0,659,2">
+                        <riaControls:DomainDataSource.QueryParameters>
+                            <riaControls:Parameter ParameterName="_csrId" />
+                        </riaControls:DomainDataSource.QueryParameters>
+                        <riaControls:DomainDataSource.DomainContext>
+                            <my:BusinessSystemsDomainContext />
+                        </riaControls:DomainDataSource.DomainContext>
+                    </riaControls:DomainDataSource>
+                    <sdk:DataGrid AutoGenerateColumns="False" Height="184" HorizontalAlignment="Left" ItemsSource="{Binding ElementName=notesDomainDataSource, Path=Data}" Margin="6,4,0,0" Name="notesDataGrid" RowDetailsVisibilityMode="VisibleWhenSelected" VerticalAlignment="Top" Width="632" SelectionChanged="notesDataGrid_SelectionChanged" IsReadOnly="True" CellStyle="{StaticResource DataGridCellStyle1}" Grid.Row="1">
+                        <sdk:DataGrid.Columns>
+                            <sdk:DataGridTemplateColumn x:Name="dateColumn" Header="Date" Width="Auto">
+                                <sdk:DataGridTemplateColumn.CellEditingTemplate>
+                                    <DataTemplate>
+                                        <sdk:DatePicker SelectedDate="{Binding Path=Date, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" />
+                                    </DataTemplate>
+                                </sdk:DataGridTemplateColumn.CellEditingTemplate>
+                                <sdk:DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Text="{Binding Path=Date, StringFormat='dd.MM.yyyy  HH:mm:ss'}" VerticalAlignment="Center"/>
+                                    </DataTemplate>
+                                </sdk:DataGridTemplateColumn.CellTemplate>
+                            </sdk:DataGridTemplateColumn>
+                            <sdk:DataGridTextColumn x:Name="idColumn1" Binding="{Binding Path=Id, Mode=OneWay}" Header="Id" IsReadOnly="True" Width="Auto" />
+                            <sdk:DataGridTextColumn x:Name="headingColumn1" Binding="{Binding Path=Heading}" Header="Heading" Width="Auto" Visibility="Visible" />
+                            <sdk:DataGridTextColumn Binding="{Binding Path=User.FirstName, Mode=OneWay}" CanUserReorder="True" CanUserResize="True" CanUserSort="True" Width="Auto" Header="Author first name" />
+                            <sdk:DataGridTextColumn Binding="{Binding Path=User.LastName, Mode=OneWay}" CanUserReorder="True" CanUserResize="True" CanUserSort="True" Header="Author last name" Width="Auto" />
+                            <sdk:DataGridTextColumn x:Name="noteColumn" Binding="{Binding Path=Note}" Header="Note" Width="SizeToHeader" Visibility="Collapsed" />
+                            <sdk:DataGridTextColumn x:Name="autorIdColumn" Binding="{Binding Path=AutorId}" Header="Autor Id" Width="SizeToHeader" Visibility="Collapsed" />
+                            <sdk:DataGridTextColumn x:Name="csrIdColumn" Binding="{Binding Path=CsrId}" Header="Csr Id" Width="SizeToHeader" Visibility="Collapsed" />
+                            <sdk:DataGridTextColumn x:Name="descriptionColumn1" Binding="{Binding Path=Description}" Header="Description" Width="SizeToHeader" Visibility="Collapsed" />
+                        </sdk:DataGrid.Columns>
+                    </sdk:DataGrid>
+                    <Button Content="{Binding Source={StaticResource BS_RES}, Path=LocalizedStrings.CSRReview_Notes_Button_Remove}" Height="23" HorizontalAlignment="Left" Margin="389,194,0,0" Name="CSRReview_Notes_Button_Remove" VerticalAlignment="Top" Width="75" Click="button1_Click" Visibility="Collapsed" Grid.Row="1" />
+                    <Button Content="{Binding Source={StaticResource BS_RES}, Path=LocalizedStrings.CSRReview_Notes_Button_Add}" Height="23" HorizontalAlignment="Left" Margin="563,194,0,0" Name="CSRReview_Notes_Button_Add" VerticalAlignment="Top" Width="75" Click="btnAddNote_Click" IsEnabled="False" Grid.Row="1" />
+                    <Button Content="{Binding Source={StaticResource BS_RES}, Path=LocalizedStrings.CSRReview_Notes_Button_Edit}" Height="23" HorizontalAlignment="Left" Margin="477,194,0,0" Name="CSRReview_Notes_Button_Edit" VerticalAlignment="Top" Width="75" Click="button3_Click" IsEnabled="False" Grid.Row="1" />
+                    <Grid Name="grid2" Width="632" Margin="6,241,6,6" ShowGridLines="True" Grid.Row="1">
+                        <Rectangle Height="437" HorizontalAlignment="Left" Name="rectangle1" Stroke="#A4000000" StrokeThickness="1" VerticalAlignment="Top" Width="632" />
+                        <sdk:Label Height="17" HorizontalAlignment="Left" Margin="18,25,0,0" Name="CSRReview_Notes_Label_Heading" VerticalAlignment="Top" Width="120" Content="{Binding Source={StaticResource BS_RES}, Path=LocalizedStrings.CSRReview_Notes_Label_Heading}" />
+                        <TextBox Height="23" HorizontalAlignment="Right" Margin="0,21,72,0" Name="NotesHeadingTextBox" VerticalAlignment="Top" Width="393" IsReadOnly="True" />
+                        <sdk:Label Content="{Binding Source={StaticResource BS_RES}, Path=LocalizedStrings.CSRReview_Notes_Label_Author}" Height="17" HorizontalAlignment="Left" Margin="18,59,0,0" Name="CSRReview_Notes_Label_Author" VerticalAlignment="Top" Width="120" />
+                        <TextBox Height="23" HorizontalAlignment="Right" Margin="0,55,161,0" Name="NotesAuthorTextBox" VerticalAlignment="Top" Width="304" IsReadOnly="True" />
+                        <TextBox Height="23" HorizontalAlignment="Right" Margin="0,92,285,0" Name="NoteDateTextBox" VerticalAlignment="Top" Width="180" IsReadOnly="True" />
+                        <sdk:Label Content="{Binding Source={StaticResource BS_RES}, Path=LocalizedStrings.CSRReview_Notes_Label_Date}" Height="17" HorizontalAlignment="Left" Margin="18,96,0,0" Name="CSRReview_Notes_Label_Date" VerticalAlignment="Top" Width="120" />
+                        <sdk:Label Content="{Binding Source={StaticResource BS_RES}, Path=LocalizedStrings.CSRReview_Notes_Label_Note}" Height="17" HorizontalAlignment="Left" Margin="18,132,0,0" Name="CSRReview_Notes_Label_Note" VerticalAlignment="Top" Width="120" />
+                        <ScrollViewer Height="132" HorizontalAlignment="Left" Margin="167,124,0,0" Name="scrollViewer3" VerticalAlignment="Top" Width="393" Padding="0" BorderBrush="{x:Null}" VerticalScrollBarVisibility="Auto">
+                            <TextBox Name="NoteNoteTextBox" Width="374" IsReadOnly="False" Padding="2" HorizontalContentAlignment="Left" HorizontalAlignment="Left" VerticalAlignment="Stretch" TextWrapping="Wrap" KeyDown="NoteNoteTextBox_KeyDown" />
+                        </ScrollViewer>
+                        <sdk:Label Content="{Binding Source={StaticResource BS_RES}, Path=LocalizedStrings.CSRReview_Notes_Label_Attachments}" Height="17" HorizontalAlignment="Left" Margin="18,272,0,0" Name="CSRReview_Notes_Label_Attachments" VerticalAlignment="Top" Width="120" />
+                        <ListBox Height="100" HorizontalAlignment="Left" Margin="167,272,0,0" Name="Note_Attachments_ListBox" VerticalAlignment="Top" Width="393" SelectionChanged="Note_Attachments_ListBox_SelectionChanged" />
+                    </Grid>
+                    <sdk:Label Height="19" HorizontalAlignment="Left" Margin="6,223,0,0" Name="CSRReview_Notes_Label_NoteDetails" VerticalAlignment="Top" Width="120" Content="{Binding Source={StaticResource BS_RES}, Path=LocalizedStrings.CSRReview_Notes_Label_NoteDetails}" FontWeight="Black" Grid.Row="1" />
+                    <riaControls:DomainDataSource AutoLoad="False" d:DesignData="{d:DesignInstance my:AttachmenttAssign, CreateList=true}" Height="0" Name="kBAttachmenttAssignDomainDataSource" QueryName="GetAttachmenttAssignKBQuery" Width="0" LoadedData="attachmenttAssignDomainDataSource1_LoadedData" Margin="0,0,659,2">
+                        <riaControls:DomainDataSource.DomainContext>
+                            <my:BusinessSystemsDomainContext />
+                        </riaControls:DomainDataSource.DomainContext>
+                        <riaControls:DomainDataSource.QueryParameters>
+                            <riaControls:Parameter ParameterName="_kbId" />
+                        </riaControls:DomainDataSource.QueryParameters>
+                    </riaControls:DomainDataSource>
+                    <riaControls:DomainDataSource AutoLoad="False" d:DesignData="{d:DesignInstance my:AttachmenttAssign, CreateList=true}" Height="0" Name="notesAttachmentAssignDomainDataSource" QueryName="GetAttachmenttAssignNoteQuery" Width="0" LoadedData="notesAttachmentAssignDomainDataSource_LoadedData" Margin="0,0,659,2">
+                        <riaControls:DomainDataSource.DomainContext>
+                            <my:BusinessSystemsDomainContext />
+                        </riaControls:DomainDataSource.DomainContext>
+                        <riaControls:DomainDataSource.QueryParameters>
+                            <riaControls:Parameter ParameterName="_noteId" />
+                        </riaControls:DomainDataSource.QueryParameters>
+                    </riaControls:DomainDataSource>
+                </Grid>
+            </sdk:TabItem>
+            <sdk:TabItem Header="{Binding Source={StaticResource BS_RES}, Path=LocalizedStrings.CSRReview_TabItem_RiskAnalysis}" Name="CSRReview_TabItem_RiskAnalysis">
+                <Grid Height="840" Name="grid3" Width="654">
+                    <sdk:Label Content="{Binding Source={StaticResource BS_RES}, Path=LocalizedStrings.CSRReview_RiskAnalysis_Label_CSRId}" Height="17" HorizontalAlignment="Left" Margin="13,25,0,0" Name="CSRReview_RiskAnalysis_Label_CSRId" VerticalAlignment="Top" Width="120" />
+                    <TextBox Height="23" HorizontalAlignment="Right" IsReadOnly="True" Margin="0,21,318,0" Name="RiskAnalysisCsrIdTextBox" VerticalAlignment="Top" Width="190" />
+                    <sdk:Label Content="{Binding Source={StaticResource BS_RES}, Path=LocalizedStrings.CSRReview_RiskAnalysis_Label_Heading}" Height="17" HorizontalAlignment="Left" Margin="13,59,0,0" Name="CSRReview_RiskAnalysis_Label_Heading" VerticalAlignment="Top" Width="120" />
+                    <TextBox Height="23" HorizontalAlignment="Right" IsReadOnly="True" Margin="0,55,27,0" Name="RiskAnalysisCsrHeadingTextBox" VerticalAlignment="Top" Width="480" />
+                    <sdk:Label Content="{Binding Source={StaticResource BS_RES}, Path=LocalizedStrings.CSRReview_RiskAnalysis_Label_Severity}" Height="17" HorizontalAlignment="Left" Margin="13,95,0,0" Name="CSRReview_RiskAnalysis_Label_Severity" VerticalAlignment="Top" Width="120" />
+                    <sdk:Label Content="{Binding Source={StaticResource BS_RES}, Path=LocalizedStrings.CSRReview_RiskAnalysis_Label_Frequency}" Height="17" HorizontalAlignment="Left" Margin="13,131,0,0" Name="CSRReview_RiskAnalysis_Label_Frequency" VerticalAlignment="Top" Width="120" />
+                    <Button Content="{Binding Source={StaticResource BS_RES}, Path=LocalizedStrings.CSRReview_RiskAnalysis_Button_EnableEditing}" Height="23" HorizontalAlignment="Left" Margin="147,177,0,0" Name="CSRReview_RiskAnalysis_Button_EnableEditing" VerticalAlignment="Top" Width="109" Click="button4_Click" IsEnabled="False" />
+                    <Button Content="{Binding Source={StaticResource BS_RES}, Path=LocalizedStrings.CSRReview_RiskAnalysis_Button_SaveChanges}" Height="23" HorizontalAlignment="Left" Margin="275,177,0,0" Name="CSRReview_RiskAnalysis_Button_SaveChanges" VerticalAlignment="Top" Width="109" Visibility="Collapsed" Click="btnRiskAnalysisSave_Click" />
+                    <riaControls:DomainDataSource AutoLoad="True" d:DesignData="{d:DesignInstance my:Severity, CreateList=true}" Height="0" LoadedData="severityDomainDataSource_LoadedData" Name="severityDomainDataSource" QueryName="GetSeverityQuery" Width="0">
+                        <riaControls:DomainDataSource.DomainContext>
+                            <my:BusinessSystemsDomainContext />
+                        </riaControls:DomainDataSource.DomainContext>
+                    </riaControls:DomainDataSource>
+                    <ComboBox Height="23" HorizontalAlignment="Left" ItemsSource="{Binding ElementName=severityDomainDataSource, Path=Data}" Margin="147,89,0,0" Name="severityComboBox" VerticalAlignment="Top" Width="252" SelectedValuePath="Id" DisplayMemberPath="SeverityName" IsEnabled="False" LayoutUpdated="severityComboBox_LayoutUpdated">
+                        <ComboBox.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <VirtualizingStackPanel />
+                            </ItemsPanelTemplate>
+                        </ComboBox.ItemsPanel>
+                    </ComboBox>
+                    <riaControls:DomainDataSource AutoLoad="True" d:DesignData="{d:DesignInstance my:Frequency, CreateList=true}" Height="0" LoadedData="frequencyDomainDataSource_LoadedData" Name="frequencyDomainDataSource" QueryName="GetFrequencyQuery" Width="0">
+                        <riaControls:DomainDataSource.DomainContext>
+                            <my:BusinessSystemsDomainContext />
+                        </riaControls:DomainDataSource.DomainContext>
+                    </riaControls:DomainDataSource>
+                    <ComboBox Height="23" HorizontalAlignment="Left" ItemsSource="{Binding ElementName=frequencyDomainDataSource, Path=Data}" Margin="147,125,0,0" Name="frequencyComboBox" VerticalAlignment="Top" Width="252" DisplayMemberPath="FrequencyName" SelectedValuePath="Id" IsEnabled="False" LayoutUpdated="frequencyComboBox_LayoutUpdated">
+                        <ComboBox.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <VirtualizingStackPanel />
+                            </ItemsPanelTemplate>
+                        </ComboBox.ItemsPanel>
+                    </ComboBox>
+                    <Button Content="{Binding Source={StaticResource BS_RES}, Path=LocalizedStrings.CSRReview_RiskAnalysis_Button_CancelChanging}" Height="23" HorizontalAlignment="Left" Margin="404,177,0,0" Name="CSRReview_RiskAnalysis_Button_CancelChanging" VerticalAlignment="Top" Width="109" Visibility="Collapsed" Click="btnRiskAnalysisCancel_Click" />
+                    <riaControls:DomainDataSource AutoLoad="False" d:DesignData="{d:DesignInstance my:Csr, CreateList=true}" Height="0" Name="csrDomainDataSource1" QueryName="GetCsrQuery" Width="0" LoadedData="csrDomainDataSource1_LoadedData_1" PageSize="10" LoadSize="10">
+                        <riaControls:DomainDataSource.DomainContext>
+                            <my:BusinessSystemsDomainContext />
+                        </riaControls:DomainDataSource.DomainContext>
+                    </riaControls:DomainDataSource>
+                    <riaControls:DomainDataSource AutoLoad="False" d:DesignData="{d:DesignInstance my:CompaniesAssignment, CreateList=true}" Height="0" LoadedData="companiesAssignmentDomainDataSource_LoadedData" Name="companiesAssignmentDomainDataSource" QueryName="GetCompaniesAssignmentQuery" Width="0">
+                        <riaControls:DomainDataSource.DomainContext>
+                            <my:BusinessSystemsDomainContext />
+                        </riaControls:DomainDataSource.DomainContext>
+                        <riaControls:DomainDataSource.QueryParameters>
+                            <riaControls:Parameter ParameterName="_companyId" Value="{Binding ElementName=_companyIdTextBox, Path=Text}" />
+                        </riaControls:DomainDataSource.QueryParameters>
+                    </riaControls:DomainDataSource>
+                </Grid>
+            </sdk:TabItem>
+            <sdk:TabItem Header="{Binding Source={StaticResource BS_RES}, Path=LocalizedStrings.CSRReview_TabItem_KnowledgeBase}" Name="CSRReview_TabItem_KnowledgeBase">
+                <Grid Height="844" Name="grid4" Width="646">
+                    <riaControls:DomainDataSource AutoLoad="False" d:DesignData="{d:DesignInstance my:KB_Notes, CreateList=true}" Height="0" LoadedData="kB_NotesDomainDataSource_LoadedData" Name="kB_NotesDomainDataSource" QueryName="GetKB_NotesQuery" Width="0">
+                        <riaControls:DomainDataSource.QueryParameters>
+                            <riaControls:Parameter ParameterName="_csrId" />
+                        </riaControls:DomainDataSource.QueryParameters>
+                        <riaControls:DomainDataSource.DomainContext>
+                            <my:BusinessSystemsDomainContext />
+                        </riaControls:DomainDataSource.DomainContext>
+                    </riaControls:DomainDataSource>
+                    <Button Content="{Binding Source={StaticResource BS_RES}, Path=LocalizedStrings.CSRReview_KB_Button_Remove}" Height="23" HorizontalAlignment="Left" Margin="369,139,0,0" Name="CSRReview_KB_Button_Remove" VerticalAlignment="Top" Width="75" Click="btnRemoveKbNote_Click" Visibility="Collapsed" />
+                    <Button Content="{Binding Source={StaticResource BS_RES}, Path=LocalizedStrings.CSRReview_KB_Button_Add}" Height="23" HorizontalAlignment="Left" Margin="551,139,0,0" Name="CSRReview_KB_Button_Add" VerticalAlignment="Top" Width="75" Click="btnAddKBNote_Click" IsEnabled="False" />
+                    <Button Content="{Binding Source={StaticResource BS_RES}, Path=LocalizedStrings.CSRReview_KB_Button_Edit}" Height="23" HorizontalAlignment="Left" Margin="460,139,0,0" Name="CSRReview_KB_Button_Edit" VerticalAlignment="Top" Width="75" Click="btnEditKBNote_Click" Visibility="Visible" IsEnabled="False" />
+                    <Grid Margin="6,176,6,0" Name="kbnotesGrid">
+                        <sdk:Label Content="{Binding Source={StaticResource BS_RES}, Path=LocalizedStrings.CSRReview_KB_Label_KBId}" Height="19" HorizontalAlignment="Left" HorizontalContentAlignment="Right" Margin="10,16,0,0" Name="CSRReview_KB_Label_KBId" VerticalAlignment="Top" Width="137" />
+                        <TextBox Height="23" HorizontalAlignment="Left" Margin="180,12,0,0" Name="KBIdTextBox" VerticalAlignment="Top" Width="208" IsReadOnly="True" />
+                        <sdk:Label Content="{Binding Source={StaticResource BS_RES}, Path=LocalizedStrings.CSRReview_KB_Label_Heading}" Height="19" HorizontalAlignment="Left" HorizontalContentAlignment="Right" Margin="10,51,0,0" Name="CSRReview_KB_Label_Heading" VerticalAlignment="Top" Width="137" />
+                        <TextBox Height="23" HorizontalAlignment="Left" Margin="180,47,0,0" Name="KBTitleTextBox" VerticalAlignment="Top" Width="399" IsReadOnly="True" />
+                        <sdk:Label Content="{Binding Source={StaticResource BS_RES}, Path=LocalizedStrings.CSRReview_KB_Label_Description}" Height="19" HorizontalAlignment="Left" HorizontalContentAlignment="Right" Margin="10,84,0,0" Name="CSRReview_KB_Label_Description" VerticalAlignment="Top" Width="137" />
+                        <sdk:Label Content="{Binding Source={StaticResource BS_RES}, Path=LocalizedStrings.CSRReview_KB_Label_Author}" Height="19" HorizontalAlignment="Left" HorizontalContentAlignment="Right" Margin="10,219,0,0" Name="CSRReview_KB_Label_Author" VerticalAlignment="Top" Width="137" />
+                        <TextBox Height="23" Margin="180,215,232,0" Name="KBAuthorTextBox" VerticalAlignment="Top" IsReadOnly="True" />
+                        <sdk:Label Content="{Binding Source={StaticResource BS_RES}, Path=LocalizedStrings.CSRReview_KB_Label_Solution}" Height="19" HorizontalAlignment="Left" HorizontalContentAlignment="Right" Margin="10,252,0,0" Name="CSRReview_KB_Label_Solution" VerticalAlignment="Top" Width="137" />
+                        <ScrollViewer Height="115" HorizontalAlignment="Left" Margin="180,84,0,0" Name="scrollViewer4" Padding="0" VerticalAlignment="Top" Width="418" BorderBrush="{x:Null}" VerticalScrollBarVisibility="Auto">
+                            <TextBox Name="KBDescriptionTextBox" TextWrapping="Wrap" Width="399" IsReadOnly="False" VerticalAlignment="Stretch" HorizontalAlignment="Left" KeyDown="KBDescriptionTextBox_KeyDown" />
+                        </ScrollViewer>
+                        <ScrollViewer Height="117" HorizontalAlignment="Left" Margin="180,254,0,0" Name="scrollViewer5" Padding="0" VerticalAlignment="Top" Width="418" VerticalScrollBarVisibility="Auto" BorderBrush="{x:Null}">
+                            <TextBox Name="KBSolutionTextBox" TextWrapping="Wrap" Width="399" IsReadOnly="False" HorizontalAlignment="Left" VerticalAlignment="Stretch" KeyDown="KBSolutionTextBox_KeyDown" />
+                        </ScrollViewer>
+                        <sdk:Label Content="{Binding Source={StaticResource BS_RES}, Path=LocalizedStrings.CSRReview_KB_Label_Attachment}" Height="19" HorizontalAlignment="Left" HorizontalContentAlignment="Right" Margin="7,386,0,0" Name="CSRReview_KB_Label_Attachment" VerticalAlignment="Top" Width="137" />
+                        <ListBox Height="79" HorizontalAlignment="Left" Margin="180,386,0,0" Name="KBNotesAttachment_ListBox" VerticalAlignment="Top" Width="400" SelectionChanged="KBNotesAttachment_ListBox_SelectionChanged" />
+                    </Grid>
+                    <sdk:DataGrid AutoGenerateColumns="False" Height="127" HorizontalAlignment="Left" ItemsSource="{Binding ElementName=kB_NotesDomainDataSource, Path=Data}" Margin="6,6,0,0" Name="kB_NotesDataGrid" RowDetailsVisibilityMode="VisibleWhenSelected" VerticalAlignment="Top" Width="620" SelectionChanged="kB_NotesDataGrid_SelectionChanged" IsReadOnly="True" AllowDrop="False" CellStyle="{StaticResource DataGridCellStyle1}">
+                        <sdk:DataGrid.Columns>
+                            <sdk:DataGridTextColumn x:Name="idColumn2" Binding="{Binding Path=Id, Mode=OneWay}" Header="Id" IsReadOnly="True" Width="Auto" />
+                            <sdk:DataGridTemplateColumn x:Name="dateColumn1" Header="Date" Width="Auto">
+                                <sdk:DataGridTemplateColumn.CellEditingTemplate>
+                                    <DataTemplate>
+                                        <sdk:DatePicker SelectedDate="{Binding Path=Date, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" />
+                                    </DataTemplate>
+                                </sdk:DataGridTemplateColumn.CellEditingTemplate>
+                                <sdk:DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Text="{Binding Path=Date, StringFormat='dd.MM.yyyy H:mm:ss'}" VerticalAlignment="Center" />
+                                    </DataTemplate>
+                                </sdk:DataGridTemplateColumn.CellTemplate>
+                            </sdk:DataGridTemplateColumn>
+                            <sdk:DataGridTextColumn x:Name="headingColumn2" Binding="{Binding Path=Heading}" Header="Heading" Width="Auto" />
+                            <sdk:DataGridTextColumn Binding="{Binding Path=Product.ProductName, Mode=OneWay}" CanUserReorder="True" CanUserResize="True" CanUserSort="True" Header="Product" Width="Auto" />
+                            <sdk:DataGridTextColumn x:Name="autorIdColumn1" Binding="{Binding Path=AutorId}" Header="Autor Id" Width="SizeToHeader" Visibility="Collapsed" />
+                            <sdk:DataGridTextColumn x:Name="csrIdColumn1" Binding="{Binding Path=CsrId}" Header="Csr Id" Width="SizeToHeader" Visibility="Collapsed" />
+                            <sdk:DataGridTextColumn x:Name="descriptionColumn2" Binding="{Binding Path=Description}" Header="Description" Width="SizeToHeader" Visibility="Collapsed" />
+                            <sdk:DataGridTextColumn x:Name="noteColumn1" Binding="{Binding Path=Note}" Header="Note" Width="SizeToHeader" Visibility="Collapsed" />
+                            <sdk:DataGridTextColumn x:Name="productIdColumn1" Binding="{Binding Path=ProductId}" Header="Product Id" Width="SizeToHeader" Visibility="Collapsed" />
+                        </sdk:DataGrid.Columns>
+                    </sdk:DataGrid>
+                </Grid>
+            </sdk:TabItem>
+        </sdk:TabControl>
+        <sdk:DataGrid AutoGenerateColumns="False" Height="202" ItemsSource="{Binding ElementName=csrDomainDataSource1, Path=Data}" Margin="4,14,0,0" Name="csrDataGrid" RowDetailsVisibilityMode="VisibleWhenSelected" VerticalAlignment="Top" SelectionChanged="csrDataGrid_SelectionChanged" IsReadOnly="True" IsTabStop="True" CellStyle="{StaticResource DataGridCellStyle1}" Grid.Row="1">
+            <sdk:DataGrid.Columns>
+                <sdk:DataGridTextColumn x:Name="answerColumn" Binding="{Binding Path=Answer}" Header="Answer" Width="SizeToHeader" Visibility="Collapsed" />
+                <sdk:DataGridTemplateColumn x:Name="answerDateColumn" Header="Answer Date" Width="SizeToHeader" Visibility="Collapsed">
+                    <sdk:DataGridTemplateColumn.CellEditingTemplate>
+                        <DataTemplate>
+                            <sdk:DatePicker SelectedDate="{Binding Path=AnswerDate, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" />
+                        </DataTemplate>
+                    </sdk:DataGridTemplateColumn.CellEditingTemplate>
+                    <sdk:DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Path=AnswerDate, StringFormat=\{0:d\}}"/>
+                        </DataTemplate>
+                    </sdk:DataGridTemplateColumn.CellTemplate>
+                </sdk:DataGridTemplateColumn>
+                <sdk:DataGridTemplateColumn x:Name="callDateColumn" Header="Call Date" Width="SizeToHeader" Visibility="Collapsed">
+                    <sdk:DataGridTemplateColumn.CellEditingTemplate>
+                        <DataTemplate>
+                            <sdk:DatePicker SelectedDate="{Binding Path=CallDate, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true, TargetNullValue=''}" />
+                        </DataTemplate>
+                    </sdk:DataGridTemplateColumn.CellEditingTemplate>
+                    <sdk:DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Path=CallDate, StringFormat=\{0:d\}}" />
+                        </DataTemplate>
+                    </sdk:DataGridTemplateColumn.CellTemplate>
+                </sdk:DataGridTemplateColumn>
+                <sdk:DataGridTextColumn x:Name="callerIdColumn" Binding="{Binding Path=CallerId}" Header="Caller Id" Width="SizeToHeader" Visibility="Collapsed" />
+                <sdk:DataGridTextColumn x:Name="communicationIdColumn" Binding="{Binding Path=CommunicationId}" Header="Communication Id" Width="SizeToHeader" Visibility="Collapsed" />
+                <sdk:DataGridTextColumn x:Name="companyIdColumn" Binding="{Binding Path=CompanyId}" Header="Company Id" Width="SizeToHeader" Visibility="Collapsed" />
+                <sdk:DataGridTextColumn x:Name="cSRNumberColumn" Binding="{Binding Path=CSRNumber}" Header="CSRNumber" Width="SizeToHeader" Visibility="Collapsed" />
+                <sdk:DataGridTextColumn x:Name="descriptionColumn" Binding="{Binding Path=Description}" Header="Description" Width="SizeToHeader" Visibility="Collapsed" />
+                <sdk:DataGridTemplateColumn x:Name="finishDateColumn" Header="Finish Date" Width="SizeToHeader" Visibility="Collapsed">
+                    <sdk:DataGridTemplateColumn.CellEditingTemplate>
+                        <DataTemplate>
+                            <sdk:DatePicker SelectedDate="{Binding Path=FinishDate, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" />
+                        </DataTemplate>
+                    </sdk:DataGridTemplateColumn.CellEditingTemplate>
+                    <sdk:DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Path=FinishDate, StringFormat=\{0:d\}}" />
+                        </DataTemplate>
+                    </sdk:DataGridTemplateColumn.CellTemplate>
+                </sdk:DataGridTemplateColumn>
+                <sdk:DataGridTextColumn x:Name="frequencyIdColumn" Binding="{Binding Path=FrequencyId}" Header="Frequency Id" Width="SizeToHeader" Visibility="Collapsed" />
+                <sdk:DataGridTextColumn x:Name="idColumn" Binding="{Binding Path=Id, Mode=OneWay}" Header="Id" IsReadOnly="True" Width="Auto" />
+                <sdk:DataGridTemplateColumn x:Name="registerDateColumn" Header="Register Date" Width="Auto" Visibility="Visible">
+                    <sdk:DataGridTemplateColumn.CellEditingTemplate>
+                        <DataTemplate>
+                            <sdk:DatePicker SelectedDate="{Binding Path=RegisterDate, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true, TargetNullValue=''}" />
+                        </DataTemplate>
+                    </sdk:DataGridTemplateColumn.CellEditingTemplate>
+                    <sdk:DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Path=RegisterDate, StringFormat='dd.MM.yyyy H:mm:ss'}" VerticalAlignment="Center"/>
+                        </DataTemplate>
+                    </sdk:DataGridTemplateColumn.CellTemplate>
+                </sdk:DataGridTemplateColumn>
+                <sdk:DataGridTextColumn Binding="{Binding Path=Csr_Status.StatusName, Mode=OneWay}" CanUserReorder="True" CanUserResize="True" CanUserSort="True" Header="Status" IsReadOnly="False" Width="Auto" />
+                <sdk:DataGridTextColumn Binding="{Binding Path=Company.CompanyName, Mode=OneWay}" CanUserReorder="True" CanUserResize="True" CanUserSort="True" Header="Company name" IsReadOnly="True" Width="Auto" />
+                <sdk:DataGridTextColumn x:Name="headingColumn" Binding="{Binding Path=Heading}" Header="Heading" Width="400" />
+                <sdk:DataGridTextColumn Binding="{Binding Path=Product.ProductName, Mode=OneWay}" CanUserReorder="True" CanUserResize="True" CanUserSort="True" Header="Proizvod" IsReadOnly="True" Width="Auto" />
+                <sdk:DataGridTextColumn x:Name="lastUserIdColumn" Binding="{Binding Path=LastUserId}" Header="Last User Id" Width="SizeToHeader" Visibility="Collapsed" />
+                <sdk:DataGridTextColumn x:Name="priorityIdColumn" Binding="{Binding Path=PriorityId}" Header="Priority Id" Width="SizeToHeader" Visibility="Collapsed" />
+                <sdk:DataGridTextColumn x:Name="productIdColumn" Binding="{Binding Path=ProductId}" Header="Product Id" Width="SizeToHeader" Visibility="Collapsed" />
+                <sdk:DataGridCheckBoxColumn x:Name="riskAnalysisPerformedColumn" Binding="{Binding Path=RiskAnalysisPerformed}" Header="Risk Analysis Performed" Width="SizeToHeader" Visibility="Collapsed" />
+                <sdk:DataGridTextColumn x:Name="severityIdColumn" Binding="{Binding Path=SeverityId}" Header="Severity Id" Width="SizeToHeader" Visibility="Collapsed" />
+                <sdk:DataGridTextColumn x:Name="siteIdColumn" Binding="{Binding Path=SiteId}" Header="Site Id" Width="SizeToHeader" Visibility="Collapsed" />
+                <sdk:DataGridTextColumn x:Name="statusIdColumn" Binding="{Binding Path=StatusId}" Header="Status Id" Width="SizeToHeader" Visibility="Collapsed" />
+                <sdk:DataGridTextColumn x:Name="troubleReportColumn" Binding="{Binding Path=TroubleReport}" Header="Trouble Report" Width="SizeToHeader" Visibility="Collapsed" />
+                <sdk:DataGridTextColumn x:Name="userIdColumn" Binding="{Binding Path=UserId}" Header="User Id" Width="SizeToHeader" Visibility="Collapsed" />
+            </sdk:DataGrid.Columns>
+        </sdk:DataGrid>
+        <sdk:DataPager Height="26" Margin="4,215,0,0" Name="dataPager1" PageSize="10" VerticalAlignment="Top" Source="{Binding ElementName=csrDomainDataSource1, Path=Data}" Grid.Row="1" />
+        <ProgressBar Height="13" HorizontalAlignment="Stretch" Margin="296,116,251,0" Name="progressBar1" VerticalAlignment="Top" Width="124" IsIndeterminate="True" Visibility="Collapsed" IsEnabled="True" Foreground="#DA74B2E8" Grid.Row="1" />
+        <toolkit:Expander HorizontalAlignment="Stretch" Margin="3,4,0,0" Name="CSReview_Expander_Header" Width="Auto" Header="{Binding Source={StaticResource BS_RES}, Path=LocalizedStrings.CSReview_Expander_Header}" IsExpanded="False" Expanded="CSReview_Expander_Header_Expanded" Collapsed="CSReview_Expander_Header_Collapsed" Height="22" VerticalAlignment="Top" Grid.RowSpan="2">
+            <Grid HorizontalAlignment="Stretch" Name="grid5" VerticalAlignment="Stretch" Width="Auto" Height="329">
+                <sdk:Label Content="{Binding Source={StaticResource BS_RES}, Path=LocalizedStrings.CSRReview_Label_Filter_CSRId}" Height="19" HorizontalAlignment="Left" HorizontalContentAlignment="Left" Margin="6,9,0,0" Name="CSRReview_Label_Filter_CSRId" VerticalAlignment="Top" Width="137" />
+                <CheckBox Content="{Binding Source={StaticResource BS_RES}, Path=LocalizedStrings.CSRReview_CheckBox_MyCSRs}" Height="16" HorizontalAlignment="Left" Margin="524,9,0,0" Name="CSRReview_CheckBox_MyCSRs" VerticalAlignment="Top"  />
+                <riaControls:DomainDataSource AutoLoad="False" d:DesignData="{d:DesignInstance my:Company, CreateList=true}" Height="0" LoadedData="companyDomainDataSource_LoadedData" Name="companyDomainDataSource" QueryName="GetCompanyQuery" Width="0">
+                    <riaControls:DomainDataSource.DomainContext>
+                        <my:BusinessSystemsDomainContext />
+                    </riaControls:DomainDataSource.DomainContext>
+                </riaControls:DomainDataSource>
+                <ComboBox Height="23" ItemsSource="{Binding ElementName=companyDomainDataSource, Path=Data}" Margin="178,76,0,0" Name="companyComboBox" VerticalAlignment="Top" SelectedValuePath="Id" DisplayMemberPath="CompanyName" SelectionChanged="companyComboBox_SelectionChanged" HorizontalAlignment="Left" Width="320">
+                    <ComboBox.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <VirtualizingStackPanel />
+                        </ItemsPanelTemplate>
+                    </ComboBox.ItemsPanel>
+                </ComboBox>
+                <riaControls:DomainDataSource AutoLoad="False" d:DesignData="{d:DesignInstance my:Product, CreateList=true}" Height="0" LoadedData="productDomainDataSource_LoadedData" Name="productDomainDataSource" QueryName="GetProductQuery" Width="0">
+                    <riaControls:DomainDataSource.DomainContext>
+                        <my:BusinessSystemsDomainContext />
+                    </riaControls:DomainDataSource.DomainContext>
+                </riaControls:DomainDataSource>
+                <ComboBox Height="23" HorizontalAlignment="Left" ItemsSource="{Binding ElementName=productDomainDataSource, Path=Data}" Margin="178,106,0,0" Name="productComboBox" VerticalAlignment="Top" Width="320" DisplayMemberPath="ProductName" SelectedValuePath="Id">
+                    <ComboBox.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <VirtualizingStackPanel />
+                        </ItemsPanelTemplate>
+                    </ComboBox.ItemsPanel>
+                </ComboBox>
+                <sdk:Label Content="{Binding Source={StaticResource BS_RES}, Path=LocalizedStrings.CSRReview_Filter_Label_Client}" Height="19" HorizontalAlignment="Left" HorizontalContentAlignment="Left" Margin="6,80,0,0" Name="CSRReview_Filter_Label_Client" VerticalAlignment="Top" Width="137" />
+                <sdk:Label Content="{Binding Source={StaticResource BS_RES}, Path=LocalizedStrings.CSRReview_Filter_Label_Product}" Height="19" HorizontalAlignment="Left" HorizontalContentAlignment="Left" Margin="6,110,0,0" Name="CSRReview_Filter_Label_Product" VerticalAlignment="Top" Width="137" />
+                <sdk:Label Content="{Binding Source={StaticResource BS_RES}, Path=LocalizedStrings.CSRReview_Filter_Label_Status}" Height="19" HorizontalAlignment="Left" HorizontalContentAlignment="Left" Margin="6,136,0,0" Name="CSRReview_Filter_Label_Status" VerticalAlignment="Top" Width="137" />
+                <sdk:Label Content="{Binding Source={StaticResource BS_RES}, Path=LocalizedStrings.CSRReview_Filter_Label_ReportedDate}" Height="19" HorizontalAlignment="Left" HorizontalContentAlignment="Left" Margin="6,256,0,0" Name="CSRReview_Filter_Label_ReportedDate" VerticalAlignment="Top" Width="137" />
+                <sdk:Label Content="{Binding Source={StaticResource BS_RES}, Path=LocalizedStrings.CSRReview_Filter_Label_FinishedDate}" Height="19" HorizontalAlignment="Left" HorizontalContentAlignment="Left" Margin="6,290,0,0" Name="CSRReview_Filter_Label_FinishedDate" VerticalAlignment="Top" Width="137" />
+                <sdk:DatePicker Height="23" HorizontalAlignment="Left" Margin="357,252,0,0" Name="Filter_ReportedDate_To_datePicker" VerticalAlignment="Top" Width="141" />
+                <sdk:DatePicker Height="23" HorizontalAlignment="Left" Margin="179,252,0,0" Name="Filter_ReportedDate_From_datePicker" VerticalAlignment="Top" Width="141" Text="OD" SelectedDateFormat="Short" />
+                <sdk:DatePicker Height="23" HorizontalAlignment="Left" Margin="357,288,0,0" Name="Filter_FinishedDate_To_datePicker" VerticalAlignment="Top" Width="141" />
+                <sdk:DatePicker Height="23" HorizontalAlignment="Left" Margin="179,288,0,0" Name="Filter_FinishedDate_From_datePicker" VerticalAlignment="Top" Width="141" />
+                <Button Content="{Binding Source={StaticResource BS_RES}, Path=LocalizedStrings.CSRReview_Filter_Button_Filter}" Height="23" HorizontalAlignment="Left" Margin="568,286,0,0" Name="CSRReview_Filter_Button_Filter" VerticalAlignment="Top" Width="75" Click="CSRReview_Filter_Button_Filter_Click" />
+                <TextBox Height="23" HorizontalAlignment="Left" Margin="178,6,0,0" Name="Filter_CsrId_TextBox" VerticalAlignment="Top" Width="174" />
+                <ScrollViewer Height="102" HorizontalAlignment="Left" Margin="180,139,0,0" Name="scrollViewer6" VerticalAlignment="Top" Width="318" VerticalScrollBarVisibility="Auto" Padding="0">
+                    <StackPanel Name="Filter_CsrStatuses_StackPanel" />
+                </ScrollViewer>
+                <sdk:Label Content="{Binding Source={StaticResource BS_RES}, Path=LocalizedStrings.CSRReview_Filter_Label_TextSearch}" Height="19" HorizontalAlignment="Left" HorizontalContentAlignment="Left" Margin="7,42,0,0" Name="CSRReview_Filter_Label_TextSearch" VerticalAlignment="Top" Width="137" />
+                <TextBox Height="23" HorizontalAlignment="Left" Margin="178,39,0,0" Name="CSRReview_Filter_SearchText" VerticalAlignment="Top" Width="318" />
+                <Grid.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="Black" Offset="0" />
+                        <GradientStop Color="#FDE2E2EB" Offset="1" />
+                        <GradientStop Color="#FFE6E6F2" Offset="0" />
+                    </LinearGradientBrush>
+                </Grid.Background>
+            </Grid>
+        </toolkit:Expander>
+        <sdk:Label Height="18" Margin="0,6,29,0" Name="CSRReview_Report_LabelButton" VerticalAlignment="Top" Content="{Binding Source={StaticResource BS_RES}, Path=LocalizedStrings.CSRReview_Report_LabelButton}" FontWeight="Bold" Foreground="#FF3574DC" Cursor="Hand" HorizontalAlignment="Right" Width="77" MouseLeftButtonDown="CSRReview_Report_LabelButton_MouseLeftButtonDown" MouseEnter="CSRReview_Report_LabelButton_MouseEnter" MouseLeave="CSRReview_Report_LabelButton_MouseLeave" Grid.RowSpan="2" />
+        <sdk:Label Height="20" HorizontalAlignment="Left" Margin="428,4,0,0" Name="lblCompleteReport" VerticalAlignment="Top" Width="129" Grid.RowSpan="2" Content="Complete CSR Report" Foreground="#FF1F35ED" FontWeight="Black" MouseRightButtonDown="lblCompleteReport_MouseRightButtonDown" Cursor="Hand" MouseLeftButtonDown="lblCompleteReport_MouseLeftButtonDown" Visibility="Collapsed" />
+        <HyperlinkButton Content="Complete CSR Report" Height="23" HorizontalAlignment="Left" Margin="428,3,0,0" Name="reportLink" VerticalAlignment="Top" Width="136" TargetName="_blank" Grid.RowSpan="2" Visibility="Collapsed" Click="reportLink_Click" />
+    </Grid>
+</navigation:Page>

@@ -1,0 +1,1257 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="MainMenu_Node_Administrator" xml:space="preserve">
+    <value> Administrator</value>
+  </data>
+  <data name="MainMenu_Node_BusinessSystems" xml:space="preserve">
+    <value>Service desk</value>
+  </data>
+  <data name="MainMenu_Node_Communication" xml:space="preserve">
+    <value>Communication</value>
+  </data>
+  <data name="MainMenu_Node_CommunicationChannels" xml:space="preserve">
+    <value>CommunicationChannels</value>
+  </data>
+  <data name="MainMenu_Node_Companies" xml:space="preserve">
+    <value>Companies</value>
+  </data>
+  <data name="MainMenu_Node_Company" xml:space="preserve">
+    <value>Company</value>
+  </data>
+  <data name="MainMenu_Node_Csr" xml:space="preserve">
+    <value>Csr</value>
+  </data>
+  <data name="MainMenu_Node_CsrReport" xml:space="preserve">
+    <value>CSR Report</value>
+  </data>
+  <data name="MainMenu_Node_CsrReview" xml:space="preserve">
+    <value>CSR Review</value>
+  </data>
+  <data name="MainMenu_Node_Frequency" xml:space="preserve">
+    <value>Frequency</value>
+  </data>
+  <data name="MainMenu_Node_KB" xml:space="preserve">
+    <value>Knowledge base</value>
+  </data>
+  <data name="MainMenu_Node_Logout" xml:space="preserve">
+    <value> Logout</value>
+  </data>
+  <data name="MainMenu_Node_Priority" xml:space="preserve">
+    <value>Priority</value>
+  </data>
+  <data name="MainMenu_Node_Product" xml:space="preserve">
+    <value>Product</value>
+  </data>
+  <data name="MainMenu_Node_Settings" xml:space="preserve">
+    <value>Settings</value>
+  </data>
+  <data name="MainMenu_Node_Severity" xml:space="preserve">
+    <value>Severity</value>
+  </data>
+  <data name="MainMenu_Node_Sites" xml:space="preserve">
+    <value>Sites</value>
+  </data>
+  <data name="MainMenu_Node_Status" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="MainMenu_Node_User" xml:space="preserve">
+    <value>User</value>
+  </data>
+  <data name="MainMenu_Node_Users" xml:space="preserve">
+    <value>Users</value>
+  </data>
+  <data name="MainMenu_Node_UserTypes" xml:space="preserve">
+    <value>UserTypes</value>
+  </data>
+  <data name="MainPage_Title_Label" xml:space="preserve">
+    <value>Service Desk</value>
+  </data>
+  <data name="MainMenu_Node_Products" xml:space="preserve">
+    <value>Products</value>
+  </data>
+  <data name="CsrReport_Label_SelectCustomer" xml:space="preserve">
+    <value>Select a customer:</value>
+  </data>
+  <data name="MainMenu_Node_Language" xml:space="preserve">
+    <value>Language</value>
+  </data>
+  <data name="ChangeSettings_btnSaveSettings" xml:space="preserve">
+    <value>Save changes</value>
+  </data>
+  <data name="ChangeSettings_Label_ContactDetails" xml:space="preserve">
+    <value>Contact details</value>
+  </data>
+  <data name="ChangeSettings_Label_Email" xml:space="preserve">
+    <value>E-mail</value>
+  </data>
+  <data name="ChangeSettings_Label_FirstName" xml:space="preserve">
+    <value>First name</value>
+  </data>
+  <data name="ChangeSettings_Label_Fix1" xml:space="preserve">
+    <value>Fix1</value>
+  </data>
+  <data name="ChangeSettings_Label_Fix2" xml:space="preserve">
+    <value>Fix2</value>
+  </data>
+  <data name="ChangeSettings_Label_LastName" xml:space="preserve">
+    <value>Last name</value>
+  </data>
+  <data name="ChangeSettings_Label_Mobile1" xml:space="preserve">
+    <value>Mobile1</value>
+  </data>
+  <data name="ChangeSettings_Label_Mobile2" xml:space="preserve">
+    <value>Mobile2</value>
+  </data>
+  <data name="ChangeSettings_Label_Password" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="ChangeSettings_Label_Password1" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="ChangeSettings_Label_Username" xml:space="preserve">
+    <value>Username</value>
+  </data>
+  <data name="CommunicationChannel_Button_Delete" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="CommunicationChannel_Button_Edit" xml:space="preserve">
+    <value>Edit...</value>
+  </data>
+  <data name="CommunicationChannel_Button_New" xml:space="preserve">
+    <value>New...</value>
+  </data>
+  <data name="CommunicationChannel_Grid_Column_Description" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="CommunicationChannel_Grid_Column_Id" xml:space="preserve">
+    <value>Id</value>
+  </data>
+  <data name="CommunicationChannel_Grid_Column_Name" xml:space="preserve">
+    <value>Communication channel name</value>
+  </data>
+  <data name="Company_Button_Delete" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="Company_Button_Edit" xml:space="preserve">
+    <value>Edit...</value>
+  </data>
+  <data name="Company_Button_New" xml:space="preserve">
+    <value>New...</value>
+  </data>
+  <data name="CsrReport_Button_Save" xml:space="preserve">
+    <value>Save CSR</value>
+  </data>
+  <data name="CsrReport_Expander_Header" xml:space="preserve">
+    <value>Attachments</value>
+  </data>
+  <data name="CsrReport_Label_Caller" xml:space="preserve">
+    <value>Caller:</value>
+  </data>
+  <data name="CsrReport_Label_CommunicationChannel" xml:space="preserve">
+    <value>Communication channel:</value>
+  </data>
+  <data name="CsrReport_Label_Customer" xml:space="preserve">
+    <value>Customer:</value>
+  </data>
+  <data name="CsrReport_Label_Description" xml:space="preserve">
+    <value>Description:</value>
+  </data>
+  <data name="CsrReport_Label_Heading" xml:space="preserve">
+    <value>Heading:</value>
+  </data>
+  <data name="CsrReport_Label_Popup" xml:space="preserve">
+    <value>CSR Saved</value>
+  </data>
+  <data name="CsrReport_Label_Priority" xml:space="preserve">
+    <value>Priority:</value>
+  </data>
+  <data name="CsrReport_Label_Product" xml:space="preserve">
+    <value>Product:</value>
+  </data>
+  <data name="CsrReport_Label_ReportedBy" xml:space="preserve">
+    <value>Reported by:</value>
+  </data>
+  <data name="CsrReport_Label_Site" xml:space="preserve">
+    <value>Site:</value>
+  </data>
+  <data name="CsrReport_Label_Time" xml:space="preserve">
+    <value>CSR report time:</value>
+  </data>
+  <data name="Culture_Button_Delete" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="Culture_Button_Edit" xml:space="preserve">
+    <value>Edit...</value>
+  </data>
+  <data name="Culture_Button_New" xml:space="preserve">
+    <value>New...</value>
+  </data>
+  <data name="Frequency_Button_Delete" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="Frequency_Button_Edit" xml:space="preserve">
+    <value>Edit...</value>
+  </data>
+  <data name="Frequency_Button_New" xml:space="preserve">
+    <value>New..</value>
+  </data>
+  <data name="KB_Label_Description" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="KB_Label_Heading" xml:space="preserve">
+    <value>Heading</value>
+  </data>
+  <data name="KB_Label_Id" xml:space="preserve">
+    <value>Id</value>
+  </data>
+  <data name="KB_TabItem_KBDetails" xml:space="preserve">
+    <value>Knowledge base details</value>
+  </data>
+  <data name="KnowledgeBase_Expander_Header" xml:space="preserve">
+    <value>Search KB note details</value>
+  </data>
+  <data name="CommunicationChannelDetails_Label_Description" xml:space="preserve">
+    <value>Description:</value>
+  </data>
+  <data name="CommunicationChannelDetails_Label_Id" xml:space="preserve">
+    <value>Id:</value>
+  </data>
+  <data name="CommunicationChannelDetails_Label_Name" xml:space="preserve">
+    <value>Name:</value>
+  </data>
+  <data name="CommunicationChannelDetails_Window" xml:space="preserve">
+    <value>Communication channel details</value>
+  </data>
+  <data name="CompanyDetails_Companies_Button_Add" xml:space="preserve">
+    <value>Add</value>
+  </data>
+  <data name="CompanyDetails_Companies_Button_Remove" xml:space="preserve">
+    <value>Remove</value>
+  </data>
+  <data name="CompanyDetails_Companies_Label_AllCompanies" xml:space="preserve">
+    <value>All companies</value>
+  </data>
+  <data name="CompanyDetails_Companies_Label_AssignedCompanies" xml:space="preserve">
+    <value>Company assigned companies</value>
+  </data>
+  <data name="CompanyDetails_Label_Description" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="CompanyDetails_Label_Id" xml:space="preserve">
+    <value>Id</value>
+  </data>
+  <data name="CompanyDetails_Label_Name" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="CompanyDetails_Priorities_Button_Add" xml:space="preserve">
+    <value>Add</value>
+  </data>
+  <data name="CompanyDetails_Priorities_Button_Remove" xml:space="preserve">
+    <value>Remove</value>
+  </data>
+  <data name="CompanyDetails_Priorities_Label_AllCSRPriorities" xml:space="preserve">
+    <value>All priorities</value>
+  </data>
+  <data name="CompanyDetails_Priorities_Label_CompanyCSRPriorities" xml:space="preserve">
+    <value>Company priorities</value>
+  </data>
+  <data name="CompanyDetails_Products_Button_Add" xml:space="preserve">
+    <value>Add</value>
+  </data>
+  <data name="CompanyDetails_Products_Button_Remove" xml:space="preserve">
+    <value>Remove</value>
+  </data>
+  <data name="CompanyDetails_Products_Label_AllProducts" xml:space="preserve">
+    <value>All products</value>
+  </data>
+  <data name="CompanyDetails_Products_Label_CompanyProducts" xml:space="preserve">
+    <value>Company products</value>
+  </data>
+  <data name="CompanyDetails_Statuses_Button_Add" xml:space="preserve">
+    <value>Add</value>
+  </data>
+  <data name="CompanyDetails_Statuses_Button_Remove" xml:space="preserve">
+    <value>Remove</value>
+  </data>
+  <data name="CompanyDetails_Statuses_Label_AllCSRStatuses" xml:space="preserve">
+    <value>All CSR statuses</value>
+  </data>
+  <data name="CompanyDetails_Statuses_Label_CompanyCSRStatuses" xml:space="preserve">
+    <value>Company CSR statuses</value>
+  </data>
+  <data name="CompanyDetails_TabItem_Companies" xml:space="preserve">
+    <value>Companies</value>
+  </data>
+  <data name="CompanyDetails_TabItem_Priorities" xml:space="preserve">
+    <value>Priorities</value>
+  </data>
+  <data name="CompanyDetails_TabItem_Products" xml:space="preserve">
+    <value>Products</value>
+  </data>
+  <data name="CompanyDetails_TabItem_Statuses" xml:space="preserve">
+    <value>Statuses</value>
+  </data>
+  <data name="CompanyDetails_TabItem_Users" xml:space="preserve">
+    <value>Users to notify</value>
+  </data>
+  <data name="CompanyDetails_Users_Button_Add" xml:space="preserve">
+    <value>Add</value>
+  </data>
+  <data name="CompanyDetails_Users_Button_Remove" xml:space="preserve">
+    <value>Remove</value>
+  </data>
+  <data name="CompanyDetails_Users_Label_AllUsers" xml:space="preserve">
+    <value>All users</value>
+  </data>
+  <data name="CompanyDetails_Users_Label_NotifyUsers" xml:space="preserve">
+    <value>Users to notify</value>
+  </data>
+  <data name="KB_Label_Author" xml:space="preserve">
+    <value>Author</value>
+  </data>
+  <data name="KB_Label_Solution" xml:space="preserve">
+    <value>Solution</value>
+  </data>
+  <data name="KnowledgeBase_Filter_Button_Filter" xml:space="preserve">
+    <value>Filter</value>
+  </data>
+  <data name="KnowledgeBase_Label_Filter_KBId" xml:space="preserve">
+    <value>KB Id</value>
+  </data>
+  <data name="KnowledgeBase_Label_Filter_Product" xml:space="preserve">
+    <value>Product</value>
+  </data>
+  <data name="KnowledgeBase_Label_Filter_SearchText" xml:space="preserve">
+    <value>Search text</value>
+  </data>
+  <data name="Priority_Button_Delete" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="Priority_Button_Edit" xml:space="preserve">
+    <value>Edit...</value>
+  </data>
+  <data name="Priority_Button_New" xml:space="preserve">
+    <value>New...</value>
+  </data>
+  <data name="Product_Button_Delete" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="Product_Button_Edit" xml:space="preserve">
+    <value>Edit...</value>
+  </data>
+  <data name="Product_Button_New" xml:space="preserve">
+    <value>New...</value>
+  </data>
+  <data name="Severity_Button_Delete" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="Severity_Button_Edit" xml:space="preserve">
+    <value>Edit...</value>
+  </data>
+  <data name="Severity_Button_New" xml:space="preserve">
+    <value>New...</value>
+  </data>
+  <data name="Site_Button_Delete" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="Site_Button_Edit" xml:space="preserve">
+    <value>Edit...</value>
+  </data>
+  <data name="Site_Button_New" xml:space="preserve">
+    <value>New...</value>
+  </data>
+  <data name="Status_Button_Delete" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="Status_Button_Edit" xml:space="preserve">
+    <value>Edit...</value>
+  </data>
+  <data name="Status_Button_New" xml:space="preserve">
+    <value>New...</value>
+  </data>
+  <data name="Users_Expander_Header" xml:space="preserve">
+    <value>Search users</value>
+  </data>
+  <data name="UserTypes_Button_Delete" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="UserTypes_Button_Edit" xml:space="preserve">
+    <value>Edit...</value>
+  </data>
+  <data name="UserTypes_Button_New" xml:space="preserve">
+    <value>New...</value>
+  </data>
+  <data name="User_Button_Delete" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="User_Button_Edit" xml:space="preserve">
+    <value>Edit...</value>
+  </data>
+  <data name="User_Button_New" xml:space="preserve">
+    <value>New...</value>
+  </data>
+  <data name="User_Filter_Button_Filter" xml:space="preserve">
+    <value>Filter</value>
+  </data>
+  <data name="User_Label_Company" xml:space="preserve">
+    <value>Company:</value>
+  </data>
+  <data name="User_Label_FirstName" xml:space="preserve">
+    <value>First name:</value>
+  </data>
+  <data name="User_Label_Id" xml:space="preserve">
+    <value>Id:</value>
+  </data>
+  <data name="User_Label_LastName" xml:space="preserve">
+    <value>Last name:</value>
+  </data>
+  <data name="CommunicationChannel_Grid_Description" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="CommunicationChannel_Grid_Id" xml:space="preserve">
+    <value>Id</value>
+  </data>
+  <data name="CommunicationChannel_Grid_Name" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="Company_Grid_Description" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="Company_Grid_Id" xml:space="preserve">
+    <value>Id</value>
+  </data>
+  <data name="Company_Grid_Name" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="CSReview_Expander_Header" xml:space="preserve">
+    <value>Search CSR details</value>
+  </data>
+  <data name="CSRReport_Label_Notify" xml:space="preserve">
+    <value>You selected Emergency priority, it is wery important to call by phone too!</value>
+  </data>
+  <data name="CSRReview_Button_Cancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="CSRReview_Button_Edit" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="CSRReview_Button_Save" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="CSRReview_CheckBox_MyCSRs" xml:space="preserve">
+    <value>Only my CSR-s</value>
+  </data>
+  <data name="CSRReview_CSRGrid_CompanyName" xml:space="preserve">
+    <value>Company name</value>
+  </data>
+  <data name="CSRReview_CSRGrid_Heading" xml:space="preserve">
+    <value>Heading</value>
+  </data>
+  <data name="CSRReview_CSRGrid_Id" xml:space="preserve">
+    <value>Id</value>
+  </data>
+  <data name="CSRReview_CSRGrid_RegisterDate" xml:space="preserve">
+    <value>Register date</value>
+  </data>
+  <data name="CSRReview_CSRGrid_ReportedDate" xml:space="preserve">
+    <value>Report time</value>
+  </data>
+  <data name="CSRReview_CSRGrid_Status" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="CSRReview_Filter_Button_Filter" xml:space="preserve">
+    <value>Filter</value>
+  </data>
+  <data name="CSRReview_Filter_Label_Client" xml:space="preserve">
+    <value>Client:</value>
+  </data>
+  <data name="CSRReview_Filter_Label_FinishedDate" xml:space="preserve">
+    <value>CSR Finished:</value>
+  </data>
+  <data name="CSRReview_Filter_Label_Product" xml:space="preserve">
+    <value>Product:</value>
+  </data>
+  <data name="CSRReview_Filter_Label_ReportedDate" xml:space="preserve">
+    <value>CSR Reported:</value>
+  </data>
+  <data name="CSRReview_Filter_Label_Status" xml:space="preserve">
+    <value>Status:</value>
+  </data>
+  <data name="CSRReview_Filter_Label_TextSearch" xml:space="preserve">
+    <value>Text Search:</value>
+  </data>
+  <data name="CSRReview_KBGrid_Date" xml:space="preserve">
+    <value>Date</value>
+  </data>
+  <data name="CSRReview_KBGrid_Heading" xml:space="preserve">
+    <value>Heading</value>
+  </data>
+  <data name="CSRReview_KBGrid_Id" xml:space="preserve">
+    <value>Id</value>
+  </data>
+  <data name="CSRReview_KBGrid_Product" xml:space="preserve">
+    <value>Product</value>
+  </data>
+  <data name="CSRReview_KB_Button_Add" xml:space="preserve">
+    <value>Add...</value>
+  </data>
+  <data name="CSRReview_KB_Button_Edit" xml:space="preserve">
+    <value>Edit...</value>
+  </data>
+  <data name="CSRReview_KB_Button_Remove" xml:space="preserve">
+    <value>Remove</value>
+  </data>
+  <data name="CSRReview_KB_Label_Attachment" xml:space="preserve">
+    <value>Attachments:</value>
+  </data>
+  <data name="CSRReview_KB_Label_Author" xml:space="preserve">
+    <value>Author:</value>
+  </data>
+  <data name="CSRReview_KB_Label_Description" xml:space="preserve">
+    <value>Description:</value>
+  </data>
+  <data name="CSRReview_KB_Label_Heading" xml:space="preserve">
+    <value>Heading:</value>
+  </data>
+  <data name="CSRReview_KB_Label_KBId" xml:space="preserve">
+    <value>Knowledge base Id:</value>
+  </data>
+  <data name="CSRReview_KB_Label_Solution" xml:space="preserve">
+    <value>Solution:</value>
+  </data>
+  <data name="CSRReview_Label_Answer" xml:space="preserve">
+    <value>Answer:</value>
+  </data>
+  <data name="CSRReview_Label_Attachments" xml:space="preserve">
+    <value>Attachments:</value>
+  </data>
+  <data name="CSRReview_Label_CallTime" xml:space="preserve">
+    <value>Call time:</value>
+  </data>
+  <data name="CSRReview_Label_Company" xml:space="preserve">
+    <value>Company:</value>
+  </data>
+  <data name="CSRReview_Label_CSRId" xml:space="preserve">
+    <value>CSR Id:</value>
+  </data>
+  <data name="CSRReview_Label_Description" xml:space="preserve">
+    <value>Description:</value>
+  </data>
+  <data name="CSRReview_Label_Filter_CSRId" xml:space="preserve">
+    <value>CSR Id:</value>
+  </data>
+  <data name="CSRReview_Label_FinishedTime" xml:space="preserve">
+    <value>Finished time:</value>
+  </data>
+  <data name="CSRReview_Label_Heading" xml:space="preserve">
+    <value>Heading:</value>
+  </data>
+  <data name="CSRReview_Label_LastUser" xml:space="preserve">
+    <value>Last user:</value>
+  </data>
+  <data name="CSRReview_Label_Priority" xml:space="preserve">
+    <value>Priority:</value>
+  </data>
+  <data name="CSRReview_Label_Product" xml:space="preserve">
+    <value>Product:</value>
+  </data>
+  <data name="CSRReview_Label_RegisterTime" xml:space="preserve">
+    <value>Register time:</value>
+  </data>
+  <data name="CSRReview_Label_ReportedBy" xml:space="preserve">
+    <value>Reported by:</value>
+  </data>
+  <data name="CSRReview_Label_Status" xml:space="preserve">
+    <value>Status:</value>
+  </data>
+  <data name="CSRReview_Label_TroubleTicket" xml:space="preserve">
+    <value>Trouble ticket:</value>
+  </data>
+  <data name="CSRReview_NotesGrid_AuthorFirstName" xml:space="preserve">
+    <value>First name</value>
+  </data>
+  <data name="CSRReview_NotesGrid_AuthorLastName" xml:space="preserve">
+    <value>Last name</value>
+  </data>
+  <data name="CSRReview_NotesGrid_Date" xml:space="preserve">
+    <value>Date</value>
+  </data>
+  <data name="CSRReview_NotesGrid_Heading" xml:space="preserve">
+    <value>Heading</value>
+  </data>
+  <data name="CSRReview_NotesGrid_Id" xml:space="preserve">
+    <value>Id</value>
+  </data>
+  <data name="CSRReview_Notes_Button_Add" xml:space="preserve">
+    <value>Add...</value>
+  </data>
+  <data name="CSRReview_Notes_Button_Edit" xml:space="preserve">
+    <value>Edit...</value>
+  </data>
+  <data name="CSRReview_Notes_Button_Remove" xml:space="preserve">
+    <value>Remove</value>
+  </data>
+  <data name="CSRReview_Notes_Label_Attachments" xml:space="preserve">
+    <value>Attachments:</value>
+  </data>
+  <data name="CSRReview_Notes_Label_Author" xml:space="preserve">
+    <value>Author:</value>
+  </data>
+  <data name="CSRReview_Notes_Label_Date" xml:space="preserve">
+    <value>Date:</value>
+  </data>
+  <data name="CSRReview_Notes_Label_Heading" xml:space="preserve">
+    <value>Heading:</value>
+  </data>
+  <data name="CSRReview_Notes_Label_Note" xml:space="preserve">
+    <value>Note:</value>
+  </data>
+  <data name="CSRReview_Notes_Label_NoteDetails" xml:space="preserve">
+    <value>Note details</value>
+  </data>
+  <data name="CSRReview_PopUp_Email_Label" xml:space="preserve">
+    <value>E-mail:</value>
+  </data>
+  <data name="CSRReview_PopUp_Mobiles_Label" xml:space="preserve">
+    <value>Mobiles:</value>
+  </data>
+  <data name="CSRReview_PopUp_Phones_Label" xml:space="preserve">
+    <value>Phones:</value>
+  </data>
+  <data name="CSRReview_Report_LabelButton" xml:space="preserve">
+    <value>Report</value>
+  </data>
+  <data name="CSRReview_RiskAnalysis_Button_CancelChanging" xml:space="preserve">
+    <value>Cancel changing</value>
+  </data>
+  <data name="CSRReview_RiskAnalysis_Button_EnableEditing" xml:space="preserve">
+    <value>Enable editing</value>
+  </data>
+  <data name="CSRReview_RiskAnalysis_Button_SaveChanges" xml:space="preserve">
+    <value>Save changes</value>
+  </data>
+  <data name="CSRReview_RiskAnalysis_Label_CSRId" xml:space="preserve">
+    <value>CSR Id:</value>
+  </data>
+  <data name="CSRReview_RiskAnalysis_Label_Frequency" xml:space="preserve">
+    <value>Frequency:</value>
+  </data>
+  <data name="CSRReview_RiskAnalysis_Label_Heading" xml:space="preserve">
+    <value>Heading:</value>
+  </data>
+  <data name="CSRReview_RiskAnalysis_Label_Severity" xml:space="preserve">
+    <value>Severity:</value>
+  </data>
+  <data name="CSRReview_TabItem_CSRDetails" xml:space="preserve">
+    <value>CSR details</value>
+  </data>
+  <data name="CSRReview_TabItem_KnowledgeBase" xml:space="preserve">
+    <value>Knowledge base</value>
+  </data>
+  <data name="CSRReview_TabItem_Notes" xml:space="preserve">
+    <value>Notes</value>
+  </data>
+  <data name="CSRReview_TabItem_RiskAnalysis" xml:space="preserve">
+    <value>Risk analysis</value>
+  </data>
+  <data name="Culture_Grid_Descripition" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="Culture_Grid_Id" xml:space="preserve">
+    <value>Id</value>
+  </data>
+  <data name="Culture_Grid_Language" xml:space="preserve">
+    <value>Language</value>
+  </data>
+  <data name="Frequency_Grid_Description" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="Frequency_Grid_Id" xml:space="preserve">
+    <value>Id</value>
+  </data>
+  <data name="Frequency_Grid_Name" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="KB_Grid_Date" xml:space="preserve">
+    <value>Date</value>
+  </data>
+  <data name="KB_Grid_Heading" xml:space="preserve">
+    <value>Heading</value>
+  </data>
+  <data name="KB_Grid_Id" xml:space="preserve">
+    <value>Id</value>
+  </data>
+  <data name="KB_Grid_Product" xml:space="preserve">
+    <value>Product</value>
+  </data>
+  <data name="Priority_Grid_Description" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="Priority_Grid_Id" xml:space="preserve">
+    <value>Id</value>
+  </data>
+  <data name="Priority_Grid_Name" xml:space="preserve">
+    <value>Priority name</value>
+  </data>
+  <data name="Product_Grid_Description" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="Product_Grid_Id" xml:space="preserve">
+    <value>Id</value>
+  </data>
+  <data name="Product_Grid_Name" xml:space="preserve">
+    <value>Product name</value>
+  </data>
+  <data name="Severity_Grid_Description" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="Severity_Grid_Id" xml:space="preserve">
+    <value>Id</value>
+  </data>
+  <data name="Severity_Grid_Name" xml:space="preserve">
+    <value>Severity name</value>
+  </data>
+  <data name="Site_Grid_Company" xml:space="preserve">
+    <value>Company name</value>
+  </data>
+  <data name="Site_Grid_Description" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="Site_Grid_Id" xml:space="preserve">
+    <value>Id</value>
+  </data>
+  <data name="Site_Grid_Name" xml:space="preserve">
+    <value>Site name</value>
+  </data>
+  <data name="Status_Grid_Description" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="Status_Grid_Id" xml:space="preserve">
+    <value>Id</value>
+  </data>
+  <data name="Status_Grid_Name" xml:space="preserve">
+    <value>CSR status name</value>
+  </data>
+  <data name="UserType_Grid_Id" xml:space="preserve">
+    <value>Id</value>
+  </data>
+  <data name="UserType_Grid_Description" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="UserType_Grid_Name" xml:space="preserve">
+    <value>User type name</value>
+  </data>
+  <data name="User_Grid_Company" xml:space="preserve">
+    <value>Company</value>
+  </data>
+  <data name="User_Grid_FirstName" xml:space="preserve">
+    <value>First name</value>
+  </data>
+  <data name="User_Grid_Id" xml:space="preserve">
+    <value>Id</value>
+  </data>
+  <data name="User_Grid_LastName" xml:space="preserve">
+    <value>Last name</value>
+  </data>
+  <data name="User_Grid_Username" xml:space="preserve">
+    <value>Username</value>
+  </data>
+  <data name="User_Grid_UserType" xml:space="preserve">
+    <value>User type</value>
+  </data>
+  <data name="CompanyDetails_Companies_Grid_Id" xml:space="preserve">
+    <value>Company Id</value>
+  </data>
+  <data name="CompanyDetails_Companies_Grid_Name" xml:space="preserve">
+    <value>Company name</value>
+  </data>
+  <data name="CompanyDetails_Priorities_Grid_Id" xml:space="preserve">
+    <value>Priority Id</value>
+  </data>
+  <data name="CompanyDetails_Priorities_Grid_Name" xml:space="preserve">
+    <value>Priority name</value>
+  </data>
+  <data name="CompanyDetails_Products_Grid_Id" xml:space="preserve">
+    <value>Product Id</value>
+  </data>
+  <data name="CompanyDetails_Products_Grid_Name" xml:space="preserve">
+    <value>Product name</value>
+  </data>
+  <data name="CompanyDetails_Statuses_Grid_Id" xml:space="preserve">
+    <value>Status Id</value>
+  </data>
+  <data name="CompanyDetails_Statuses_Grid_Name" xml:space="preserve">
+    <value>Status name</value>
+  </data>
+  <data name="CompanyDetails_Users_Grid_FirstName" xml:space="preserve">
+    <value>First name</value>
+  </data>
+  <data name="CompanyDetails_Users_Grid_Id" xml:space="preserve">
+    <value>User Id</value>
+  </data>
+  <data name="CompanyDetails_Users_Grid_LastName" xml:space="preserve">
+    <value>Last name</value>
+  </data>
+  <data name="CompanyDetails_Window_Title" xml:space="preserve">
+    <value>Company details</value>
+  </data>
+  <data name="CsrPropertyDetails_Label_Description" xml:space="preserve">
+    <value>Description:</value>
+  </data>
+  <data name="CsrPropertyDetails_Label_Id" xml:space="preserve">
+    <value>Id:</value>
+  </data>
+  <data name="CsrPropertyDetails_Label_Name" xml:space="preserve">
+    <value>Name:</value>
+  </data>
+  <data name="CsrPropertyDetails_Window_Title" xml:space="preserve">
+    <value>CSR property details</value>
+  </data>
+  <data name="CultureDetails_Label_Description" xml:space="preserve">
+    <value>Description:</value>
+  </data>
+  <data name="CultureDetails_Label_Id" xml:space="preserve">
+    <value>Id:</value>
+  </data>
+  <data name="CultureDetails_Label_Name" xml:space="preserve">
+    <value>Name:</value>
+  </data>
+  <data name="CultureDetails_Window_Title" xml:space="preserve">
+    <value>User culture details</value>
+  </data>
+  <data name="KBNotesDetails_Button_AddAttachments" xml:space="preserve">
+    <value>Add Attachments</value>
+  </data>
+  <data name="KBNotesDetails_Button_Cancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="KBNotesDetails_Expander_Files" xml:space="preserve">
+    <value>Files</value>
+  </data>
+  <data name="KBNotesDetails_Label_Attachments" xml:space="preserve">
+    <value>Attachements:</value>
+  </data>
+  <data name="KBNotesDetails_Label_Author" xml:space="preserve">
+    <value>Author:</value>
+  </data>
+  <data name="KBNotesDetails_Label_CSRId" xml:space="preserve">
+    <value>CSR Id:</value>
+  </data>
+  <data name="KBNotesDetails_Label_Date" xml:space="preserve">
+    <value>Date:</value>
+  </data>
+  <data name="KBNotesDetails_Label_Heading" xml:space="preserve">
+    <value>Heading:</value>
+  </data>
+  <data name="KBNotesDetails_Label_Id" xml:space="preserve">
+    <value>Id:</value>
+  </data>
+  <data name="KBNotesDetails_Label_NoteProblem" xml:space="preserve">
+    <value>Note problem:</value>
+  </data>
+  <data name="KBNotesDetails_Label_NoteSolution" xml:space="preserve">
+    <value>Note solution:</value>
+  </data>
+  <data name="KBNotesDetails_Label_Product" xml:space="preserve">
+    <value>Product:</value>
+  </data>
+  <data name="KBNotesDetails_Window_Title" xml:space="preserve">
+    <value>Knowledge base details</value>
+  </data>
+  <data name="MainPage_Page_Title" xml:space="preserve">
+    <value>Service Desk</value>
+  </data>
+  <data name="NotesDetails_Button_AddAttachments" xml:space="preserve">
+    <value>Add Attachments</value>
+  </data>
+  <data name="NotesDetails_Button_Cancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="NotesDetails_Expander_Files" xml:space="preserve">
+    <value>Files</value>
+  </data>
+  <data name="NotesDetails_Label_Attachments" xml:space="preserve">
+    <value>Attachements:</value>
+  </data>
+  <data name="NotesDetails_Label_Author" xml:space="preserve">
+    <value>Author:</value>
+  </data>
+  <data name="NotesDetails_Label_CSRId" xml:space="preserve">
+    <value>CSR Id:</value>
+  </data>
+  <data name="NotesDetails_Label_Date" xml:space="preserve">
+    <value>Date:</value>
+  </data>
+  <data name="NotesDetails_Label_Heading" xml:space="preserve">
+    <value>Heading:</value>
+  </data>
+  <data name="NotesDetails_Label_Id" xml:space="preserve">
+    <value>Id:</value>
+  </data>
+  <data name="NotesDetails_Label_Note" xml:space="preserve">
+    <value>Note:</value>
+  </data>
+  <data name="NotesDetails_Window_Title" xml:space="preserve">
+    <value>Note details</value>
+  </data>
+  <data name="ProductDetails_Label_Description" xml:space="preserve">
+    <value>Description:</value>
+  </data>
+  <data name="ProductDetails_Label_Id" xml:space="preserve">
+    <value>Id:</value>
+  </data>
+  <data name="ProductDetails_Label_Name" xml:space="preserve">
+    <value>Name:</value>
+  </data>
+  <data name="ProductDetails_Window_Title" xml:space="preserve">
+    <value>Product details</value>
+  </data>
+  <data name="SiteDetails_Label_Company" xml:space="preserve">
+    <value>Company:</value>
+  </data>
+  <data name="SiteDetails_Label_Description" xml:space="preserve">
+    <value>Description:</value>
+  </data>
+  <data name="SiteDetails_Label_Id" xml:space="preserve">
+    <value>Id:</value>
+  </data>
+  <data name="SiteDetails_Label_Name" xml:space="preserve">
+    <value>Name:</value>
+  </data>
+  <data name="SiteDetails_Window_Title" xml:space="preserve">
+    <value>Site details</value>
+  </data>
+  <data name="UserDetails_Contact_Label_Email" xml:space="preserve">
+    <value>E-mail:</value>
+  </data>
+  <data name="UserDetails_Contact_Label_Fix1" xml:space="preserve">
+    <value>Fix1:</value>
+  </data>
+  <data name="UserDetails_Contact_Label_Fix2" xml:space="preserve">
+    <value>Fix2:</value>
+  </data>
+  <data name="UserDetails_Contact_Label_Id" xml:space="preserve">
+    <value>Contact Id:</value>
+  </data>
+  <data name="UserDetails_Contact_Label_Mobile1" xml:space="preserve">
+    <value>Mobile1:</value>
+  </data>
+  <data name="UserDetails_Contact_Label_Mobile2" xml:space="preserve">
+    <value>Mobile2:</value>
+  </data>
+  <data name="UserDetails_Label_Company" xml:space="preserve">
+    <value>Company:</value>
+  </data>
+  <data name="UserDetails_Label_FirstName" xml:space="preserve">
+    <value>First name:</value>
+  </data>
+  <data name="UserDetails_Label_Id" xml:space="preserve">
+    <value>Id:</value>
+  </data>
+  <data name="UserDetails_Label_Language" xml:space="preserve">
+    <value>Language:</value>
+  </data>
+  <data name="UserDetails_Label_LastName" xml:space="preserve">
+    <value>Last name:</value>
+  </data>
+  <data name="UserDetails_Label_Password" xml:space="preserve">
+    <value>Password:</value>
+  </data>
+  <data name="UserDetails_Label_Type" xml:space="preserve">
+    <value>Type:</value>
+  </data>
+  <data name="UserDetails_Label_Username" xml:space="preserve">
+    <value>Username:</value>
+  </data>
+  <data name="UserDetails_Window_Title" xml:space="preserve">
+    <value>User details</value>
+  </data>
+  <data name="UserTypeDetails_Label_Description" xml:space="preserve">
+    <value>Description:</value>
+  </data>
+  <data name="UserTypeDetails_Label_Id" xml:space="preserve">
+    <value>Id:</value>
+  </data>
+  <data name="UserTypeDetails_Label_Name" xml:space="preserve">
+    <value>Name:</value>
+  </data>
+  <data name="UserTypeDetails_Window_Title" xml:space="preserve">
+    <value>User type details</value>
+  </data>
+  <data name="CsrReport_RequiredInput" xml:space="preserve">
+    <value>Required Input!</value>
+  </data>
+  <data name="CSRReport_Button_Clear" xml:space="preserve">
+    <value>Clear form</value>
+  </data>
+  <data name="Dialog_ConfirmDelete_Text" xml:space="preserve">
+    <value>Are you sure you want to delete selected item?</value>
+  </data>
+  <data name="Dialog_ConfirmDelete_Title" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="CSRReport_BusyIndicator_Saving" xml:space="preserve">
+    <value>Saving CSR ...</value>
+  </data>
+  <data name="CSRReport_BusyIndicator_Uploading" xml:space="preserve">
+    <value>Uploading attachments ...</value>
+  </data>
+  <data name="ChangeSettings_Label_Saved" xml:space="preserve">
+    <value>Saved</value>
+  </data>
+  <data name="ChangeSettings_PasswordsEqual" xml:space="preserve">
+    <value>Passwords not equal, or password to short (min. 6 chars)!</value>
+  </data>
+  <data name="UserDetails_PasswordValid" xml:space="preserve">
+    <value>Password to short! (min. 6 chars)</value>
+  </data>
+  <data name="UserDetails_DuplicateUser_Text" xml:space="preserve">
+    <value>User with this username already exists! Change username and try again.</value>
+  </data>
+  <data name="UserDetails_DuplicateUser_Title" xml:space="preserve">
+    <value>Duplicate username</value>
+  </data>
+  <data name="CSRReview_Label_Location" xml:space="preserve">
+    <value>Location:</value>
+  </data>
+  <data name="IssueDomain_Button_Delete" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="IssueDomain_Button_Edit" xml:space="preserve">
+    <value>Edit...</value>
+  </data>
+  <data name="IssueDomain_Button_New" xml:space="preserve">
+    <value>New...</value>
+  </data>
+  <data name="CompanyDetails_Tab_IssueDomain" xml:space="preserve">
+    <value>Issue domains</value>
+  </data>
+  <data name="CompanyDetails_Tab_TypeOfRequester" xml:space="preserve">
+    <value>Type of requester</value>
+  </data>
+  <data name="MainMenu_Node_IssueDomain" xml:space="preserve">
+    <value>Issue domain</value>
+  </data>
+  <data name="MainMenu_Node_IssueDomains" xml:space="preserve">
+    <value>Issue domains</value>
+  </data>
+  <data name="MainMenu_Node_TypeOfRequester" xml:space="preserve">
+    <value>Type of requester</value>
+  </data>
+  <data name="MainMenu_Node_TypeOfRequesters" xml:space="preserve">
+    <value>Type of requesters</value>
+  </data>
+  <data name="TypeOfRequester_Button_Delete" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="TypeOfRequester_Button_Edit" xml:space="preserve">
+    <value>Edit...</value>
+  </data>
+  <data name="TypeOfRequester_Button_New" xml:space="preserve">
+    <value>New...</value>
+  </data>
+  <data name="TypeOfRequester_Grid_Description" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="TypeOfRequester_Grid_Id" xml:space="preserve">
+    <value>Id</value>
+  </data>
+  <data name="TypeOfRequester_Grid_Name" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="CompanyDetails_TypeOfRequester_Add" xml:space="preserve">
+    <value>Add</value>
+  </data>
+  <data name="CompanyDetails_TypeOfRequester_AllTypeOfRequester" xml:space="preserve">
+    <value>All type of requesters</value>
+  </data>
+  <data name="CompanyDetails_TypeOfRequester_Description" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="CompanyDetails_TypeOfRequester_Name" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="CompanyDetails_TypeOfRequester_Remove" xml:space="preserve">
+    <value>Remove</value>
+  </data>
+  <data name="CompanyDetails_TypeOfRequester_TypeOfRequesters" xml:space="preserve">
+    <value>Type of requesters</value>
+  </data>
+  <data name="CSRReport_IssueDomain" xml:space="preserve">
+    <value>Issue domain</value>
+  </data>
+  <data name="CSRReport_TypeOfRequester" xml:space="preserve">
+    <value>Type of requester</value>
+  </data>
+  <data name="CompanyDetails_IssueDomain_Add" xml:space="preserve">
+    <value>Add</value>
+  </data>
+  <data name="CompanyDetails_IssueDomain_AllIssueDomain" xml:space="preserve">
+    <value>All issue domains</value>
+  </data>
+  <data name="CompanyDetails_IssueDomain_Description" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="CompanyDetails_IssueDomain_IssueDomain" xml:space="preserve">
+    <value>Issue domains</value>
+  </data>
+  <data name="CompanyDetails_IssueDomain_Name" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="CompanyDetails_IssueDomain_Remove" xml:space="preserve">
+    <value>Remove</value>
+  </data>
+  <data name="CSRReview_IssueDomain_Label" xml:space="preserve">
+    <value>Issue domain</value>
+  </data>
+  <data name="CSRReview_TypeOfRequester_Label" xml:space="preserve">
+    <value>Type of requester</value>
+  </data>
+  <data name="IssueDomain_Grid_Description" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="IssueDomain_Grid_Id" xml:space="preserve">
+    <value>Id</value>
+  </data>
+  <data name="IssueDomain_Grid_Name" xml:space="preserve">
+    <value>Issue domain name</value>
+  </data>
+  <data name="RequesterType_Grid_Description" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="RequesterType_Grid_Id" xml:space="preserve">
+    <value>Id</value>
+  </data>
+  <data name="RequesterType_Grid_Name" xml:space="preserve">
+    <value>Type of requester name</value>
+  </data>
+  <data name="IssueDomainDetails_Window_Title" xml:space="preserve">
+    <value>Issue domain details</value>
+  </data>
+  <data name="TypeOfRequesterDetails_Window_Title" xml:space="preserve">
+    <value>Type of requester details</value>
+  </data>
+  <data name="CSRReview_Label_Remedy" xml:space="preserve">
+    <value>Remedy description</value>
+  </data>
+  <data name="CSRReview_Label_RemedyTime" xml:space="preserve">
+    <value>Remedy time</value>
+  </data>
+</root>

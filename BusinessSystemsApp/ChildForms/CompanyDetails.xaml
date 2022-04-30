@@ -1,0 +1,336 @@
+﻿<controls:ChildWindow x:Class="BusinessSystemsApp.ChildForms.CompanyDetails"
+           xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+           xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+           xmlns:controls="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls"
+           Width="702" Height="609" HasCloseButton="False" mc:Ignorable="d" xmlns:riaControls="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.DomainServices" xmlns:my="clr-namespace:BusinessSystemsApp.Web" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk" Name="CompanyDetails_Window"
+                      xmlns:resrc="clr-namespace:BusinessSystemsApp.Resources" Loaded="CompanyDetails_Window_Loaded">
+    <sdk:ChildWindow.Resources>
+        <CollectionViewSource x:Key="companyCompanyPrioritiesViewSource" Source="{Binding Path=Data.CompanyPriorities, ElementName=companyDomainDataSource}" />
+        <resrc:CustomResources x:Key="BS_RES" />
+    </sdk:ChildWindow.Resources>
+    <Grid x:Name="LayoutRoot" Margin="2" Height="593" Width="679">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="544*" />
+            <RowDefinition Height="49" />
+        </Grid.RowDefinitions>
+
+        <Button x:Name="CancelButton" Content="Cancel" Click="CancelButton_Click" Width="75" Height="23" HorizontalAlignment="Right" Margin="0,0,12,14" Grid.Row="1" />
+        <Button x:Name="OKButton" Content="OK" Click="OKButton_Click" Width="75" Height="23" HorizontalAlignment="Left" Margin="511,0,0,14" Grid.Row="1" />
+        <riaControls:DomainDataSource AutoLoad="True" d:DesignData="{d:DesignInstance my:CompanyStatuses, CreateList=true}" Height="0" LoadedData="companyStatusesDomainDataSource_LoadedData" Name="companyStatusesDomainDataSource" QueryName="GetCompanyStatusesQuery" Width="0">
+            <riaControls:DomainDataSource.DomainContext>
+                <my:BusinessSystemsDomainContext />
+            </riaControls:DomainDataSource.DomainContext>
+        </riaControls:DomainDataSource>
+        <riaControls:DomainDataSource AutoLoad="True" d:DesignData="{d:DesignInstance my:Csr_Status, CreateList=true}" Height="0" LoadedData="csr_StatusDomainDataSource_LoadedData" Name="csr_StatusDomainDataSource" Width="0">
+            <riaControls:DomainDataSource.DomainContext>
+                <my:BusinessSystemsDomainContext />
+            </riaControls:DomainDataSource.DomainContext>
+        </riaControls:DomainDataSource>
+        <riaControls:DomainDataSource AutoLoad="True" d:DesignData="{d:DesignInstance my:Priority, CreateList=true}" Height="0" LoadedData="priorityDomainDataSource_LoadedData" Name="priorityDomainDataSource" QueryName="GetPriorityQuery" Width="0">
+            <riaControls:DomainDataSource.DomainContext>
+                <my:BusinessSystemsDomainContext />
+            </riaControls:DomainDataSource.DomainContext>
+        </riaControls:DomainDataSource>
+        <riaControls:DomainDataSource AutoLoad="True" d:DesignData="{d:DesignInstance my:Product, CreateList=true}" Height="0" LoadedData="productDomainDataSource_LoadedData" Name="productDomainDataSource" QueryName="GetProductQuery" Width="0">
+            <riaControls:DomainDataSource.DomainContext>
+                <my:BusinessSystemsDomainContext />
+            </riaControls:DomainDataSource.DomainContext>
+        </riaControls:DomainDataSource>
+        <riaControls:DomainDataSource AutoLoad="True" d:DesignData="{d:DesignInstance my:Company, CreateList=true}" Height="0" LoadedData="companyDomainDataSource_LoadedData" Name="companyDomainDataSource" QueryName="GetCompanyQuery" Width="0">
+            <riaControls:DomainDataSource.DomainContext>
+                <my:BusinessSystemsDomainContext />
+            </riaControls:DomainDataSource.DomainContext>
+        </riaControls:DomainDataSource>
+        <riaControls:DomainDataSource AutoLoad="True" d:DesignData="{d:DesignInstance my:Csr_Status, CreateList=true}" Height="0" LoadedData="csr_StatusDomainDataSource1_LoadedData" Name="csr_StatusDomainDataSource1" QueryName="GetCsr_StatusQuery" Width="0">
+            <riaControls:DomainDataSource.DomainContext>
+                <my:BusinessSystemsDomainContext />
+            </riaControls:DomainDataSource.DomainContext>
+        </riaControls:DomainDataSource>
+        <sdk:TabControl Height="355" HorizontalAlignment="Left" Margin="9,189,0,0" Name="tabControl1" VerticalAlignment="Top" Width="659" Grid.RowSpan="2">
+            <sdk:TabItem Header="{Binding Source={StaticResource BS_RES}, Path=LocalizedStrings.CompanyDetails_TabItem_Products}" Name="CompanyDetails_TabItem_Products">
+                <Grid>
+                    <ComboBox Height="23" HorizontalAlignment="Left" ItemsSource="{Binding ElementName=productDomainDataSource, Path=Data}" Margin="6,27,0,0" Name="productComboBox" VerticalAlignment="Top" Width="313" SelectedValuePath="Id" DisplayMemberPath="ProductName">
+                        <ComboBox.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <VirtualizingStackPanel />
+                            </ItemsPanelTemplate>
+                        </ComboBox.ItemsPanel>
+                    </ComboBox>
+                    <Button Content="{Binding Source={StaticResource BS_RES}, Path=LocalizedStrings.CompanyDetails_Products_Button_Add}" Height="23" HorizontalAlignment="Left" Margin="386,92,0,0" Name="CompanyDetails_Products_Button_Add" VerticalAlignment="Top" Width="59" Click="btnAddProduct_Click" />
+                    <Button Content="{Binding Source={StaticResource BS_RES}, Path=LocalizedStrings.CompanyDetails_Products_Button_Remove}" Height="23" HorizontalAlignment="Left" Margin="386,122,0,0" Name="CompanyDetails_Products_Button_Remove" VerticalAlignment="Top" Width="59" Click="btnRemoveProduct_Click" />
+                    <sdk:Label Height="15" HorizontalAlignment="Left" Margin="6,6,0,0" Name="CompanyDetails_Products_Label_AllProducts" VerticalAlignment="Top" Width="130" Content="{Binding Source={StaticResource BS_RES}, Path=LocalizedStrings.CompanyDetails_Products_Label_AllProducts}" />
+                    <sdk:Label Content="{Binding Source={StaticResource BS_RES}, Path=LocalizedStrings.CompanyDetails_Products_Label_CompanyProducts}" Height="15" HorizontalAlignment="Left" Margin="6,69,0,0" Name="CompanyDetails_Products_Label_CompanyProducts" VerticalAlignment="Top" Width="271" />
+                    <riaControls:DomainDataSource AutoLoad="False" d:DesignData="{d:DesignInstance my:ProductsInCompany, CreateList=true}" Height="0" LoadedData="productsInCompanyDomainDataSource_LoadedData" Name="productsInCompanyDomainDataSource" QueryName="GetProductsInCompanyQuery" Width="0">
+                        <riaControls:DomainDataSource.QueryParameters>
+                            <riaControls:Parameter ParameterName="_companyId" Value="{Binding ElementName=idTextBox, Path=Text}" />
+                        </riaControls:DomainDataSource.QueryParameters>
+                        <riaControls:DomainDataSource.DomainContext>
+                            <my:BusinessSystemsDomainContext />
+                        </riaControls:DomainDataSource.DomainContext>
+                    </riaControls:DomainDataSource>
+                    <sdk:DataGrid AutoGenerateColumns="False" Height="182" HorizontalAlignment="Left" ItemsSource="{Binding ElementName=productsInCompanyDomainDataSource, Path=Data}" Margin="7,91,0,0" Name="productsInCompanyDataGrid" RowDetailsVisibilityMode="VisibleWhenSelected" VerticalAlignment="Top" Width="373" IsReadOnly="True" CellStyle="{StaticResource DataGridCellStyle1}">
+                        <sdk:DataGrid.Columns>
+                            <sdk:DataGridTextColumn x:Name="companyIdColumn" Binding="{Binding Path=CompanyId}" Header="Company Id" Width="SizeToHeader" Visibility="Collapsed" />
+                            <sdk:DataGridTextColumn x:Name="productIdColumn" Binding="{Binding Path=ProductId}" Header="Product Id" Width="SizeToHeader" />
+                            <sdk:DataGridTextColumn Binding="{Binding Path=Product.ProductName, Mode=OneWay}" CanUserReorder="True" CanUserResize="True" CanUserSort="True" Width="Auto" Header="Product name" />
+                            <sdk:DataGridTextColumn x:Name="descriptionColumn2" Binding="{Binding Path=Description}" Header="Description" Width="SizeToHeader" Visibility="Collapsed" />
+                        </sdk:DataGrid.Columns>
+                    </sdk:DataGrid>
+                </Grid>
+            </sdk:TabItem>
+            <sdk:TabItem Header="{Binding Source={StaticResource BS_RES}, Path=LocalizedStrings.CompanyDetails_TabItem_Statuses}" Name="CompanyDetails_TabItem_Statuses">
+                <Grid Height="276" Name="grid1" Width="648">
+                    <ComboBox Height="23" HorizontalAlignment="Left" ItemsSource="{Binding ElementName=csr_StatusDomainDataSource1, Path=Data}" Margin="6,25,0,0" Name="csr_StatusComboBox" VerticalAlignment="Top" Width="311" DisplayMemberPath="StatusName" SelectedValuePath="Id">
+                        <ComboBox.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <VirtualizingStackPanel />
+                            </ItemsPanelTemplate>
+                        </ComboBox.ItemsPanel>
+                    </ComboBox>
+                    <Button Content="{Binding Source={StaticResource BS_RES}, Path=LocalizedStrings.CompanyDetails_Statuses_Button_Add}" Height="23" HorizontalAlignment="Left" Margin="384,89,0,0" Name="CompanyDetails_Statuses_Button_Add" VerticalAlignment="Top" Width="59" Click="btnAddStatus_Click" />
+                    <Button Content="{Binding Source={StaticResource BS_RES}, Path=LocalizedStrings.CompanyDetails_Statuses_Button_Remove}" Height="23" HorizontalAlignment="Left" Margin="384,119,0,0" Name="CompanyDetails_Statuses_Button_Remove" VerticalAlignment="Top" Width="59" Click="btnRemoveStatus_Click" />
+                    <sdk:Label Content="{Binding Source={StaticResource BS_RES}, Path=LocalizedStrings.CompanyDetails_Statuses_Label_AllCSRStatuses}" Height="15" HorizontalAlignment="Left" Margin="8,7,0,0" Name="CompanyDetails_Statuses_Label_AllCSRStatuses" VerticalAlignment="Top" Width="130" />
+                    <sdk:Label Content="{Binding Source={StaticResource BS_RES}, Path=LocalizedStrings.CompanyDetails_Statuses_Label_CompanyCSRStatuses}" Height="15" HorizontalAlignment="Left" Margin="6,68,0,0" Name="CompanyDetails_Statuses_Label_CompanyCSRStatuses" VerticalAlignment="Top" Width="256" />
+                    <sdk:DataGrid AutoGenerateColumns="False" Height="180" HorizontalAlignment="Left" ItemsSource="{Binding ElementName=companyStatusesDomainDataSource, Path=Data}" Margin="7,89,0,0" Name="companyStatusesDataGrid" RowDetailsVisibilityMode="VisibleWhenSelected" VerticalAlignment="Top" Width="371" IsReadOnly="True" CellStyle="{StaticResource DataGridCellStyle1}">
+                        <sdk:DataGrid.Columns>
+                            <sdk:DataGridTextColumn x:Name="statusIdColumn" Binding="{Binding Path=StatusId}" Header="Status Id" Width="SizeToHeader" />
+                            <sdk:DataGridTextColumn x:Name="companyIdColumn1" Binding="{Binding Path=CompanyId}" Header="Company Id" Width="SizeToHeader" Visibility="Collapsed" />
+                            <sdk:DataGridTextColumn x:Name="descriptionColumn" Binding="{Binding Path=Description}" Header="Description" Width="SizeToHeader" Visibility="Collapsed" />
+                            <sdk:DataGridTextColumn CanUserReorder="True" CanUserResize="True" CanUserSort="True" Header="Status name" Width="Auto" Binding="{Binding Path=Csr_Status.StatusName, Mode=OneWay}" />
+                        </sdk:DataGrid.Columns>
+                    </sdk:DataGrid>
+                </Grid>
+            </sdk:TabItem>
+            <sdk:TabItem Header="{Binding Source={StaticResource BS_RES}, Path=LocalizedStrings.CompanyDetails_TabItem_Priorities}" Name="CompanyDetails_TabItem_Priorities">
+                <Grid Height="276" Name="grid2" Width="651">
+                    <ComboBox Height="23" HorizontalAlignment="Left" ItemsSource="{Binding ElementName=priorityDomainDataSource, Path=Data}" Margin="6,26,0,0" Name="priorityComboBox" VerticalAlignment="Top" Width="306" DisplayMemberPath="PriorityName" SelectedValuePath="Id">
+                        <ComboBox.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <VirtualizingStackPanel />
+                            </ItemsPanelTemplate>
+                        </ComboBox.ItemsPanel>
+                    </ComboBox>
+                    <Button Content="{Binding Source={StaticResource BS_RES}, Path=LocalizedStrings.CompanyDetails_Priorities_Button_Add}" Height="23" HorizontalAlignment="Left" Margin="388,85,0,0" Name="CompanyDetails_Priorities_Button_Add" VerticalAlignment="Top" Width="59" Click="btnAddPriority_Click" />
+                    <Button Content="{Binding Source={StaticResource BS_RES}, Path=LocalizedStrings.CompanyDetails_Priorities_Button_Remove}" Height="23" HorizontalAlignment="Left" Margin="388,115,0,0" Name="CompanyDetails_Priorities_Button_Remove" VerticalAlignment="Top" Width="59" Click="btnRemovePriority_Click" />
+                    <sdk:Label Content="{Binding Source={StaticResource BS_RES}, Path=LocalizedStrings.CompanyDetails_Priorities_Label_AllCSRPriorities}" Height="15" HorizontalAlignment="Left" Margin="7,8,0,0" Name="CompanyDetails_Priorities_Label_AllCSRPriorities" VerticalAlignment="Top" Width="130" />
+                    <sdk:Label Content="{Binding Source={StaticResource BS_RES}, Path=LocalizedStrings.CompanyDetails_Priorities_Label_CompanyCSRPriorities}" Height="17" HorizontalAlignment="Left" Margin="7,64,0,0" Name="CompanyDetails_Priorities_Label_CompanyCSRPriorities" VerticalAlignment="Top" Width="233" />
+                    <sdk:DataGrid AutoGenerateColumns="False" Height="185" HorizontalAlignment="Left" ItemsSource="{Binding Source={StaticResource companyCompanyPrioritiesViewSource}}" Margin="7,84,0,0" Name="companyPrioritiesDataGrid" RowDetailsVisibilityMode="VisibleWhenSelected" VerticalAlignment="Top" Width="375" IsReadOnly="True" CellStyle="{StaticResource DataGridCellStyle1}">
+                        <sdk:DataGrid.Columns>
+                            <sdk:DataGridTextColumn x:Name="priorityIdColumn" Binding="{Binding Path=PriorityId}" Header="Priority Id" Width="SizeToHeader" />
+                            <sdk:DataGridTextColumn x:Name="companyIdColumn2" Binding="{Binding Path=CompanyId}" Header="Company Id" Width="SizeToHeader" Visibility="Collapsed" />
+                            <sdk:DataGridTextColumn x:Name="descriptionColumn1" Binding="{Binding Path=Description}" Header="Description" Width="SizeToHeader" Visibility="Collapsed" />
+                            <sdk:DataGridTextColumn CanUserReorder="True" CanUserResize="True" CanUserSort="True" Header="Priority name" Width="Auto" Binding="{Binding Path=Priority.PriorityName, Mode=OneWay}" />
+                        </sdk:DataGrid.Columns>
+                    </sdk:DataGrid>
+                </Grid>
+            </sdk:TabItem>
+            <sdk:TabItem Header="{Binding Source={StaticResource BS_RES}, Path=LocalizedStrings.CompanyDetails_TabItem_Companies}" Name="CompanyDetails_TabItem_Companies">
+                <Grid Height="276" Name="grid3" Width="650">
+                    <ComboBox Height="23" HorizontalAlignment="Left" ItemsSource="{Binding ElementName=companyDomainDataSource, Path=Data}" Margin="7,27,0,0" Name="companyComboBox" VerticalAlignment="Top" Width="316" DisplayMemberPath="CompanyName" SelectedValuePath="Id">
+                        <ComboBox.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <VirtualizingStackPanel />
+                            </ItemsPanelTemplate>
+                        </ComboBox.ItemsPanel>
+                    </ComboBox>
+                    <Button Content="{Binding Source={StaticResource BS_RES}, Path=LocalizedStrings.CompanyDetails_Companies_Button_Add}" Height="23" HorizontalAlignment="Left" Margin="388,88,0,0" Name="CompanyDetails_Companies_Button_Add" VerticalAlignment="Top" Width="59" Click="btnAddCompany_Click" />
+                    <Button Content="{Binding Source={StaticResource BS_RES}, Path=LocalizedStrings.CompanyDetails_Companies_Button_Remove}" Height="23" HorizontalAlignment="Left" Margin="388,118,0,0" Name="CompanyDetails_Companies_Button_Remove" VerticalAlignment="Top" Width="59" Click="btnRemoveCompany_Click" />
+                    <sdk:Label Content="{Binding Source={StaticResource BS_RES}, Path=LocalizedStrings.CompanyDetails_Companies_Label_AllCompanies}" Height="15" HorizontalAlignment="Left" Margin="8,8,0,0" Name="CompanyDetails_Companies_Label_AllCompanies" VerticalAlignment="Top" Width="244" />
+                    <sdk:Label Content="{Binding Source={StaticResource BS_RES}, Path=LocalizedStrings.CompanyDetails_Companies_Label_AssignedCompanies}" Height="15" HorizontalAlignment="Left" Margin="7,66,0,0" Name="CompanyDetails_Companies_Label_AssignedCompanies" VerticalAlignment="Top" Width="316" />
+                    <riaControls:DomainDataSource AutoLoad="True" d:DesignData="{d:DesignInstance my:CompaniesAssignment, CreateList=true}" Height="0" LoadedData="companiesAssignmentDomainDataSource_LoadedData" Name="companiesAssignmentDomainDataSource" QueryName="GetCompaniesAssignmentQuery" Width="0">
+                        <riaControls:DomainDataSource.DomainContext>
+                            <my:BusinessSystemsDomainContext />
+                        </riaControls:DomainDataSource.DomainContext>
+                    </riaControls:DomainDataSource>
+                    <sdk:DataGrid AutoGenerateColumns="False" Height="182" HorizontalAlignment="Left" ItemsSource="{Binding ElementName=companiesAssignmentDomainDataSource, Path=Data}" Margin="8,88,0,0" Name="companiesAssignmentDataGrid" RowDetailsVisibilityMode="VisibleWhenSelected" VerticalAlignment="Top" Width="376" IsReadOnly="True" CellStyle="{StaticResource DataGridCellStyle1}">
+                        <sdk:DataGrid.Columns>
+                            <sdk:DataGridTextColumn x:Name="assignedCommpanyIdColumn" Binding="{Binding Path=AssignedCommpanyId}" Header="Company Id" Width="SizeToHeader" />
+                            <sdk:DataGridTextColumn CanUserReorder="True" CanUserResize="True" CanUserSort="True" Header="Company name" Width="Auto" Binding="{Binding Path=Company1.CompanyName, Mode=OneWay}" />
+                            <sdk:DataGridTextColumn x:Name="companyIdColumn3" Binding="{Binding Path=CompanyId}" Header="Company Id" Width="SizeToHeader" Visibility="Collapsed" />
+                            <sdk:DataGridTextColumn x:Name="descriptionColumn3" Binding="{Binding Path=Description}" Header="Description" Width="SizeToHeader" Visibility="Collapsed" />
+                        </sdk:DataGrid.Columns>
+                    </sdk:DataGrid>
+                </Grid>
+            </sdk:TabItem>
+            <sdk:TabItem Header="{Binding Source={StaticResource BS_RES}, Path=LocalizedStrings.CompanyDetails_TabItem_Users}" Name="CompanyDetails_TabItem_Users">
+                <Grid>
+                    <Button Content="{Binding Source={StaticResource BS_RES}, Path=LocalizedStrings.CompanyDetails_Users_Button_Add}" Height="23" HorizontalAlignment="Left" Margin="386,92,0,0" Name="CompanyDetails_Users_Button_Add" VerticalAlignment="Top" Width="59" Click="btnAddUser_Click" />
+                    <Button Content="{Binding Source={StaticResource BS_RES}, Path=LocalizedStrings.CompanyDetails_Users_Button_Remove}" Height="23" HorizontalAlignment="Left" Margin="386,122,0,0" Name="CompanyDetails_Users_Button_Remove" VerticalAlignment="Top" Width="59" Click="btnRemoveUser_Click" />
+                    <sdk:Label Content="{Binding Source={StaticResource BS_RES}, Path=LocalizedStrings.CompanyDetails_Users_Label_AllUsers}" Height="15" HorizontalAlignment="Left" Margin="6,6,0,0" Name="CompanyDetails_Users_Label_AllUsers" VerticalAlignment="Top" Width="130" />
+                    <sdk:Label Content="{Binding Source={StaticResource BS_RES}, Path=LocalizedStrings.CompanyDetails_Users_Label_NotifyUsers}" Height="15" HorizontalAlignment="Left" Margin="6,69,0,0" Name="CompanyDetails_Users_Label_NotifyUsers" VerticalAlignment="Top" Width="255" />
+                    <riaControls:DomainDataSource AutoLoad="True" d:DesignData="{d:DesignInstance my:ProductsInCompany, CreateList=true}" Height="0" LoadedData="productsInCompanyDomainDataSource_LoadedData" Name="domainDataSource1" QueryName="GetProductsInCompanyQuery" Width="0">
+                        <riaControls:DomainDataSource.DomainContext>
+                            <my:BusinessSystemsDomainContext />
+                        </riaControls:DomainDataSource.DomainContext>
+                    </riaControls:DomainDataSource>
+                    <riaControls:DomainDataSource AutoLoad="True" d:DesignData="{d:DesignInstance my:User, CreateList=true}" Height="0" LoadedData="userDomainDataSource_LoadedData" Name="userDomainDataSource" QueryName="GetUserQuery" Width="0">
+                        <riaControls:DomainDataSource.DomainContext>
+                            <my:BusinessSystemsDomainContext />
+                        </riaControls:DomainDataSource.DomainContext>
+                    </riaControls:DomainDataSource>
+                    <ComboBox Height="23" HorizontalAlignment="Left" ItemsSource="{Binding ElementName=userDomainDataSource, Path=Data}" Margin="7,27,0,0" Name="userComboBox" VerticalAlignment="Top" Width="274" SelectedValuePath="Id">
+                        <ComboBox.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <VirtualizingStackPanel />
+                            </ItemsPanelTemplate>
+                        </ComboBox.ItemsPanel>
+                        <ComboBox.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="{Binding FirstName, Mode=OneWay}" />
+                                    <TextBlock Text=" " />
+                                    <TextBlock Text="{Binding LastName, Mode=OneWay}" />
+                                    <TextBlock Text=" - " />
+                                    <TextBlock Text="{Binding UserName, Mode=OneWay}" />
+                                </StackPanel>
+                            </DataTemplate>
+                        </ComboBox.ItemTemplate>
+                    </ComboBox>
+                    <riaControls:DomainDataSource AutoLoad="False" d:DesignData="{d:DesignInstance my:UserNotifications, CreateList=true}" Height="0" LoadedData="userNotificationsDomainDataSource_LoadedData" Name="userNotificationsDomainDataSource" QueryName="GetUserNotificationsQuery" Width="0">
+                        <riaControls:DomainDataSource.DomainContext>
+                            <my:BusinessSystemsDomainContext />
+                        </riaControls:DomainDataSource.DomainContext>
+                        <riaControls:DomainDataSource.QueryParameters>
+                            <riaControls:Parameter ParameterName="_companyId" Value="{Binding ElementName=_companyIdTextBox, Path=Text}" />
+                        </riaControls:DomainDataSource.QueryParameters>
+                    </riaControls:DomainDataSource>
+                    <sdk:DataGrid AutoGenerateColumns="False" Height="179" HorizontalAlignment="Left" ItemsSource="{Binding ElementName=userNotificationsDomainDataSource, Path=Data}" Margin="7,90,0,0" Name="userNotificationsDataGrid" RowDetailsVisibilityMode="VisibleWhenSelected" VerticalAlignment="Top" Width="373" CellStyle="{StaticResource DataGridCellStyle1}">
+                        <sdk:DataGrid.Columns>
+                            <sdk:DataGridTextColumn x:Name="userIdColumn" Binding="{Binding Path=UserId}" Header="User Id" Width="SizeToHeader" />
+                            <sdk:DataGridTextColumn x:Name="companyIdColumn4" Binding="{Binding Path=CompanyId}" Header="Company Id" Width="SizeToHeader" Visibility="Collapsed" />
+                            <sdk:DataGridTextColumn Binding="{Binding Path=User.FirstName, Mode=OneWay}" CanUserReorder="True" CanUserResize="True" CanUserSort="True" Width="Auto" Header="First name" />
+                            <sdk:DataGridTextColumn Binding="{Binding Path=User.LastName, Mode=OneWay}" CanUserReorder="True" CanUserResize="True" CanUserSort="True" Header="Last name" Width="Auto" />
+                            <sdk:DataGridTextColumn x:Name="descriptionColumn4" Binding="{Binding Path=Description}" Header="Description" Width="SizeToHeader" Visibility="Collapsed" />
+                        </sdk:DataGrid.Columns>
+                    </sdk:DataGrid>
+                </Grid>
+            </sdk:TabItem>
+            <sdk:TabItem Header="{Binding Source={StaticResource BS_RES}, Path=LocalizedStrings.CompanyDetails_Tab_TypeOfRequester}">
+                <Grid>
+                    <Button Content="{Binding Source={StaticResource BS_RES}, Path=LocalizedStrings.CompanyDetails_Users_Button_Add}" Height="23" HorizontalAlignment="Left" Margin="426,92,0,0" Name="CompanyDetails_TypeOfRequester_Button_Add" VerticalAlignment="Top" Width="59" Click="CompanyDetails_TypeOfRequester_Button_Add_Click" />
+                    <Button Content="{Binding Source={StaticResource BS_RES}, Path=LocalizedStrings.CompanyDetails_Users_Button_Remove}" Height="23" HorizontalAlignment="Left" Margin="426,121,0,0" Name="CompanyDetails_TypeOfRequester_Button_Remove" VerticalAlignment="Top" Width="59" Click="CompanyDetails_TypeOfRequester_Button_Remove_Click" />
+                    <sdk:Label Content="{Binding Source={StaticResource BS_RES}, Path=LocalizedStrings.CompanyDetails_TypeOfRequester_AllTypeOfRequester}" Height="15" HorizontalAlignment="Left" Margin="6,6,0,0" Name="label1" VerticalAlignment="Top" Width="130" />
+                    <sdk:Label Content="{Binding Source={StaticResource BS_RES}, Path=LocalizedStrings.CompanyDetails_TypeOfRequester_TypeOfRequesters}" Height="15" HorizontalAlignment="Left" Margin="6,69,0,0" Name="label2" VerticalAlignment="Top" Width="255" />
+                    <riaControls:DomainDataSource AutoLoad="True" d:DesignData="{d:DesignInstance my:ProductsInCompany, CreateList=true}" Height="0" LoadedData="productsInCompanyDomainDataSource_LoadedData" Name="domainDataSource2" QueryName="GetProductsInCompanyQuery" Width="0">
+                        <riaControls:DomainDataSource.DomainContext>
+                            <my:BusinessSystemsDomainContext />
+                        </riaControls:DomainDataSource.DomainContext>
+                    </riaControls:DomainDataSource>
+                    <riaControls:DomainDataSource AutoLoad="True" d:DesignData="{d:DesignInstance my:User, CreateList=true}" Height="0" LoadedData="userDomainDataSource_LoadedData" Name="domainDataSource3" QueryName="GetUserQuery" Width="0">
+                        <riaControls:DomainDataSource.DomainContext>
+                            <my:BusinessSystemsDomainContext />
+                        </riaControls:DomainDataSource.DomainContext>
+                    </riaControls:DomainDataSource>
+                    <riaControls:DomainDataSource AutoLoad="False" d:DesignData="{d:DesignInstance my:UserNotifications, CreateList=true}" Height="0" LoadedData="userNotificationsDomainDataSource_LoadedData" Name="domainDataSource4" QueryName="GetUserNotificationsQuery" Width="0">
+                        <riaControls:DomainDataSource.DomainContext>
+                            <my:BusinessSystemsDomainContext />
+                        </riaControls:DomainDataSource.DomainContext>
+                        <riaControls:DomainDataSource.QueryParameters>
+                            <riaControls:Parameter ParameterName="_companyId" Value="{Binding ElementName=_companyIdTextBox, Path=Text}" />
+                        </riaControls:DomainDataSource.QueryParameters>
+                    </riaControls:DomainDataSource>
+                    <riaControls:DomainDataSource AutoLoad="True" d:DesignData="{d:DesignInstance my:RequesterType, CreateList=true}" Height="0" LoadedData="requesterTypeDomainDataSource_LoadedData" Name="requesterTypeDomainDataSource" QueryName="GetRequesterTypeQuery" Width="0">
+                        <riaControls:DomainDataSource.DomainContext>
+                            <my:BusinessSystemsDomainContext />
+                        </riaControls:DomainDataSource.DomainContext>
+                    </riaControls:DomainDataSource>
+                    <ComboBox Height="23" HorizontalAlignment="Left" ItemsSource="{Binding ElementName=requesterTypeDomainDataSource, Path=Data}" Margin="7,27,0,0" Name="requesterTypeComboBox" VerticalAlignment="Top" Width="373" SelectionChanged="requesterTypeComboBox_SelectionChanged" SelectedValuePath="Id">
+                        <ComboBox.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <VirtualizingStackPanel />
+                            </ItemsPanelTemplate>
+                        </ComboBox.ItemsPanel>
+                        <ComboBox.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="{Binding Name, Mode=OneWay}" />
+                                    <TextBlock Text=" " />
+                                </StackPanel>
+                            </DataTemplate>
+                        </ComboBox.ItemTemplate>
+                    </ComboBox>
+                    <riaControls:DomainDataSource AutoLoad="True" d:DesignData="{d:DesignInstance my:RequesterTypeInCompany, CreateList=true}" Height="0" LoadedData="requesterTypeInCompanyDomainDataSource_LoadedData" Name="requesterTypeInCompanyDomainDataSource" QueryName="GetRequesterTypeInCompanyQuery" Width="0">
+                        <riaControls:DomainDataSource.DomainContext>
+                            <my:BusinessSystemsDomainContext />
+                        </riaControls:DomainDataSource.DomainContext>
+                    </riaControls:DomainDataSource>
+                    <sdk:DataGrid AutoGenerateColumns="False" Height="200" HorizontalAlignment="Left" ItemsSource="{Binding ElementName=requesterTypeInCompanyDomainDataSource, Path=Data}" Margin="7,91,0,0" Name="requesterTypeInCompanyDataGrid" RowDetailsVisibilityMode="VisibleWhenSelected" VerticalAlignment="Top" Width="400">
+                        <sdk:DataGrid.Columns>
+                            <sdk:DataGridTextColumn x:Name="companyIdColumn5" Binding="{Binding Path=CompanyId}" Header="Company Id" Width="SizeToHeader" Visibility="Collapsed" />
+                            <sdk:DataGridTextColumn x:Name="descriptionColumn5" Binding="{Binding Path=Description}" Header="Description" Width="SizeToHeader" Visibility="Collapsed" />
+                            <sdk:DataGridTextColumn x:Name="requesterTypeIdColumn" Binding="{Binding Path=RequesterTypeId}" Header="Requester Type Id" Width="SizeToHeader" />
+                            <sdk:DataGridTextColumn Binding="{Binding Path=RequesterType.Name, Mode=OneWay}" CanUserReorder="True" CanUserResize="True" CanUserSort="True" Width="Auto" Header="Name" />
+                            <sdk:DataGridTextColumn Binding="{Binding Path=RequesterType.Description, Mode=OneWay}" CanUserReorder="True" CanUserResize="True" CanUserSort="True" Width="Auto" Header="Description" />
+                        </sdk:DataGrid.Columns>
+                    </sdk:DataGrid>
+                </Grid>
+            </sdk:TabItem>
+            <sdk:TabItem Header="{Binding Source={StaticResource BS_RES}, Path=LocalizedStrings.CompanyDetails_Tab_IssueDomain}">
+                <Grid Height="307">
+                    <Button Content="{Binding Source={StaticResource BS_RES}, Path=LocalizedStrings.CompanyDetails_Users_Button_Add}" Height="23" HorizontalAlignment="Left" Margin="428,91,0,0" Name="CompanyDetails_IssueDomain_Button_Add" VerticalAlignment="Top" Width="59" Click="CompanyDetails_IssueDomain_Button_Add_Click" />
+                    <Button Content="{Binding Source={StaticResource BS_RES}, Path=LocalizedStrings.CompanyDetails_Users_Button_Remove}" Height="23" HorizontalAlignment="Left" Margin="428,120,0,0" Name="CompanyDetails_IssueDomain_Button_Remove" VerticalAlignment="Top" Width="59" Click="CompanyDetails_IssueDomain_Button_Remove_Click" />
+                    <sdk:Label Content="{Binding Source={StaticResource BS_RES}, Path=LocalizedStrings.CompanyDetails_IssueDomain_AllIssueDomain}" Height="15" HorizontalAlignment="Left" Margin="6,6,0,0" Name="label3" VerticalAlignment="Top" Width="130" />
+                    <sdk:Label Content="{Binding Source={StaticResource BS_RES}, Path=LocalizedStrings.CompanyDetails_IssueDomain_IssueDomain}" Height="15" HorizontalAlignment="Left" Margin="6,69,0,0" Name="label4" VerticalAlignment="Top" Width="255" />
+                    <riaControls:DomainDataSource AutoLoad="True" d:DesignData="{d:DesignInstance my:ProductsInCompany, CreateList=true}" Height="0" LoadedData="productsInCompanyDomainDataSource_LoadedData" Name="domainDataSource5" QueryName="GetProductsInCompanyQuery" Width="0">
+                        <riaControls:DomainDataSource.DomainContext>
+                            <my:BusinessSystemsDomainContext />
+                        </riaControls:DomainDataSource.DomainContext>
+                    </riaControls:DomainDataSource>
+                    <riaControls:DomainDataSource AutoLoad="True" d:DesignData="{d:DesignInstance my:User, CreateList=true}" Height="0" LoadedData="userDomainDataSource_LoadedData" Name="domainDataSource6" QueryName="GetUserQuery" Width="0">
+                        <riaControls:DomainDataSource.DomainContext>
+                            <my:BusinessSystemsDomainContext />
+                        </riaControls:DomainDataSource.DomainContext>
+                    </riaControls:DomainDataSource>
+                    <riaControls:DomainDataSource AutoLoad="False" d:DesignData="{d:DesignInstance my:UserNotifications, CreateList=true}" Height="0" LoadedData="userNotificationsDomainDataSource_LoadedData" Name="domainDataSource7" QueryName="GetUserNotificationsQuery" Width="0">
+                        <riaControls:DomainDataSource.DomainContext>
+                            <my:BusinessSystemsDomainContext />
+                        </riaControls:DomainDataSource.DomainContext>
+                        <riaControls:DomainDataSource.QueryParameters>
+                            <riaControls:Parameter ParameterName="_companyId" Value="{Binding ElementName=_companyIdTextBox, Path=Text}" />
+                        </riaControls:DomainDataSource.QueryParameters>
+                    </riaControls:DomainDataSource>
+                    <riaControls:DomainDataSource AutoLoad="True" d:DesignData="{d:DesignInstance my:IssueDomain, CreateList=true}" Height="0" LoadedData="issueDomainDomainDataSource_LoadedData" Name="issueDomainDomainDataSource" QueryName="GetIssueDomainQuery" Width="0">
+                        <riaControls:DomainDataSource.DomainContext>
+                            <my:BusinessSystemsDomainContext />
+                        </riaControls:DomainDataSource.DomainContext>
+                    </riaControls:DomainDataSource>
+                    <ComboBox Height="23" HorizontalAlignment="Left" ItemsSource="{Binding ElementName=issueDomainDomainDataSource, Path=Data}" Margin="7,26,0,0" Name="issueDomainComboBox" VerticalAlignment="Top" Width="373" SelectedValuePath="Id">
+                        <ComboBox.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <VirtualizingStackPanel />
+                            </ItemsPanelTemplate>
+                        </ComboBox.ItemsPanel>
+                        <ComboBox.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="{Binding Name, Mode=OneWay}" />
+                                    <TextBlock Text=" " />
+                                </StackPanel>
+                            </DataTemplate>
+                        </ComboBox.ItemTemplate>
+                    </ComboBox>
+                    <riaControls:DomainDataSource AutoLoad="True" d:DesignData="{d:DesignInstance my:IssueDomainInCompany, CreateList=true}" Height="0" LoadedData="issueDomainInCompanyDomainDataSource_LoadedData" Name="issueDomainInCompanyDomainDataSource" QueryName="GetIssueDomainInCompanyQuery" Width="0">
+                        <riaControls:DomainDataSource.DomainContext>
+                            <my:BusinessSystemsDomainContext />
+                        </riaControls:DomainDataSource.DomainContext>
+                    </riaControls:DomainDataSource>
+                    <sdk:DataGrid AutoGenerateColumns="False" Height="200" HorizontalAlignment="Left" ItemsSource="{Binding ElementName=issueDomainInCompanyDomainDataSource, Path=Data}" Margin="7,91,0,0" Name="issueDomainInCompanyDataGrid" RowDetailsVisibilityMode="VisibleWhenSelected" VerticalAlignment="Top" Width="400">
+                        <sdk:DataGrid.Columns>
+                            <sdk:DataGridTextColumn x:Name="companyIdColumn6" Binding="{Binding Path=CompanyId}" Header="Company Id" Width="SizeToHeader" Visibility="Collapsed" />
+                            <sdk:DataGridTextColumn x:Name="descriptionColumn6" Binding="{Binding Path=Description}" Header="Description" Width="SizeToHeader" Visibility="Collapsed" />
+                            <sdk:DataGridTextColumn x:Name="issueDomainIdColumn" Binding="{Binding Path=IssueDomainId}" Header="Issue Domain Id" Width="SizeToHeader" />
+                            <sdk:DataGridTextColumn Binding="{Binding Path=IssueDomain.Name, Mode=OneWay}" CanUserReorder="True" CanUserResize="True" CanUserSort="True" Width="Auto" Header="Name" />
+                            <sdk:DataGridTextColumn Binding="{Binding Path=IssueDomain.Description, Mode=OneWay}" CanUserReorder="True" CanUserResize="True" CanUserSort="True" Width="Auto" Header="Description" />
+                        </sdk:DataGrid.Columns>
+                    </sdk:DataGrid>
+                </Grid>
+            </sdk:TabItem>
+        </sdk:TabControl>
+        <sdk:Label Height="20" HorizontalAlignment="Left" Margin="12,12,0,0" Name="CompanyDetails_Label_Id" VerticalAlignment="Top" Width="92" Content="{Binding Source={StaticResource BS_RES}, Path=LocalizedStrings.CompanyDetails_Label_Id}" />
+        <TextBox Height="23" HorizontalAlignment="Left" Margin="110,9,0,0" Name="idTextBox" VerticalAlignment="Top" Width="122" IsReadOnly="True" />
+        <sdk:Label Height="20" HorizontalAlignment="Left" Margin="12,48,0,0" Name="CompanyDetails_Label_Name" VerticalAlignment="Top" Width="92" Content="{Binding Source={StaticResource BS_RES}, Path=LocalizedStrings.CompanyDetails_Label_Name}" />
+        <TextBox Height="23" HorizontalAlignment="Left" Margin="110,46,0,0" Name="nameTextBox" VerticalAlignment="Top" Width="332" />
+        <sdk:Label Height="20" HorizontalAlignment="Left" Margin="12,81,0,0" Name="CompanyDetails_Label_Description" VerticalAlignment="Top" Width="92" Content="{Binding Source={StaticResource BS_RES}, Path=LocalizedStrings.CompanyDetails_Label_Description}" />
+        <TextBox Height="83" HorizontalAlignment="Left" Margin="110,82,0,0" Name="descriptionTextBox" VerticalAlignment="Top" Width="332" />
+    </Grid>
+</controls:ChildWindow>

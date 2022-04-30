@@ -1,0 +1,9 @@
+<OutOfBrowserSettings ShortName="BusinessSystemsApp Application" EnableGPUAcceleration="False" ShowInstallMenuItem="True">
+  <OutOfBrowserSettings.Blurb>BusinessSystemsApp Application on your desktop; at home, at work or on the go.</OutOfBrowserSettings.Blurb>
+  <OutOfBrowserSettings.WindowSettings>
+    <WindowSettings Title="BusinessSystemsApp Application" />
+  </OutOfBrowserSettings.WindowSettings>
+  <OutOfBrowserSettings.Icons>
+    <Icon Size="32,32">Images/ericssonLogo.png</Icon>
+  </OutOfBrowserSettings.Icons>
+</OutOfBrowserSettings>

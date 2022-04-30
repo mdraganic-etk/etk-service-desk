@@ -1,0 +1,36 @@
+﻿<navigation:Page x:Class="BusinessSystemsApp.Views.Site" 
+           xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+           xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+           xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+           xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+           mc:Ignorable="d"
+           xmlns:navigation="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Navigation"
+           d:DesignWidth="640" d:DesignHeight="480"
+           Title="Site Page" xmlns:riaControls="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.DomainServices" xmlns:my="clr-namespace:BusinessSystemsApp.Web" xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk"
+                 xmlns:resrc="clr-namespace:BusinessSystemsApp.Resources">
+
+    <UserControl.Resources>
+        <resrc:CustomResources x:Key="BS_RES" />
+    </UserControl.Resources>
+
+    <Grid x:Name="LayoutRoot">
+        <riaControls:DomainDataSource AutoLoad="True" d:DesignData="{d:DesignInstance my:Site, CreateList=true}" Height="0" LoadedData="siteDomainDataSource_LoadedData" Name="siteDomainDataSource" QueryName="GetSiteQuery" Width="0">
+            <riaControls:DomainDataSource.DomainContext>
+                <my:BusinessSystemsDomainContext />
+            </riaControls:DomainDataSource.DomainContext>
+        </riaControls:DomainDataSource>
+        <Button Content="{Binding Source={StaticResource BS_RES}, Path=LocalizedStrings.Site_Button_New}" Height="23" HorizontalAlignment="Right" Margin="0,12,30,0" Name="Site_Button_New" VerticalAlignment="Top" Width="75" Click="btnNew_Click" />
+        <Button Content="{Binding Source={StaticResource BS_RES}, Path=LocalizedStrings.Site_Button_Edit}" Height="23" HorizontalAlignment="Right" Margin="0,41,30,0" Name="Site_Button_Edit" VerticalAlignment="Top" Width="75" Click="btnEdit_Click" />
+        <Button Content="{Binding Source={StaticResource BS_RES}, Path=LocalizedStrings.Site_Button_Delete}" Height="23" HorizontalAlignment="Right" Margin="0,70,30,0" Name="Site_Button_Delete" VerticalAlignment="Top" Width="75" Click="btnDelete_Click" Visibility="Collapsed" />
+
+        <sdk:DataGrid AutoGenerateColumns="False" Height="Auto" HorizontalAlignment="Stretch" ItemsSource="{Binding ElementName=siteDomainDataSource, Path=Data}" Name="siteDataGrid" RowDetailsVisibilityMode="VisibleWhenSelected" VerticalAlignment="Stretch" IsReadOnly="True" CellStyle="{StaticResource DataGridCellStyle1}" Margin="0,0,138,0">
+            <sdk:DataGrid.Columns>
+                <sdk:DataGridTextColumn x:Name="idColumn" Binding="{Binding Path=Id, Mode=OneWay}" Header="Id" IsReadOnly="True" Width="Auto" />
+                <sdk:DataGridTextColumn x:Name="siteNameColumn" Binding="{Binding Path=SiteName}" Header="Site Name" Width="Auto" />
+                <sdk:DataGridTextColumn x:Name="descriptionColumn" Binding="{Binding Path=Description}" Header="Description" Width="Auto" />
+                <sdk:DataGridTextColumn x:Name="companyIdColumn" Binding="{Binding Path=CompanyId}" Header="Company Id" Width="SizeToHeader" Visibility="Collapsed" />
+                <sdk:DataGridTextColumn Binding="{Binding Path=Company.CompanyName, Mode=OneWay}" CanUserReorder="True" CanUserResize="True" CanUserSort="True" Width="Auto" Header="Company Name" ClipboardContentBinding="{Binding}" />
+            </sdk:DataGrid.Columns>
+        </sdk:DataGrid>
+    </Grid>
+</navigation:Page>

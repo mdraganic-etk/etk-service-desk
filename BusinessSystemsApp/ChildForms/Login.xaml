@@ -1,0 +1,37 @@
+﻿<controls:ChildWindow x:Class="BusinessSystemsApp.ChildForms.Login"
+           xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+           xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+           xmlns:controls="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls"
+           Width="355" Height="268" 
+           Title="" xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk" HasCloseButton="False" OverlayBrush="#92000000" xmlns:toolkit="http://schemas.microsoft.com/winfx/2006/xaml/presentation/toolkit" Closed="ChildWindow_Closed">
+    <sdk:ChildWindow.Background>
+        <SolidColorBrush />
+    </sdk:ChildWindow.Background>
+    <Grid x:Name="LayoutRoot" Margin="2">
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Rectangle Height="193" HorizontalAlignment="Left" Margin="25,29,0,0" Name="rectangle1" RadiusX="15" RadiusY="15" Stroke="#3A000000" StrokeThickness="2" VerticalAlignment="Top" Width="285">
+            <Rectangle.Fill>
+                <LinearGradientBrush EndPoint="1,0.5" StartPoint="0,0.5">
+                    <GradientStop Color="#00000000" Offset="0" />
+                    <GradientStop Color="#56030000" Offset="1" />
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Image Height="36" HorizontalAlignment="Left" Margin="10,14,0,0" Name="image1" Source="/BusinessSystemsApp;component/Images/lock-silver.png" Stretch="Fill" VerticalAlignment="Top" Width="38" />
+        <TextBox Height="23" HorizontalAlignment="Left" Margin="59,70,0,0" Name="UserNameTextBox" TabIndex="1" VerticalAlignment="Top" Width="219" KeyUp="UserNameTextBox_KeyUp" />
+        <sdk:Label Content="Username" Height="13" HorizontalAlignment="Left" Margin="60,54,0,0" Name="Login_Label_Username" VerticalAlignment="Top" Width="118" />
+        <sdk:Label Content="Password" Height="13" HorizontalAlignment="Left" Margin="59,118,0,0" Name="Login_Label_Password" VerticalAlignment="Top" Width="118" />
+        <Button Content="Login..." Height="23" HorizontalAlignment="Left" Margin="203,185,0,0" Name="Login_Button_Login" VerticalAlignment="Top" Width="75" Click="button1_Click" />
+        <sdk:Label Content="SERVICE DESK" FontFamily=".\Fonts\EricssonCapitalTT.ttf#Ericsson Capital TT" FontSize="13" FontStretch="Expanded" FontWeight="Bold" Foreground="#471B1B21" Height="20" HorizontalAlignment="Left" Margin="58,10,0,0" Name="Login_Label_Title" VerticalAlignment="Top" Width="147" />
+        <sdk:Label Content="Ericsson Nikola Tesla d.d." Foreground="#5600139F" Height="13" HorizontalAlignment="Left" Margin="169,223,0,0" Name="label5" VerticalAlignment="Top" Width="150" />
+        <PasswordBox Height="23" HorizontalAlignment="Left" Margin="59,134,0,0" Name="passwordBox" TabIndex="2" VerticalAlignment="Top" Width="219" KeyUp="passwordBox_KeyUp" />
+        <Grid Height="100" HorizontalAlignment="Left" Margin="25,242,0,0" Name="WarningGrid" VerticalAlignment="Top" Visibility="Collapsed" Width="294">
+            <TextBlock Foreground="#FFD82121" Height="88" HorizontalAlignment="Left" Margin="6,6,0,0" Name="Login_TextBlock_Failed" Text="Username or password is incorrect.  Please try again. If you are unauthorized user please exit immediately!" TextWrapping="Wrap" VerticalAlignment="Top" Width="284" />
+        </Grid>
+        <toolkit:BusyIndicator Height="64" HorizontalAlignment="Left" Margin="83,87,0,0" Name="busyIndicator1" VerticalAlignment="Top" Width="164" IsBusy="False" Visibility="Collapsed" />
+        <Image Height="30" HorizontalAlignment="Left" Margin="35,180,0,0" Name="image2" Stretch="Fill" VerticalAlignment="Top" Width="34" Source="/BusinessSystemsApp;component/Images/Logo.png" />
+    </Grid>
+</controls:ChildWindow>

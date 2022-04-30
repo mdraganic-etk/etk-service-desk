@@ -1,0 +1,50 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusinessSystemsApp", "BusinessSystemsApp\BusinessSystemsApp.csproj", "{9F67DF32-D569-4307-84C0-1B5182A32291}"
+	ProjectSection(ProjectDependencies) = postProject
+		{8F235B72-4995-400B-BFB9-115B9138C4BB} = {8F235B72-4995-400B-BFB9-115B9138C4BB}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusinessSystemsApp.Web", "BusinessSystemsApp.Web\BusinessSystemsApp.Web.csproj", "{8F235B72-4995-400B-BFB9-115B9138C4BB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SilverlightFileUploader", "..\FileUploaderExample\SilverlightFileUploader\SilverlightFileUploader.csproj", "{3B4A42BA-206F-4041-9A34-978CCFBEEEBA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vci.FileUploader", "..\FileUploaderExample\Vci.FileUploader\Vci.FileUploader.csproj", "{1B94E090-A489-4E9F-ACB2-763A75BAFAD5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Multiculture|Any CPU = Multiculture|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9F67DF32-D569-4307-84C0-1B5182A32291}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9F67DF32-D569-4307-84C0-1B5182A32291}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9F67DF32-D569-4307-84C0-1B5182A32291}.Multiculture|Any CPU.ActiveCfg = Multiculture|Any CPU
+		{9F67DF32-D569-4307-84C0-1B5182A32291}.Multiculture|Any CPU.Build.0 = Multiculture|Any CPU
+		{9F67DF32-D569-4307-84C0-1B5182A32291}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9F67DF32-D569-4307-84C0-1B5182A32291}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8F235B72-4995-400B-BFB9-115B9138C4BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F235B72-4995-400B-BFB9-115B9138C4BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8F235B72-4995-400B-BFB9-115B9138C4BB}.Multiculture|Any CPU.ActiveCfg = Multiculture|Any CPU
+		{8F235B72-4995-400B-BFB9-115B9138C4BB}.Multiculture|Any CPU.Build.0 = Multiculture|Any CPU
+		{8F235B72-4995-400B-BFB9-115B9138C4BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F235B72-4995-400B-BFB9-115B9138C4BB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3B4A42BA-206F-4041-9A34-978CCFBEEEBA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3B4A42BA-206F-4041-9A34-978CCFBEEEBA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3B4A42BA-206F-4041-9A34-978CCFBEEEBA}.Multiculture|Any CPU.ActiveCfg = Multiculture|Any CPU
+		{3B4A42BA-206F-4041-9A34-978CCFBEEEBA}.Multiculture|Any CPU.Build.0 = Multiculture|Any CPU
+		{3B4A42BA-206F-4041-9A34-978CCFBEEEBA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3B4A42BA-206F-4041-9A34-978CCFBEEEBA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1B94E090-A489-4E9F-ACB2-763A75BAFAD5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1B94E090-A489-4E9F-ACB2-763A75BAFAD5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1B94E090-A489-4E9F-ACB2-763A75BAFAD5}.Multiculture|Any CPU.ActiveCfg = Multiculture|Any CPU
+		{1B94E090-A489-4E9F-ACB2-763A75BAFAD5}.Multiculture|Any CPU.Build.0 = Multiculture|Any CPU
+		{1B94E090-A489-4E9F-ACB2-763A75BAFAD5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1B94E090-A489-4E9F-ACB2-763A75BAFAD5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

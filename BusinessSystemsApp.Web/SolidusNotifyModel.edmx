@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="CSR_NotyfiModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2005" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="CSR_NotyfiModelStoreContainer">
+          <EntitySet Name="CSR_list" EntityType="CSR_NotyfiModel.Store.CSR_list" store:Type="Tables" Schema="dbo" />
+        </EntityContainer>
+        <EntityType Name="CSR_list">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Source" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="CSR" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Priority" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Company" Type="varchar" Nullable="false" MaxLength="128" />
+          <Property Name="Product" Type="varchar" Nullable="false" MaxLength="128" />
+          <Property Name="Code" Type="varchar" MaxLength="50" />
+          <Property Name="RegistrationTime" Type="datetime" />
+          <Property Name="RegistrationPerson" Type="varchar" MaxLength="128" />
+          <Property Name="Subject" Type="varchar" Nullable="false" MaxLength="256" />
+          <Property Name="Description" Type="varchar(max)" />
+          <Property Name="Status" Type="varchar" MaxLength="5" />
+          <Property Name="NotificationTime" Type="datetime" />
+          <Property Name="Agent" Type="varchar" MaxLength="50" />
+        </EntityType>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="CSR_NotyfiModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="CSR_NotyfiEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="CSR_list" EntityType="CSR_NotyfiModel.CSR_list" />
+        </EntityContainer>
+        <EntityType Name="CSR_list">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="String" Name="Source" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="CSR" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Priority" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Company" Nullable="false" MaxLength="128" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Product" Nullable="false" MaxLength="128" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Code" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="RegistrationTime" Nullable="false" />
+          <Property Type="String" Name="RegistrationPerson" MaxLength="128" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Subject" Nullable="false" MaxLength="256" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Description" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Status" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="NotificationTime" />
+          <Property Type="String" Name="Agent" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="CSR_NotyfiModelStoreContainer" CdmEntityContainer="CSR_NotyfiEntities">
+          <EntitySetMapping Name="CSR_list">
+            <EntityTypeMapping TypeName="CSR_NotyfiModel.CSR_list">
+              <MappingFragment StoreEntitySet="CSR_list">
+                <ScalarProperty Name="RegistrationTime" ColumnName="RegistrationTime" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Agent" ColumnName="Agent" />
+                <ScalarProperty Name="NotificationTime" ColumnName="NotificationTime" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Subject" ColumnName="Subject" />
+                <ScalarProperty Name="RegistrationPerson" ColumnName="RegistrationPerson" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="Product" ColumnName="Product" />
+                <ScalarProperty Name="Company" ColumnName="Company" />
+                <ScalarProperty Name="Priority" ColumnName="Priority" />
+                <ScalarProperty Name="CSR" ColumnName="CSR" />
+                <ScalarProperty Name="Source" ColumnName="Source" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="SolidusNotifyModel" ZoomLevel="75">
+        <EntityTypeShape EntityType="CSR_NotyfiModel.CSR_list" Width="3.5" PointX="0.75" PointY="0.75" Height="3.7109993489583326" />
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

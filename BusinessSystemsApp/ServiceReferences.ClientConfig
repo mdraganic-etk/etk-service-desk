@@ -1,0 +1,82 @@
+﻿<configuration>
+    <system.serviceModel>
+        <bindings>
+            <basicHttpBinding>
+                <binding name="BasicHttpBinding_Configuration" maxBufferSize="2147483647"
+                    maxReceivedMessageSize="2147483647">
+                    <security mode="None" />
+                </binding>
+                <binding name="BasicHttpBinding_Configuration1" maxBufferSize="2147483647"
+                    maxReceivedMessageSize="2147483647">
+                    <security mode="Transport" />
+                </binding>
+                <binding name="BasicHttpBinding_DateTimeService" maxBufferSize="2147483647"
+                    maxReceivedMessageSize="2147483647">
+                    <security mode="None" />
+                </binding>
+                <binding name="BasicHttpBinding_DateTimeService1" maxBufferSize="2147483647"
+                    maxReceivedMessageSize="2147483647">
+                    <security mode="Transport" />
+                </binding>
+                <binding name="BasicHttpBinding_Logger" maxBufferSize="2147483647"
+                    maxReceivedMessageSize="2147483647">
+                    <security mode="None" />
+                </binding>
+                <binding name="BasicHttpBinding_Logger1" maxBufferSize="2147483647"
+                    maxReceivedMessageSize="2147483647">
+                    <security mode="Transport" />
+                </binding>
+                <binding name="BasicHttpBinding_MailService1" maxBufferSize="2147483647"
+                    maxReceivedMessageSize="2147483647">
+                    <security mode="Transport" />
+                </binding>
+                <binding name="BasicHttpBinding_MailService" maxBufferSize="2147483647"
+                    maxReceivedMessageSize="2147483647">
+                    <security mode="None" />
+                </binding>
+                <binding name="BasicHttpBinding_MailService11" maxBufferSize="2147483647"
+                    maxReceivedMessageSize="2147483647">
+                    <security mode="Transport" />
+                </binding>
+            </basicHttpBinding>
+            <customBinding>
+                <binding name="CustomBinding_Service1">
+                    <binaryMessageEncoding />
+                    <httpTransport maxReceivedMessageSize="2147483647" maxBufferSize="2147483647" />
+                </binding>
+            </customBinding>
+        </bindings>
+        <client>
+            <endpoint address="************"
+                binding="customBinding" bindingConfiguration="CustomBinding_Service1"
+                contract="ServiceTest.Service1" name="CustomBinding_Service1" />
+            <endpoint address="************"
+                binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_MailService1"
+                contract="MailServiceReference.MailService" name="BasicHttpBinding_MailService1" />
+            <endpoint address="***********"
+                bindingConfiguration="BasicHttpBinding_Configuration" contract="ConfigurationServiceReference.Configuration"
+                name="BasicHttpBinding_Configuration" />
+            <endpoint address="************"
+                binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_Configuration1"
+                contract="ConfigurationServiceReference.Configuration" name="BasicHttpBinding_Configuration1" />
+            <endpoint address="************"
+                bindingConfiguration="BasicHttpBinding_DateTimeService" contract="DateTimeServiceReference.DateTimeService"
+                name="BasicHttpBinding_DateTimeService" />
+            <endpoint address="************"
+                binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_DateTimeService1"
+                contract="DateTimeServiceReference.DateTimeService" name="BasicHttpBinding_DateTimeService1" />
+            <endpoint address="************"
+                bindingConfiguration="BasicHttpBinding_Logger" contract="LoggerServiceReference.Logger"
+                name="BasicHttpBinding_Logger" />
+            <endpoint address="************"
+                binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_Logger1"
+                contract="LoggerServiceReference.Logger" name="BasicHttpBinding_Logger1" />
+            <endpoint address="************" binding="basicHttpBinding"
+                bindingConfiguration="BasicHttpBinding_MailService" contract="MailServiceReference.MailService"
+                name="BasicHttpBinding_MailService" />
+            <endpoint address="************"
+                binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_MailService11"
+                contract="MailServiceReference.MailService" name="BasicHttpBinding_MailService11" />
+        </client>
+    </system.serviceModel>
+</configuration>

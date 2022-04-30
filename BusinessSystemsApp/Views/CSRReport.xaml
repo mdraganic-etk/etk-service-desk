@@ -1,0 +1,217 @@
+﻿<navigation:Page x:Class="BusinessSystemsApp.Views.CSRReport" 
+           xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+           xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+           xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+           xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+           mc:Ignorable="d"
+           xmlns:navigation="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Navigation" Title="CSRReport Page" Height="885" Width="640" xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk" xmlns:riaControls="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.DomainServices" xmlns:my="clr-namespace:BusinessSystemsApp.Web" xmlns:toolkit="http://schemas.microsoft.com/winfx/2006/xaml/presentation/toolkit" xmlns:my1="clr-namespace:Vci.Silverlight.FileUploader;assembly=SilverlightFileUploader" xmlns:my2="clr-namespace:SilverlightFileUploader;assembly=SilverlightFileUploader"
+           xmlns:resrc="clr-namespace:BusinessSystemsApp.Resources">
+
+    <UserControl.Resources>
+        <resrc:CustomResources x:Key="BS_RES" />
+    </UserControl.Resources>
+
+    <Grid x:Name="LayoutRoot" Height="870" Width="Auto">
+        <riaControls:DomainDataSource AutoLoad="False" d:DesignData="{d:DesignInstance my:Company, CreateList=true}" Height="0" LoadedData="companyDomainDataSource_LoadedData" Name="companyDomainDataSource" QueryName="GetCompanyQuery" Width="0">
+            <riaControls:DomainDataSource.DomainContext>
+                <my:BusinessSystemsDomainContext />
+            </riaControls:DomainDataSource.DomainContext>
+        </riaControls:DomainDataSource>
+        <sdk:Label Content="{Binding Source={StaticResource BS_RES}, Path=LocalizedStrings.CsrReport_Label_SelectCustomer}" Height="19" HorizontalAlignment="Left" HorizontalContentAlignment="Right" Margin="37,21,0,0" Name="CsrReport_Label_SelectCustomer" VerticalAlignment="Top" Width="137" />
+        <sdk:Label Content="{Binding Source={StaticResource BS_RES}, Path=LocalizedStrings.CsrReport_Label_Time}" Height="19" HorizontalAlignment="Left" HorizontalContentAlignment="Right" Margin="37,84,0,0" Name="CsrReport_Label_Time" VerticalAlignment="Top" Width="137" />
+        <sdk:Label Content="{Binding Source={StaticResource BS_RES}, Path=LocalizedStrings.CsrReport_Label_ReportedBy}" Height="19" HorizontalAlignment="Left" HorizontalContentAlignment="Right" Margin="37,119,0,0" Name="CsrReport_Label_ReportedBy" VerticalAlignment="Top" Width="137" />
+        <sdk:Label Content="{Binding Source={StaticResource BS_RES}, Path=LocalizedStrings.CsrReport_Label_Heading}" Height="19" HorizontalAlignment="Left" HorizontalContentAlignment="Right" Margin="37,168,0,0" Name="CsrReport_Label_Heading" VerticalAlignment="Top" Width="137" />
+        <sdk:Label Content="{Binding Source={StaticResource BS_RES}, Path=LocalizedStrings.CsrReport_Label_Description}" Height="19" HorizontalAlignment="Left" HorizontalContentAlignment="Right" Margin="37,199,0,0" Name="CsrReport_Label_Description" VerticalAlignment="Top" Width="137" />
+        <sdk:Label Content="{Binding Source={StaticResource BS_RES}, Path=LocalizedStrings.CsrReport_Label_Priority}" Height="19" HorizontalAlignment="Left" HorizontalContentAlignment="Right" Margin="37,364,0,0" Name="CsrReport_Label_Priority" VerticalAlignment="Top" Width="137" />
+        <sdk:Label Content="{Binding Source={StaticResource BS_RES}, Path=LocalizedStrings.CsrReport_Label_Site}" Height="19" HorizontalAlignment="Left" HorizontalContentAlignment="Right" Margin="37,396,0,0" Name="CsrReport_Label_Site" VerticalAlignment="Top" Width="137" />
+        <sdk:Label Content="{Binding Source={StaticResource BS_RES}, Path=LocalizedStrings.CsrReport_Label_Product}" Height="19" HorizontalAlignment="Left" HorizontalContentAlignment="Right" Margin="37,432,0,0" Name="CsrReport_Label_Product" VerticalAlignment="Top" Width="137" />
+        <sdk:Label Content="{Binding Source={StaticResource BS_RES}, Path=LocalizedStrings.CsrReport_Label_Caller}" Height="19" HorizontalAlignment="Left" HorizontalContentAlignment="Right" Margin="37,542,0,0" Name="CsrReport_Label_Caller" VerticalAlignment="Top" Width="137" />
+        <TextBox Height="23" HorizontalAlignment="Left" Margin="207,80,0,0" Name="sendTimeTextBox" VerticalAlignment="Top" Width="208" IsReadOnly="True" TabIndex="3" />
+        <TextBox Height="23" HorizontalAlignment="Left" Margin="207,115,0,0" Name="UserNameTextBox" VerticalAlignment="Top" Width="208" IsReadOnly="True" TabIndex="4" />
+        <Rectangle Height="1" HorizontalAlignment="Left" Margin="37,153,0,0" Name="rectangle1" Stroke="#6A1A1111" StrokeThickness="1" VerticalAlignment="Top" Width="470" Fill="Black" />
+        <TextBox Height="23" HorizontalAlignment="Left" Margin="207,164,0,0" Name="CsrHeadingTextBox" VerticalAlignment="Top" Width="389" TabIndex="5" Text ="{Binding Path=Heading, Mode=TwoWay, ValidatesOnExceptions=True}"/>
+        <TextBox Height="146" Margin="207,195,44,0" Name="CsrDescriptionTextBox" VerticalAlignment="Top" VerticalScrollBarVisibility="Auto" TextWrapping="Wrap" TabIndex="6" AcceptsReturn="True" />
+        <Rectangle Fill="Black" Height="1" HorizontalAlignment="Left" Margin="37,348,0,0" Name="rectangle2" Stroke="#6A1A1111" StrokeThickness="1" VerticalAlignment="Top" Width="470" />
+        <riaControls:DomainDataSource AutoLoad="False" d:DesignData="{d:DesignInstance my:CompanyPriorities, CreateList=true}" Height="0" LoadedData="companyPrioritiesDomainDataSource_LoadedData" Name="companyPrioritiesDomainDataSource" QueryName="GetCompanyPrioritiesQuery" Width="0">
+            <riaControls:DomainDataSource.DomainContext>
+                <my:BusinessSystemsDomainContext />
+            </riaControls:DomainDataSource.DomainContext>
+            <riaControls:DomainDataSource.QueryParameters>
+                <riaControls:Parameter ParameterName="_companyId" Value="{Binding ElementName=_companyIdTextBox, Path=Text}" />
+            </riaControls:DomainDataSource.QueryParameters>
+        </riaControls:DomainDataSource>
+        <ComboBox Height="23" HorizontalAlignment="Left" ItemsSource="{Binding ElementName=companyPrioritiesDomainDataSource, Path=Data}" Margin="207,360,0,0" Name="companyPrioritiesComboBox" VerticalAlignment="Top" Width="294" SelectedValuePath="CompanyPriorities.PriorityId" DisplayMemberPath="Priority.PriorityName" TabIndex="7" SelectionChanged="companyPrioritiesComboBox_SelectionChanged">
+            <ComboBox.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <VirtualizingStackPanel />
+                </ItemsPanelTemplate>
+            </ComboBox.ItemsPanel>
+        </ComboBox>
+        <riaControls:DomainDataSource AutoLoad="True" d:DesignData="{d:DesignInstance my:Site, CreateList=true}" Height="0" LoadedData="siteDomainDataSource_LoadedData" Name="siteDomainDataSource" QueryName="GetSiteQuery" Width="0">
+            <riaControls:DomainDataSource.DomainContext>
+                <my:BusinessSystemsDomainContext />
+            </riaControls:DomainDataSource.DomainContext>
+        </riaControls:DomainDataSource>
+        <ComboBox Height="23" HorizontalAlignment="Right" ItemsSource="{Binding ElementName=siteDomainDataSource, Path=Data}" Margin="0,392,139,0" Name="siteComboBox" VerticalAlignment="Top" Width="294" SelectedValuePath="Id" DisplayMemberPath="SiteName" TabIndex="8">
+            <ComboBox.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <VirtualizingStackPanel />
+                </ItemsPanelTemplate>
+            </ComboBox.ItemsPanel>
+        </ComboBox>
+        <riaControls:DomainDataSource AutoLoad="False" d:DesignData="{d:DesignInstance my:ProductsInCompany, CreateList=true}" Height="0" LoadedData="productsInCompanyDomainDataSource_LoadedData" Name="productsInCompanyDomainDataSource" QueryName="GetProductsInCompanyQuery" Width="0">
+            <riaControls:DomainDataSource.DomainContext>
+                <my:BusinessSystemsDomainContext />
+            </riaControls:DomainDataSource.DomainContext>
+            <riaControls:DomainDataSource.QueryParameters>
+                <riaControls:Parameter ParameterName="_companyId" Value="{Binding ElementName=_companyIdTextBox, Path=Text}" />
+            </riaControls:DomainDataSource.QueryParameters>
+        </riaControls:DomainDataSource>
+        <ComboBox Height="23" HorizontalAlignment="Left" ItemsSource="{Binding ElementName=productsInCompanyDomainDataSource, Path=Data}" Margin="207,428,0,0" Name="productsInCompanyComboBox" VerticalAlignment="Top" Width="294" SelectedValuePath="CompaniesAssignment.ProductId" DisplayMemberPath="Product.ProductName" TabIndex="9">
+            <ComboBox.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <VirtualizingStackPanel />
+                </ItemsPanelTemplate>
+            </ComboBox.ItemsPanel>
+        </ComboBox>
+        <Rectangle Fill="Black" Height="1" HorizontalAlignment="Left" Margin="37,527,0,0" Name="rectangle3" Stroke="#6A1A1111" StrokeThickness="1" VerticalAlignment="Top" Width="470" />
+        <riaControls:DomainDataSource AutoLoad="True" d:DesignData="{d:DesignInstance my:User, CreateList=true}" Height="0" LoadedData="userDomainDataSource_LoadedData" Name="userDomainDataSource" QueryName="GetUserQuery" Width="0">
+            <riaControls:DomainDataSource.DomainContext>
+                <my:BusinessSystemsDomainContext />
+            </riaControls:DomainDataSource.DomainContext>
+        </riaControls:DomainDataSource>
+        <ComboBox Height="23" HorizontalAlignment="Left" ItemsSource="{Binding ElementName=userDomainDataSource, Path=Data}" Margin="207,538,0,0" Name="userComboBox" VerticalAlignment="Top" Width="294" TabIndex="10">
+            <ComboBox.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <VirtualizingStackPanel />
+                </ItemsPanelTemplate>
+            </ComboBox.ItemsPanel>
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="{Binding FirstName, Mode=OneWay}" />
+                        <TextBlock Text=" " />
+                        <TextBlock Text="{Binding LastName, Mode=OneWay}" />
+                    </StackPanel>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+        <Rectangle Fill="Black" Height="1" HorizontalAlignment="Left" Margin="37,610,0,0" Name="rectangle4" Stroke="#6A1A1111" StrokeThickness="1" VerticalAlignment="Top" Width="470" />
+        <toolkit:Expander Height="21" HorizontalAlignment="Left" Margin="36,634,0,0" Name="CsrReport_Expander" VerticalAlignment="Top" Width="580" Header="{Binding Source={StaticResource BS_RES}, Path=LocalizedStrings.CsrReport_Expander_Header}" IsExpanded="False" BorderThickness="0" AllowDrop="False" TabIndex="11" Expanded="CsrReport_Expander_Expanded" Collapsed="CsrReport_Expander_Collapsed">
+            <Grid HorizontalAlignment="Stretch" Name="grid1" VerticalAlignment="Stretch" Width="Auto">
+                <my1:FileUploaderControl HorizontalAlignment="Left" Margin="6,6,0,0" Name="fileUploaderControl1" VerticalAlignment="Top" UploadHandlerPath="~/UploaderControlHandler.ashx" Width="568" />
+            </Grid>
+        </toolkit:Expander>
+        <Button Content="{Binding Source={StaticResource BS_RES}, Path=LocalizedStrings.CsrReport_Button_Save}" Height="23" Margin="0,17,12,0" Name="CsrReport_Button_Save" VerticalAlignment="Top" Click="button1_Click" TabIndex="16" HorizontalAlignment="Right" Width="90" />
+        <riaControls:DomainDataSource AutoLoad="False" d:DesignData="{d:DesignInstance my:CompaniesAssignment, CreateList=true}" Height="0" LoadedData="companiesAssignmentDomainDataSource_LoadedData" Name="companiesAssignmentDomainDataSource" QueryName="GetCompaniesAssignmentQuery" Width="0">
+            <riaControls:DomainDataSource.DomainContext>
+                <my:BusinessSystemsDomainContext />
+            </riaControls:DomainDataSource.DomainContext>
+            
+        </riaControls:DomainDataSource>
+        <ComboBox Height="23" HorizontalAlignment="Left" ItemsSource="{Binding ElementName=companyDomainDataSource, Path=Data}" Margin="207,17,0,0" Name="companyComboBox" VerticalAlignment="Top" Width="294" SelectionChanged="companyComboBox_SelectionChanged" SelectedValuePath="Id" DisplayMemberPath="CompanyName" TabIndex="1">
+            <ComboBox.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <VirtualizingStackPanel />
+                </ItemsPanelTemplate>
+            </ComboBox.ItemsPanel>
+        </ComboBox>
+        <riaControls:DomainDataSource AutoLoad="False" d:DesignData="{d:DesignInstance my:User, CreateList=true}" Height="0" LoadedData="userDomainDataSource1_LoadedData" Name="userDomainDataSource1" QueryName="GetUserWithUsernameQuery" Width="0">
+            <riaControls:DomainDataSource.DomainContext>
+                <my:BusinessSystemsDomainContext />
+            </riaControls:DomainDataSource.DomainContext>
+            <riaControls:DomainDataSource.QueryParameters>
+                <riaControls:Parameter ParameterName="_userName" />
+            </riaControls:DomainDataSource.QueryParameters>
+        </riaControls:DomainDataSource>
+        <toolkit:BusyIndicator Height="63" HorizontalAlignment="Right" Margin="0,232,225,0" Name="busyIndicator1" VerticalAlignment="Top" Width="155" Visibility="Collapsed" IsBusy="False" />
+        <riaControls:DomainDataSource AutoLoad="False" d:DesignData="{d:DesignInstance my:UserNotifications, CreateList=true}" Height="0" LoadedData="userNotificationsDomainDataSource_LoadedData" Name="userNotificationsDomainDataSource" QueryName="GetUserNotificationsQuery" Width="0">
+            <riaControls:DomainDataSource.DomainContext>
+                <my:BusinessSystemsDomainContext />
+            </riaControls:DomainDataSource.DomainContext>
+            <riaControls:DomainDataSource.QueryParameters>
+                <riaControls:Parameter ParameterName="_companyId" />
+            </riaControls:DomainDataSource.QueryParameters>
+        </riaControls:DomainDataSource>
+        <riaControls:DomainDataSource AutoLoad="False" d:DesignData="{d:DesignInstance my:Contact, CreateList=true}" Height="0" LoadedData="contactDomainDataSource1_LoadedData" Name="contactDomainDataSource1" QueryName="GetContactWithContactListQuery" Width="0">
+            <riaControls:DomainDataSource.QueryParameters>
+                <riaControls:Parameter ParameterName="_contactList" Value="{Binding ElementName=contactDomainDataSource1, Path=DataView}" />
+            </riaControls:DomainDataSource.QueryParameters>
+            <riaControls:DomainDataSource.DomainContext>
+                <my:BusinessSystemsDomainContext />
+            </riaControls:DomainDataSource.DomainContext>
+        </riaControls:DomainDataSource>
+        <sdk:Label Content="{Binding Source={StaticResource BS_RES}, Path=LocalizedStrings.CsrReport_Label_CommunicationChannel}" Height="19" HorizontalAlignment="Left" HorizontalContentAlignment="Right" Margin="37,578,0,0" Name="CsrReport_Label_CommunicationChannel" VerticalAlignment="Top" Width="155" />
+        <riaControls:DomainDataSource AutoLoad="True" d:DesignData="{d:DesignInstance my:CommunicationChannel, CreateList=true}" Height="0" LoadedData="communicationChannelDomainDataSource_LoadedData" Name="communicationChannelDomainDataSource" QueryName="GetCommunicationChannelQuery" Width="0">
+            <riaControls:DomainDataSource.DomainContext>
+                <my:BusinessSystemsDomainContext />
+            </riaControls:DomainDataSource.DomainContext>
+        </riaControls:DomainDataSource>
+        <ComboBox Height="23" HorizontalAlignment="Left" ItemsSource="{Binding ElementName=communicationChannelDomainDataSource, Path=Data}" Margin="207,574,0,0" Name="communicationChannelComboBox" VerticalAlignment="Top" Width="294" SelectedValuePath="Id" DisplayMemberPath="CommunicationChannelName">
+            <ComboBox.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <VirtualizingStackPanel />
+                </ItemsPanelTemplate>
+            </ComboBox.ItemsPanel>
+        </ComboBox>
+        <Grid Height="75" HorizontalAlignment="Left" Margin="234,322,0,0" Name="grid2" VerticalAlignment="Top" Width="200" Visibility="Collapsed">
+            <Rectangle Height="74" HorizontalAlignment="Left" Name="rectangle5" Stroke="#8BE86C4D" StrokeThickness="1" VerticalAlignment="Top" Width="200" RadiusX="20" RadiusY="10">
+                <Rectangle.Fill>
+                    <LinearGradientBrush EndPoint="1,0.5" StartPoint="0,0.5">
+                        <GradientStop Color="#9E3B99E8" Offset="1" />
+                        <GradientStop Color="#FF3C12EB" Offset="0.305" />
+                    </LinearGradientBrush>
+                </Rectangle.Fill>
+            </Rectangle>
+            <sdk:Label Height="28" HorizontalAlignment="Stretch" Margin="46,22,15,0" Name="CsrReport_Label_Popup" VerticalAlignment="Top" Content="{Binding Source={StaticResource BS_RES}, Path=LocalizedStrings.CsrReport_Label_Popup}" Foreground="#FFEFEAE5" FontSize="14" FontWeight="Bold" OpacityMask="#FFE8D6D6" HorizontalContentAlignment="Stretch" />
+            <sdk:Label FontSize="12" FontWeight="Normal" Foreground="#FFEFEAE5" Height="28" HorizontalAlignment="Stretch" HorizontalContentAlignment="Stretch" Margin="55,46,6,0" Name="CsrSaved_Id_Label" OpacityMask="#FFE8D6D6" VerticalAlignment="Top" Content="( Csr ID)" />
+        </Grid>
+        <TextBlock Height="174" HorizontalAlignment="Left" Margin="517,360,0,0" Name="CSRReport_Label_Notify" Text="{Binding Source={StaticResource BS_RES}, Path=LocalizedStrings.CSRReport_Label_Notify}" VerticalAlignment="Top" Width="113" TextWrapping="Wrap" FontWeight="Bold" Foreground="#FFEB2C2C" Visibility="Collapsed" />
+        <Button Content="{Binding Source={StaticResource BS_RES}, Path=LocalizedStrings.CSRReport_Button_Clear}" Height="23" HorizontalAlignment="Right" Margin="0,55,12,0" Name="CSRReport_Button_Clear" TabIndex="16" VerticalAlignment="Top" Width="90" Click="CSRReport_Button_Clear_Click" />
+        <riaControls:DomainDataSource AutoLoad="False" d:DesignData="{d:DesignInstance my:CompanyStatuses, CreateList=true}" Height="0" LoadedData="companyStatusesDomainDataSource_LoadedData" Name="companyStatusesDomainDataSource" QueryName="GetCompanyStatusesQuery" Width="0">
+            <riaControls:DomainDataSource.QueryParameters>
+                <riaControls:Parameter ParameterName="_companyId" />
+            </riaControls:DomainDataSource.QueryParameters>
+            <riaControls:DomainDataSource.DomainContext>
+                <my:BusinessSystemsDomainContext />
+            </riaControls:DomainDataSource.DomainContext>
+        </riaControls:DomainDataSource>
+        <riaControls:DomainDataSource AutoLoad="False" d:DesignData="{d:DesignInstance my:CSR_list, CreateList=true}" Height="0" LoadedData="cSR_listDomainDataSource_LoadedData" Name="cSR_listDomainDataSource" QueryName="GetCSR_listQuery" Width="0" SubmittedChanges="cSR_listDomainDataSource_SubmittedChanges">
+            <riaControls:DomainDataSource.DomainContext>
+                <my:SolidusNotifyDomainContext />
+            </riaControls:DomainDataSource.DomainContext>
+        </riaControls:DomainDataSource>
+        <riaControls:DomainDataSource AutoLoad="False" d:DesignData="{d:DesignInstance my:IssueDomainInCompany, CreateList=true}" Height="0" LoadedData="issueDomainInCompanyDomainDataSource_LoadedData" Name="issueDomainInCompanyDomainDataSource" QueryName="GetIssueDomainInCompanyQuery" Width="0">
+            <riaControls:DomainDataSource.DomainContext>
+                <my:BusinessSystemsDomainContext />
+            </riaControls:DomainDataSource.DomainContext>
+            <riaControls:DomainDataSource.QueryParameters>
+                <riaControls:Parameter ParameterName="_companyId" Value="{Binding ElementName=_companyIdTextBox, Path=Text}" />
+            </riaControls:DomainDataSource.QueryParameters>
+        </riaControls:DomainDataSource>
+        <ComboBox Height="23" HorizontalAlignment="Left" ItemsSource="{Binding ElementName=issueDomainInCompanyDomainDataSource, Path=Data}" Margin="207,494,0,0" Name="issueDomainInCompanyComboBox" VerticalAlignment="Top" Width="294" DisplayMemberPath="IssueDomain.Name" SelectedValuePath="IssueDomainInCompany.IssueDomainId">
+            <ComboBox.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <VirtualizingStackPanel />
+                </ItemsPanelTemplate>
+            </ComboBox.ItemsPanel>
+        </ComboBox>
+        <riaControls:DomainDataSource AutoLoad="False" d:DesignData="{d:DesignInstance my:RequesterTypeInCompany, CreateList=true}" Height="0" LoadedData="requesterTypeInCompanyDomainDataSource_LoadedData" Name="requesterTypeInCompanyDomainDataSource" QueryName="GetRequesterTypeInCompanyQuery" Width="0">
+            <riaControls:DomainDataSource.DomainContext>
+                <my:BusinessSystemsDomainContext />
+            </riaControls:DomainDataSource.DomainContext>
+            <riaControls:DomainDataSource.QueryParameters>
+                <riaControls:Parameter ParameterName="_companyId" Value="{Binding ElementName=_companyIdTextBox1, Path=Text}" />
+            </riaControls:DomainDataSource.QueryParameters>
+        </riaControls:DomainDataSource>
+        <ComboBox Height="23" HorizontalAlignment="Left" ItemsSource="{Binding ElementName=requesterTypeInCompanyDomainDataSource, Path=Data}" Margin="207,461,0,0" Name="requesterTypeInCompanyComboBox" VerticalAlignment="Top" Width="294" DisplayMemberPath="RequesterType.Name" SelectedValuePath="TypeOfRequesterInCompany.RequesterTypeId">
+            <ComboBox.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <VirtualizingStackPanel />
+                </ItemsPanelTemplate>
+            </ComboBox.ItemsPanel>
+        </ComboBox>
+        <sdk:Label Content="{Binding Source={StaticResource BS_RES}, Path=LocalizedStrings.CSRReport_TypeOfRequester}" Height="19" HorizontalAlignment="Left" HorizontalContentAlignment="Right" Margin="36,464,0,0" Name="label1" VerticalAlignment="Top" Width="137" />
+        <sdk:Label Content="{Binding Source={StaticResource BS_RES}, Path=LocalizedStrings.CSRReport_IssueDomain}" Height="19" HorizontalAlignment="Left" HorizontalContentAlignment="Right" Margin="36,496,0,0" Name="label2" VerticalAlignment="Top" Width="137" />
+    </Grid>
+</navigation:Page>

@@ -1,0 +1,35 @@
+﻿<navigation:Page x:Class="BusinessSystemsApp.Views.UserTypes" 
+           xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+           xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+           xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+           xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+           mc:Ignorable="d"
+           xmlns:navigation="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Navigation"
+           d:DesignWidth="640" d:DesignHeight="480"
+           Title="UserTypes Page" xmlns:riaControls="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.DomainServices" xmlns:my="clr-namespace:BusinessSystemsApp.Web" xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk"
+                 xmlns:resrc="clr-namespace:BusinessSystemsApp.Resources">
+
+    <UserControl.Resources>
+        <resrc:CustomResources x:Key="BS_RES" />
+    </UserControl.Resources>
+
+    <Grid x:Name="LayoutRoot">
+        
+        <riaControls:DomainDataSource AutoLoad="True" d:DesignData="{d:DesignInstance my:UserType, CreateList=true}" Height="0" LoadedData="userTypeDomainDataSource_LoadedData" Name="userTypeDomainDataSource" QueryName="GetUserTypeQuery" Width="0">
+            <riaControls:DomainDataSource.DomainContext>
+                <my:BusinessSystemsDomainContext />
+            </riaControls:DomainDataSource.DomainContext>
+        </riaControls:DomainDataSource>
+        <sdk:DataGrid AutoGenerateColumns="False" Height="Auto" HorizontalAlignment="Stretch" ItemsSource="{Binding ElementName=userTypeDomainDataSource, Path=Data}" Name="userTypeDataGrid" RowDetailsVisibilityMode="VisibleWhenSelected" VerticalAlignment="Stretch" SelectionMode="Extended" IsReadOnly="True" AreRowDetailsFrozen="False" CanUserSortColumns="False" CellStyle="{StaticResource DataGridCellStyle1}" Margin="0,0,134,0">
+            <sdk:DataGrid.Columns>
+                <sdk:DataGridTextColumn x:Name="idColumn" Binding="{Binding Path=Id, Mode=OneWay}" Header="Id" IsReadOnly="True" Width="SizeToHeader" />
+                <sdk:DataGridTextColumn x:Name="typeNameColumn" Binding="{Binding Path=TypeName}" Header="Type Name" Width="Auto" />
+                <sdk:DataGridTextColumn x:Name="descriptionColumn" Binding="{Binding Path=Description}" Header="Description" Width="Auto" />
+            </sdk:DataGrid.Columns>
+        </sdk:DataGrid>
+        <Button Content="{Binding Source={StaticResource BS_RES}, Path=LocalizedStrings.UserTypes_Button_New}" Height="23" HorizontalAlignment="Right" Margin="0,12,29,0" Name="UserTypes_Button_New" VerticalAlignment="Top" Width="75" Click="btnNew_Click" Visibility="Collapsed" />
+        <Button Content="{Binding Source={StaticResource BS_RES}, Path=LocalizedStrings.UserTypes_Button_Edit}" Height="23" HorizontalAlignment="Right" Margin="0,41,29,0" Name="UserTypes_Button_Edit" VerticalAlignment="Top" Width="75" Click="btnEdit_Click" Visibility="Collapsed" />
+        <Button Content="{Binding Source={StaticResource BS_RES}, Path=LocalizedStrings.UserTypes_Button_Delete}" Height="23" HorizontalAlignment="Right" Margin="0,70,29,0" Name="UserTypes_Button_Delete" VerticalAlignment="Top" Width="75" Click="btnDelete_Click" Visibility="Collapsed" />
+        <riaControls:DomainDataSource Name="domainDataSource1" LoadSize="20" />
+    </Grid>
+</navigation:Page>

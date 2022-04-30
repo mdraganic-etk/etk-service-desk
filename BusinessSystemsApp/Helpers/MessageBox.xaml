@@ -1,0 +1,22 @@
+﻿<controls:ChildWindow x:Class="BusinessSystemsApp.Helpers.MessageBox"
+           xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+           xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+           xmlns:controls="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls"
+           Width="400" Height="283" 
+           Title="MessageBox" AllowDrop="True" UseLayoutRounding="True" xmlns:toolkit="http://schemas.microsoft.com/winfx/2006/xaml/presentation/toolkit" BorderBrush="{x:Null}" Background="{x:Null}" HasCloseButton="False">
+    <Grid x:Name="LayoutRoot" Margin="2">
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <Button x:Name="CancelButton" Content="Cancel" Click="CancelButton_Click" Width="75" Height="23" HorizontalAlignment="Right" Margin="0,8,110,4" Grid.Row="1" />
+        <Button x:Name="OKButton" Content="OK" Click="OKButton_Click" Width="75" Height="23" HorizontalAlignment="Left" Margin="289,7,0,5" Grid.Row="1" />
+        <toolkit:Expander Height="161" HorizontalAlignment="Left" Margin="12,45,0,0" Name="expander1" VerticalAlignment="Top" Width="354" HorizontalContentAlignment="Stretch" UseLayoutRounding="True" BorderThickness="0">
+            <Grid Height="Auto" HorizontalAlignment="Stretch" Name="grid1" VerticalAlignment="Stretch" Width="Auto">
+                <TextBox Height="120" HorizontalAlignment="Left" Margin="0,6,0,0" Name="errorTextBox" VerticalAlignment="Top" Width="354" VerticalScrollBarVisibility="Auto" IsReadOnly="True" TextWrapping="Wrap" />
+            </Grid>
+        </toolkit:Expander>
+        <Image Height="29" HorizontalAlignment="Left" Margin="332,4,0,0" Name="image1" Stretch="Fill" VerticalAlignment="Top" Width="32" Source="/BusinessSystemsApp;component/Images/x.png" />
+    </Grid>
+</controls:ChildWindow>

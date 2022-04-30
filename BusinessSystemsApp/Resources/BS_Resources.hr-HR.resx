@@ -1,0 +1,1257 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="MainMenu_Node_Administrator" xml:space="preserve">
+    <value> Administrator</value>
+  </data>
+  <data name="MainMenu_Node_BusinessSystems" xml:space="preserve">
+    <value>Service Desk</value>
+  </data>
+  <data name="MainMenu_Node_Communication" xml:space="preserve">
+    <value>Komunikacije</value>
+  </data>
+  <data name="MainMenu_Node_CommunicationChannels" xml:space="preserve">
+    <value>Komunikacijski kanali</value>
+  </data>
+  <data name="MainMenu_Node_Companies" xml:space="preserve">
+    <value>Kompanije</value>
+  </data>
+  <data name="MainMenu_Node_Company" xml:space="preserve">
+    <value>Kompanija</value>
+  </data>
+  <data name="MainMenu_Node_Csr" xml:space="preserve">
+    <value>CSR</value>
+  </data>
+  <data name="MainMenu_Node_CsrReport" xml:space="preserve">
+    <value>Prijava CSR-a</value>
+  </data>
+  <data name="MainMenu_Node_CsrReview" xml:space="preserve">
+    <value>Pregled CSR-ova</value>
+  </data>
+  <data name="MainMenu_Node_Frequency" xml:space="preserve">
+    <value>Frekvencija</value>
+  </data>
+  <data name="MainMenu_Node_KB" xml:space="preserve">
+    <value>Baza znanja</value>
+  </data>
+  <data name="MainMenu_Node_Logout" xml:space="preserve">
+    <value>Odjava</value>
+  </data>
+  <data name="MainMenu_Node_Priority" xml:space="preserve">
+    <value>Prioritet</value>
+  </data>
+  <data name="MainMenu_Node_Product" xml:space="preserve">
+    <value>Proizvod</value>
+  </data>
+  <data name="MainMenu_Node_Settings" xml:space="preserve">
+    <value>Podešenja</value>
+  </data>
+  <data name="MainMenu_Node_Severity" xml:space="preserve">
+    <value>Jačina</value>
+  </data>
+  <data name="MainMenu_Node_Sites" xml:space="preserve">
+    <value>Lokacije</value>
+  </data>
+  <data name="MainMenu_Node_Status" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="MainMenu_Node_User" xml:space="preserve">
+    <value>Korisnik</value>
+  </data>
+  <data name="MainMenu_Node_Users" xml:space="preserve">
+    <value>Korisnici</value>
+  </data>
+  <data name="MainMenu_Node_UserTypes" xml:space="preserve">
+    <value>Tipovi korisnika</value>
+  </data>
+  <data name="MainPage_Title_Label" xml:space="preserve">
+    <value>Service Desk</value>
+  </data>
+  <data name="MainMenu_Node_Products" xml:space="preserve">
+    <value>Proizvodi</value>
+  </data>
+  <data name="CsrReport_Label_SelectCustomer" xml:space="preserve">
+    <value>Odabir klijenta:</value>
+  </data>
+  <data name="MainMenu_Node_Language" xml:space="preserve">
+    <value>Jezik</value>
+  </data>
+  <data name="ChangeSettings_btnSaveSettings" xml:space="preserve">
+    <value>Spremi promjene</value>
+  </data>
+  <data name="ChangeSettings_Label_ContactDetails" xml:space="preserve">
+    <value>Detalji kontakta</value>
+  </data>
+  <data name="ChangeSettings_Label_Email" xml:space="preserve">
+    <value>E-mail:</value>
+  </data>
+  <data name="ChangeSettings_Label_FirstName" xml:space="preserve">
+    <value>Ime:</value>
+  </data>
+  <data name="ChangeSettings_Label_Fix1" xml:space="preserve">
+    <value>Fiksni1:</value>
+  </data>
+  <data name="ChangeSettings_Label_Fix2" xml:space="preserve">
+    <value>Fiksni2:</value>
+  </data>
+  <data name="ChangeSettings_Label_LastName" xml:space="preserve">
+    <value>Prezime:</value>
+  </data>
+  <data name="ChangeSettings_Label_Mobile1" xml:space="preserve">
+    <value>Mobilni1:</value>
+  </data>
+  <data name="ChangeSettings_Label_Mobile2" xml:space="preserve">
+    <value>Mobilni2:</value>
+  </data>
+  <data name="ChangeSettings_Label_Password" xml:space="preserve">
+    <value>Lozinka:</value>
+  </data>
+  <data name="ChangeSettings_Label_Password1" xml:space="preserve">
+    <value>Lozinka:</value>
+  </data>
+  <data name="ChangeSettings_Label_Username" xml:space="preserve">
+    <value>Korisničko ime:</value>
+  </data>
+  <data name="CommunicationChannel_Button_Delete" xml:space="preserve">
+    <value>Briši</value>
+  </data>
+  <data name="CommunicationChannel_Button_Edit" xml:space="preserve">
+    <value>Uredi...</value>
+  </data>
+  <data name="CommunicationChannel_Button_New" xml:space="preserve">
+    <value>Novi...</value>
+  </data>
+  <data name="CommunicationChannel_Grid_Column_Description" xml:space="preserve">
+    <value>Opis</value>
+  </data>
+  <data name="CommunicationChannel_Grid_Column_Id" xml:space="preserve">
+    <value>Id</value>
+  </data>
+  <data name="CommunicationChannel_Grid_Column_Name" xml:space="preserve">
+    <value>Naziv komunikacijskog kanala</value>
+  </data>
+  <data name="Company_Button_Delete" xml:space="preserve">
+    <value>Briši</value>
+  </data>
+  <data name="Company_Button_Edit" xml:space="preserve">
+    <value>Uredi...</value>
+  </data>
+  <data name="Company_Button_New" xml:space="preserve">
+    <value>Novi...</value>
+  </data>
+  <data name="CsrReport_Button_Save" xml:space="preserve">
+    <value>Spremi CSR</value>
+  </data>
+  <data name="CsrReport_Expander_Header" xml:space="preserve">
+    <value>Prilozi</value>
+  </data>
+  <data name="CsrReport_Label_Caller" xml:space="preserve">
+    <value>Pozivatelj:</value>
+  </data>
+  <data name="CsrReport_Label_CommunicationChannel" xml:space="preserve">
+    <value>Komunikacijski kanal:</value>
+  </data>
+  <data name="CsrReport_Label_Customer" xml:space="preserve">
+    <value>Klijent:</value>
+  </data>
+  <data name="CsrReport_Label_Description" xml:space="preserve">
+    <value>Opis:</value>
+  </data>
+  <data name="CsrReport_Label_Heading" xml:space="preserve">
+    <value>Naslov:</value>
+  </data>
+  <data name="CsrReport_Label_Popup" xml:space="preserve">
+    <value>CSR spremljen</value>
+  </data>
+  <data name="CsrReport_Label_Priority" xml:space="preserve">
+    <value>Prioritet:</value>
+  </data>
+  <data name="CsrReport_Label_Product" xml:space="preserve">
+    <value>Proizvod:</value>
+  </data>
+  <data name="CsrReport_Label_ReportedBy" xml:space="preserve">
+    <value>Prijavio:</value>
+  </data>
+  <data name="CsrReport_Label_Site" xml:space="preserve">
+    <value>Lokacija:</value>
+  </data>
+  <data name="CsrReport_Label_Time" xml:space="preserve">
+    <value>Vrijeme prijave CSR-a</value>
+  </data>
+  <data name="Culture_Button_Delete" xml:space="preserve">
+    <value>Briši</value>
+  </data>
+  <data name="Culture_Button_Edit" xml:space="preserve">
+    <value>Uredi...</value>
+  </data>
+  <data name="Culture_Button_New" xml:space="preserve">
+    <value>Novi...</value>
+  </data>
+  <data name="Frequency_Button_Delete" xml:space="preserve">
+    <value>Briši</value>
+  </data>
+  <data name="Frequency_Button_Edit" xml:space="preserve">
+    <value>Uredi...</value>
+  </data>
+  <data name="Frequency_Button_New" xml:space="preserve">
+    <value>Novi...</value>
+  </data>
+  <data name="KB_Label_Description" xml:space="preserve">
+    <value>Opis</value>
+  </data>
+  <data name="KB_Label_Heading" xml:space="preserve">
+    <value>Naslov</value>
+  </data>
+  <data name="KB_Label_Id" xml:space="preserve">
+    <value>Id</value>
+  </data>
+  <data name="KB_TabItem_KBDetails" xml:space="preserve">
+    <value>Detalji baze znanja</value>
+  </data>
+  <data name="KnowledgeBase_Expander_Header" xml:space="preserve">
+    <value>Pretraga baze znanja po detaljima</value>
+  </data>
+  <data name="CommunicationChannelDetails_Label_Description" xml:space="preserve">
+    <value>Opis:</value>
+  </data>
+  <data name="CommunicationChannelDetails_Label_Id" xml:space="preserve">
+    <value>Id:</value>
+  </data>
+  <data name="CommunicationChannelDetails_Label_Name" xml:space="preserve">
+    <value>Naziv:</value>
+  </data>
+  <data name="CommunicationChannelDetails_Window" xml:space="preserve">
+    <value>Detalji komunikacijskog kanala</value>
+  </data>
+  <data name="CompanyDetails_Companies_Button_Add" xml:space="preserve">
+    <value>Dodaj</value>
+  </data>
+  <data name="CompanyDetails_Companies_Button_Remove" xml:space="preserve">
+    <value>Ukloni</value>
+  </data>
+  <data name="CompanyDetails_Companies_Label_AllCompanies" xml:space="preserve">
+    <value>Sve kompanije</value>
+  </data>
+  <data name="CompanyDetails_Companies_Label_AssignedCompanies" xml:space="preserve">
+    <value>Kompanije pridjeljene kompaniji</value>
+  </data>
+  <data name="CompanyDetails_Label_Description" xml:space="preserve">
+    <value>Opis:</value>
+  </data>
+  <data name="CompanyDetails_Label_Id" xml:space="preserve">
+    <value>Id:</value>
+  </data>
+  <data name="CompanyDetails_Label_Name" xml:space="preserve">
+    <value>Name:</value>
+  </data>
+  <data name="CompanyDetails_Priorities_Button_Add" xml:space="preserve">
+    <value>Dodaj...</value>
+  </data>
+  <data name="CompanyDetails_Priorities_Button_Remove" xml:space="preserve">
+    <value>Ukloni:</value>
+  </data>
+  <data name="CompanyDetails_Priorities_Label_AllCSRPriorities" xml:space="preserve">
+    <value>Svi prioriteti:</value>
+  </data>
+  <data name="CompanyDetails_Priorities_Label_CompanyCSRPriorities" xml:space="preserve">
+    <value>Prioriteti kompanije:</value>
+  </data>
+  <data name="CompanyDetails_Products_Button_Add" xml:space="preserve">
+    <value>Dodaj</value>
+  </data>
+  <data name="CompanyDetails_Products_Button_Remove" xml:space="preserve">
+    <value>Ukloni</value>
+  </data>
+  <data name="CompanyDetails_Products_Label_AllProducts" xml:space="preserve">
+    <value>Svi proizvodi</value>
+  </data>
+  <data name="CompanyDetails_Products_Label_CompanyProducts" xml:space="preserve">
+    <value>Proizvodi za kompaniju</value>
+  </data>
+  <data name="CompanyDetails_Statuses_Button_Add" xml:space="preserve">
+    <value>Dodaj</value>
+  </data>
+  <data name="CompanyDetails_Statuses_Button_Remove" xml:space="preserve">
+    <value>Ukloni</value>
+  </data>
+  <data name="CompanyDetails_Statuses_Label_AllCSRStatuses" xml:space="preserve">
+    <value>Svi statusi CSR-a</value>
+  </data>
+  <data name="CompanyDetails_Statuses_Label_CompanyCSRStatuses" xml:space="preserve">
+    <value>Statusi CSR-a za kompaniju</value>
+  </data>
+  <data name="CompanyDetails_TabItem_Companies" xml:space="preserve">
+    <value>Kompanije</value>
+  </data>
+  <data name="CompanyDetails_TabItem_Priorities" xml:space="preserve">
+    <value>Prioriteti</value>
+  </data>
+  <data name="CompanyDetails_TabItem_Products" xml:space="preserve">
+    <value>Proizvodi</value>
+  </data>
+  <data name="CompanyDetails_TabItem_Statuses" xml:space="preserve">
+    <value>Statusi</value>
+  </data>
+  <data name="CompanyDetails_TabItem_Users" xml:space="preserve">
+    <value>Korisnici za obavijesti</value>
+  </data>
+  <data name="CompanyDetails_Users_Button_Add" xml:space="preserve">
+    <value>Dodaj</value>
+  </data>
+  <data name="CompanyDetails_Users_Button_Remove" xml:space="preserve">
+    <value>Ukloni</value>
+  </data>
+  <data name="CompanyDetails_Users_Label_AllUsers" xml:space="preserve">
+    <value>Svi korisnici</value>
+  </data>
+  <data name="CompanyDetails_Users_Label_NotifyUsers" xml:space="preserve">
+    <value>Korisnici za obavijesti</value>
+  </data>
+  <data name="KB_Label_Author" xml:space="preserve">
+    <value>Autor</value>
+  </data>
+  <data name="KB_Label_Solution" xml:space="preserve">
+    <value>Rješenje</value>
+  </data>
+  <data name="KnowledgeBase_Filter_Button_Filter" xml:space="preserve">
+    <value>Filter</value>
+  </data>
+  <data name="KnowledgeBase_Label_Filter_KBId" xml:space="preserve">
+    <value>Id baze znanja:</value>
+  </data>
+  <data name="KnowledgeBase_Label_Filter_Product" xml:space="preserve">
+    <value>Proizvod:</value>
+  </data>
+  <data name="KnowledgeBase_Label_Filter_SearchText" xml:space="preserve">
+    <value>Pretraga teksta:</value>
+  </data>
+  <data name="Priority_Button_Delete" xml:space="preserve">
+    <value>Briši</value>
+  </data>
+  <data name="Priority_Button_Edit" xml:space="preserve">
+    <value>Uredi...</value>
+  </data>
+  <data name="Priority_Button_New" xml:space="preserve">
+    <value>Novi...</value>
+  </data>
+  <data name="Product_Button_Delete" xml:space="preserve">
+    <value>Briši</value>
+  </data>
+  <data name="Product_Button_Edit" xml:space="preserve">
+    <value>Uredi</value>
+  </data>
+  <data name="Product_Button_New" xml:space="preserve">
+    <value>Novi...</value>
+  </data>
+  <data name="Severity_Button_Delete" xml:space="preserve">
+    <value>Briši</value>
+  </data>
+  <data name="Severity_Button_Edit" xml:space="preserve">
+    <value>Uredi...</value>
+  </data>
+  <data name="Severity_Button_New" xml:space="preserve">
+    <value>Novi...</value>
+  </data>
+  <data name="Site_Button_Delete" xml:space="preserve">
+    <value>Briši</value>
+  </data>
+  <data name="Site_Button_Edit" xml:space="preserve">
+    <value>Uredi...</value>
+  </data>
+  <data name="Site_Button_New" xml:space="preserve">
+    <value>Novi...</value>
+  </data>
+  <data name="Status_Button_Delete" xml:space="preserve">
+    <value>Briši</value>
+  </data>
+  <data name="Status_Button_Edit" xml:space="preserve">
+    <value>Uredi...</value>
+  </data>
+  <data name="Status_Button_New" xml:space="preserve">
+    <value>Novi...</value>
+  </data>
+  <data name="Users_Expander_Header" xml:space="preserve">
+    <value>Pretraga korisnika</value>
+  </data>
+  <data name="UserTypes_Button_Delete" xml:space="preserve">
+    <value>Briši</value>
+  </data>
+  <data name="UserTypes_Button_Edit" xml:space="preserve">
+    <value>Uredi...</value>
+  </data>
+  <data name="UserTypes_Button_New" xml:space="preserve">
+    <value>Novi...</value>
+  </data>
+  <data name="User_Button_Delete" xml:space="preserve">
+    <value>Briši</value>
+  </data>
+  <data name="User_Button_Edit" xml:space="preserve">
+    <value>Uredi...</value>
+  </data>
+  <data name="User_Button_New" xml:space="preserve">
+    <value>Novi...</value>
+  </data>
+  <data name="User_Filter_Button_Filter" xml:space="preserve">
+    <value>Filter</value>
+  </data>
+  <data name="User_Label_Company" xml:space="preserve">
+    <value>Kompanija:</value>
+  </data>
+  <data name="User_Label_FirstName" xml:space="preserve">
+    <value>Ime:</value>
+  </data>
+  <data name="User_Label_Id" xml:space="preserve">
+    <value>Id:</value>
+  </data>
+  <data name="User_Label_LastName" xml:space="preserve">
+    <value>Prezime:</value>
+  </data>
+  <data name="CommunicationChannel_Grid_Description" xml:space="preserve">
+    <value>Opis</value>
+  </data>
+  <data name="CommunicationChannel_Grid_Id" xml:space="preserve">
+    <value>Id</value>
+  </data>
+  <data name="CommunicationChannel_Grid_Name" xml:space="preserve">
+    <value>Naziv</value>
+  </data>
+  <data name="Company_Grid_Description" xml:space="preserve">
+    <value>Opis</value>
+  </data>
+  <data name="Company_Grid_Id" xml:space="preserve">
+    <value>Id</value>
+  </data>
+  <data name="Company_Grid_Name" xml:space="preserve">
+    <value>Naziv</value>
+  </data>
+  <data name="CSReview_Expander_Header" xml:space="preserve">
+    <value>Pretraga CSR-a po detaljima</value>
+  </data>
+  <data name="CSRReport_Label_Notify" xml:space="preserve">
+    <value>Odabrali ste "Emergency" prioritet, molimo obavezno nazovite i telefonom!</value>
+  </data>
+  <data name="CSRReview_Button_Cancel" xml:space="preserve">
+    <value>Odustani</value>
+  </data>
+  <data name="CSRReview_Button_Edit" xml:space="preserve">
+    <value>Uredi</value>
+  </data>
+  <data name="CSRReview_Button_Save" xml:space="preserve">
+    <value>Spremi</value>
+  </data>
+  <data name="CSRReview_CheckBox_MyCSRs" xml:space="preserve">
+    <value>Samo moji CSR-ovi</value>
+  </data>
+  <data name="CSRReview_CSRGrid_CompanyName" xml:space="preserve">
+    <value>Naziv kompanije</value>
+  </data>
+  <data name="CSRReview_CSRGrid_Heading" xml:space="preserve">
+    <value>Naslov</value>
+  </data>
+  <data name="CSRReview_CSRGrid_Id" xml:space="preserve">
+    <value>Id</value>
+  </data>
+  <data name="CSRReview_CSRGrid_RegisterDate" xml:space="preserve">
+    <value>Vrijeme registracije</value>
+  </data>
+  <data name="CSRReview_CSRGrid_ReportedDate" xml:space="preserve">
+    <value>Vrijeme prijave</value>
+  </data>
+  <data name="CSRReview_CSRGrid_Status" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="CSRReview_Filter_Button_Filter" xml:space="preserve">
+    <value>Filter</value>
+  </data>
+  <data name="CSRReview_Filter_Label_Client" xml:space="preserve">
+    <value>Klijent:</value>
+  </data>
+  <data name="CSRReview_Filter_Label_FinishedDate" xml:space="preserve">
+    <value>CSR Završen:</value>
+  </data>
+  <data name="CSRReview_Filter_Label_Product" xml:space="preserve">
+    <value>Proizvod:</value>
+  </data>
+  <data name="CSRReview_Filter_Label_ReportedDate" xml:space="preserve">
+    <value>CSR prijavljen:</value>
+  </data>
+  <data name="CSRReview_Filter_Label_Status" xml:space="preserve">
+    <value>Status:</value>
+  </data>
+  <data name="CSRReview_Filter_Label_TextSearch" xml:space="preserve">
+    <value>Pretraga teksta:</value>
+  </data>
+  <data name="CSRReview_KBGrid_Date" xml:space="preserve">
+    <value>Datum</value>
+  </data>
+  <data name="CSRReview_KBGrid_Heading" xml:space="preserve">
+    <value>Naslov</value>
+  </data>
+  <data name="CSRReview_KBGrid_Id" xml:space="preserve">
+    <value>Id</value>
+  </data>
+  <data name="CSRReview_KBGrid_Product" xml:space="preserve">
+    <value>Proizvod</value>
+  </data>
+  <data name="CSRReview_KB_Button_Add" xml:space="preserve">
+    <value>Dodaj...</value>
+  </data>
+  <data name="CSRReview_KB_Button_Edit" xml:space="preserve">
+    <value>Uredi...</value>
+  </data>
+  <data name="CSRReview_KB_Button_Remove" xml:space="preserve">
+    <value>Ukloni</value>
+  </data>
+  <data name="CSRReview_KB_Label_Attachment" xml:space="preserve">
+    <value>Prilozi:</value>
+  </data>
+  <data name="CSRReview_KB_Label_Author" xml:space="preserve">
+    <value>Autor:</value>
+  </data>
+  <data name="CSRReview_KB_Label_Description" xml:space="preserve">
+    <value>Opis:</value>
+  </data>
+  <data name="CSRReview_KB_Label_Heading" xml:space="preserve">
+    <value>Naslov:</value>
+  </data>
+  <data name="CSRReview_KB_Label_KBId" xml:space="preserve">
+    <value>Id baze znanja:</value>
+  </data>
+  <data name="CSRReview_KB_Label_Solution" xml:space="preserve">
+    <value>Rješenje:</value>
+  </data>
+  <data name="CSRReview_Label_Answer" xml:space="preserve">
+    <value>Odgovor:</value>
+  </data>
+  <data name="CSRReview_Label_Attachments" xml:space="preserve">
+    <value>Prilozi:</value>
+  </data>
+  <data name="CSRReview_Label_CallTime" xml:space="preserve">
+    <value>Vrijeme poziva:</value>
+  </data>
+  <data name="CSRReview_Label_Company" xml:space="preserve">
+    <value>Kompanija:</value>
+  </data>
+  <data name="CSRReview_Label_CSRId" xml:space="preserve">
+    <value>Id CSR-a:</value>
+  </data>
+  <data name="CSRReview_Label_Description" xml:space="preserve">
+    <value>Opis:</value>
+  </data>
+  <data name="CSRReview_Label_Filter_CSRId" xml:space="preserve">
+    <value>Id CSR-a:</value>
+  </data>
+  <data name="CSRReview_Label_FinishedTime" xml:space="preserve">
+    <value>Vrijeme završetka:</value>
+  </data>
+  <data name="CSRReview_Label_Heading" xml:space="preserve">
+    <value>Naslov:</value>
+  </data>
+  <data name="CSRReview_Label_LastUser" xml:space="preserve">
+    <value>Zadnji korisnik:</value>
+  </data>
+  <data name="CSRReview_Label_Priority" xml:space="preserve">
+    <value>Prioritet:</value>
+  </data>
+  <data name="CSRReview_Label_Product" xml:space="preserve">
+    <value>Proizvod:</value>
+  </data>
+  <data name="CSRReview_Label_RegisterTime" xml:space="preserve">
+    <value>Vrijeme registracije:</value>
+  </data>
+  <data name="CSRReview_Label_ReportedBy" xml:space="preserve">
+    <value>Prijavio:</value>
+  </data>
+  <data name="CSRReview_Label_Status" xml:space="preserve">
+    <value>Status:</value>
+  </data>
+  <data name="CSRReview_Label_TroubleTicket" xml:space="preserve">
+    <value>Trouble ticket:</value>
+  </data>
+  <data name="CSRReview_NotesGrid_AuthorFirstName" xml:space="preserve">
+    <value>Ime</value>
+  </data>
+  <data name="CSRReview_NotesGrid_AuthorLastName" xml:space="preserve">
+    <value>Prezime</value>
+  </data>
+  <data name="CSRReview_NotesGrid_Date" xml:space="preserve">
+    <value>Datum</value>
+  </data>
+  <data name="CSRReview_NotesGrid_Heading" xml:space="preserve">
+    <value>Naslov</value>
+  </data>
+  <data name="CSRReview_NotesGrid_Id" xml:space="preserve">
+    <value>Id</value>
+  </data>
+  <data name="CSRReview_Notes_Button_Add" xml:space="preserve">
+    <value>Dodaj...</value>
+  </data>
+  <data name="CSRReview_Notes_Button_Edit" xml:space="preserve">
+    <value>Uredi...</value>
+  </data>
+  <data name="CSRReview_Notes_Button_Remove" xml:space="preserve">
+    <value>Ukloni</value>
+  </data>
+  <data name="CSRReview_Notes_Label_Attachments" xml:space="preserve">
+    <value>Prilozi:</value>
+  </data>
+  <data name="CSRReview_Notes_Label_Author" xml:space="preserve">
+    <value>Autor:</value>
+  </data>
+  <data name="CSRReview_Notes_Label_Date" xml:space="preserve">
+    <value>Datum:</value>
+  </data>
+  <data name="CSRReview_Notes_Label_Heading" xml:space="preserve">
+    <value>Naslov:</value>
+  </data>
+  <data name="CSRReview_Notes_Label_Note" xml:space="preserve">
+    <value>Bilješka:</value>
+  </data>
+  <data name="CSRReview_Notes_Label_NoteDetails" xml:space="preserve">
+    <value>Detalji bilješke:</value>
+  </data>
+  <data name="CSRReview_PopUp_Email_Label" xml:space="preserve">
+    <value>E-mail:</value>
+  </data>
+  <data name="CSRReview_PopUp_Mobiles_Label" xml:space="preserve">
+    <value>Mobiteli:</value>
+  </data>
+  <data name="CSRReview_PopUp_Phones_Label" xml:space="preserve">
+    <value>Telefoni:</value>
+  </data>
+  <data name="CSRReview_Report_LabelButton" xml:space="preserve">
+    <value>Izvještaj</value>
+  </data>
+  <data name="CSRReview_RiskAnalysis_Button_CancelChanging" xml:space="preserve">
+    <value>Otkaži promjene</value>
+  </data>
+  <data name="CSRReview_RiskAnalysis_Button_EnableEditing" xml:space="preserve">
+    <value>Omogući promjene</value>
+  </data>
+  <data name="CSRReview_RiskAnalysis_Button_SaveChanges" xml:space="preserve">
+    <value>Spremi promjene</value>
+  </data>
+  <data name="CSRReview_RiskAnalysis_Label_CSRId" xml:space="preserve">
+    <value>Id CSR-a:</value>
+  </data>
+  <data name="CSRReview_RiskAnalysis_Label_Frequency" xml:space="preserve">
+    <value>Frekvencija:</value>
+  </data>
+  <data name="CSRReview_RiskAnalysis_Label_Heading" xml:space="preserve">
+    <value>Naslov:</value>
+  </data>
+  <data name="CSRReview_RiskAnalysis_Label_Severity" xml:space="preserve">
+    <value>Jačina:</value>
+  </data>
+  <data name="CSRReview_TabItem_CSRDetails" xml:space="preserve">
+    <value>Detalji CSR-a</value>
+  </data>
+  <data name="CSRReview_TabItem_KnowledgeBase" xml:space="preserve">
+    <value>Baza znanja</value>
+  </data>
+  <data name="CSRReview_TabItem_Notes" xml:space="preserve">
+    <value>Bilješke</value>
+  </data>
+  <data name="CSRReview_TabItem_RiskAnalysis" xml:space="preserve">
+    <value>Analiza rizika</value>
+  </data>
+  <data name="Culture_Grid_Descripition" xml:space="preserve">
+    <value>Opis</value>
+  </data>
+  <data name="Culture_Grid_Id" xml:space="preserve">
+    <value>Id</value>
+  </data>
+  <data name="Culture_Grid_Language" xml:space="preserve">
+    <value>Jezik</value>
+  </data>
+  <data name="Frequency_Grid_Description" xml:space="preserve">
+    <value>Opis</value>
+  </data>
+  <data name="Frequency_Grid_Id" xml:space="preserve">
+    <value>Id</value>
+  </data>
+  <data name="Frequency_Grid_Name" xml:space="preserve">
+    <value>Naziv</value>
+  </data>
+  <data name="KB_Grid_Date" xml:space="preserve">
+    <value>Datum</value>
+  </data>
+  <data name="KB_Grid_Heading" xml:space="preserve">
+    <value>Naslov</value>
+  </data>
+  <data name="KB_Grid_Id" xml:space="preserve">
+    <value>Id</value>
+  </data>
+  <data name="KB_Grid_Product" xml:space="preserve">
+    <value>Proizvod</value>
+  </data>
+  <data name="Priority_Grid_Description" xml:space="preserve">
+    <value>Opis</value>
+  </data>
+  <data name="Priority_Grid_Id" xml:space="preserve">
+    <value>Id</value>
+  </data>
+  <data name="Priority_Grid_Name" xml:space="preserve">
+    <value>Naziv prioriteta</value>
+  </data>
+  <data name="Product_Grid_Description" xml:space="preserve">
+    <value>Opis</value>
+  </data>
+  <data name="Product_Grid_Id" xml:space="preserve">
+    <value>Id</value>
+  </data>
+  <data name="Product_Grid_Name" xml:space="preserve">
+    <value>Naziv proizvoda</value>
+  </data>
+  <data name="Severity_Grid_Description" xml:space="preserve">
+    <value>Opis</value>
+  </data>
+  <data name="Severity_Grid_Id" xml:space="preserve">
+    <value>Id</value>
+  </data>
+  <data name="Severity_Grid_Name" xml:space="preserve">
+    <value>Naziv jačine</value>
+  </data>
+  <data name="Site_Grid_Company" xml:space="preserve">
+    <value>Naziv kompanije</value>
+  </data>
+  <data name="Site_Grid_Description" xml:space="preserve">
+    <value>Opis</value>
+  </data>
+  <data name="Site_Grid_Id" xml:space="preserve">
+    <value>Id</value>
+  </data>
+  <data name="Site_Grid_Name" xml:space="preserve">
+    <value>Naziv lokacije</value>
+  </data>
+  <data name="Status_Grid_Description" xml:space="preserve">
+    <value>Opis</value>
+  </data>
+  <data name="Status_Grid_Id" xml:space="preserve">
+    <value>Id</value>
+  </data>
+  <data name="Status_Grid_Name" xml:space="preserve">
+    <value>Naziv statusa CSR-a</value>
+  </data>
+  <data name="UserType_Grid_Id" xml:space="preserve">
+    <value>Id</value>
+  </data>
+  <data name="UserType_Grid_Description" xml:space="preserve">
+    <value>Opis</value>
+  </data>
+  <data name="UserType_Grid_Name" xml:space="preserve">
+    <value>Naziv tipa korisnika</value>
+  </data>
+  <data name="User_Grid_Company" xml:space="preserve">
+    <value>Kompanija</value>
+  </data>
+  <data name="User_Grid_FirstName" xml:space="preserve">
+    <value>Ime</value>
+  </data>
+  <data name="User_Grid_Id" xml:space="preserve">
+    <value>Id</value>
+  </data>
+  <data name="User_Grid_LastName" xml:space="preserve">
+    <value>Prezime</value>
+  </data>
+  <data name="User_Grid_Username" xml:space="preserve">
+    <value>Korisničko ime</value>
+  </data>
+  <data name="User_Grid_UserType" xml:space="preserve">
+    <value>Tip korisnika</value>
+  </data>
+  <data name="CompanyDetails_Companies_Grid_Id" xml:space="preserve">
+    <value>Id kompanije</value>
+  </data>
+  <data name="CompanyDetails_Companies_Grid_Name" xml:space="preserve">
+    <value>Naziv kompanije</value>
+  </data>
+  <data name="CompanyDetails_Priorities_Grid_Id" xml:space="preserve">
+    <value>Id prioriteta:</value>
+  </data>
+  <data name="CompanyDetails_Priorities_Grid_Name" xml:space="preserve">
+    <value>Naziv prioriteta:</value>
+  </data>
+  <data name="CompanyDetails_Products_Grid_Id" xml:space="preserve">
+    <value>Id proizvoda</value>
+  </data>
+  <data name="CompanyDetails_Products_Grid_Name" xml:space="preserve">
+    <value>Naziv proizvoda</value>
+  </data>
+  <data name="CompanyDetails_Statuses_Grid_Id" xml:space="preserve">
+    <value>Id statusa</value>
+  </data>
+  <data name="CompanyDetails_Statuses_Grid_Name" xml:space="preserve">
+    <value>Naziv statusa</value>
+  </data>
+  <data name="CompanyDetails_Users_Grid_FirstName" xml:space="preserve">
+    <value>Ime</value>
+  </data>
+  <data name="CompanyDetails_Users_Grid_Id" xml:space="preserve">
+    <value>Id korisnika</value>
+  </data>
+  <data name="CompanyDetails_Users_Grid_LastName" xml:space="preserve">
+    <value>Prezime</value>
+  </data>
+  <data name="CompanyDetails_Window_Title" xml:space="preserve">
+    <value>Detalji kompanije</value>
+  </data>
+  <data name="CsrPropertyDetails_Label_Description" xml:space="preserve">
+    <value>Opis:</value>
+  </data>
+  <data name="CsrPropertyDetails_Label_Id" xml:space="preserve">
+    <value>Id:</value>
+  </data>
+  <data name="CsrPropertyDetails_Label_Name" xml:space="preserve">
+    <value>Naziv:</value>
+  </data>
+  <data name="CsrPropertyDetails_Window_Title" xml:space="preserve">
+    <value>Detalji svojstava CSR-a</value>
+  </data>
+  <data name="CultureDetails_Label_Description" xml:space="preserve">
+    <value>Opis:</value>
+  </data>
+  <data name="CultureDetails_Label_Id" xml:space="preserve">
+    <value>Id:</value>
+  </data>
+  <data name="CultureDetails_Label_Name" xml:space="preserve">
+    <value>Naziv:</value>
+  </data>
+  <data name="CultureDetails_Window_Title" xml:space="preserve">
+    <value>Detalji kulture korisnika</value>
+  </data>
+  <data name="KBNotesDetails_Button_AddAttachments" xml:space="preserve">
+    <value>Dodaj priloge</value>
+  </data>
+  <data name="KBNotesDetails_Button_Cancel" xml:space="preserve">
+    <value>Odustani</value>
+  </data>
+  <data name="KBNotesDetails_Expander_Files" xml:space="preserve">
+    <value>Datoteke</value>
+  </data>
+  <data name="KBNotesDetails_Label_Attachments" xml:space="preserve">
+    <value>Prilozi:</value>
+  </data>
+  <data name="KBNotesDetails_Label_Author" xml:space="preserve">
+    <value>Autor:</value>
+  </data>
+  <data name="KBNotesDetails_Label_CSRId" xml:space="preserve">
+    <value>Id CSR-a:</value>
+  </data>
+  <data name="KBNotesDetails_Label_Date" xml:space="preserve">
+    <value>Datum:</value>
+  </data>
+  <data name="KBNotesDetails_Label_Heading" xml:space="preserve">
+    <value>Naslov:</value>
+  </data>
+  <data name="KBNotesDetails_Label_Id" xml:space="preserve">
+    <value>Id:</value>
+  </data>
+  <data name="KBNotesDetails_Label_NoteProblem" xml:space="preserve">
+    <value>Bilješka - Problem:</value>
+  </data>
+  <data name="KBNotesDetails_Label_NoteSolution" xml:space="preserve">
+    <value>Bilješka - Rješenje:</value>
+  </data>
+  <data name="KBNotesDetails_Label_Product" xml:space="preserve">
+    <value>Proizvod:</value>
+  </data>
+  <data name="KBNotesDetails_Window_Title" xml:space="preserve">
+    <value>Detalji baze znanja</value>
+  </data>
+  <data name="MainPage_Page_Title" xml:space="preserve">
+    <value>Service Desk</value>
+  </data>
+  <data name="NotesDetails_Button_AddAttachments" xml:space="preserve">
+    <value>Dodaj priloge</value>
+  </data>
+  <data name="NotesDetails_Button_Cancel" xml:space="preserve">
+    <value>Odustani</value>
+  </data>
+  <data name="NotesDetails_Expander_Files" xml:space="preserve">
+    <value>Datoteke</value>
+  </data>
+  <data name="NotesDetails_Label_Attachments" xml:space="preserve">
+    <value>Prilozi:</value>
+  </data>
+  <data name="NotesDetails_Label_Author" xml:space="preserve">
+    <value>Autor:</value>
+  </data>
+  <data name="NotesDetails_Label_CSRId" xml:space="preserve">
+    <value>Id CSR-a:</value>
+  </data>
+  <data name="NotesDetails_Label_Date" xml:space="preserve">
+    <value>Datum:</value>
+  </data>
+  <data name="NotesDetails_Label_Heading" xml:space="preserve">
+    <value>Naslov:</value>
+  </data>
+  <data name="NotesDetails_Label_Id" xml:space="preserve">
+    <value>Id:</value>
+  </data>
+  <data name="NotesDetails_Label_Note" xml:space="preserve">
+    <value>Bilješka:</value>
+  </data>
+  <data name="NotesDetails_Window_Title" xml:space="preserve">
+    <value>Detalji bilješke</value>
+  </data>
+  <data name="ProductDetails_Label_Description" xml:space="preserve">
+    <value>Opis:</value>
+  </data>
+  <data name="ProductDetails_Label_Id" xml:space="preserve">
+    <value>Id:</value>
+  </data>
+  <data name="ProductDetails_Label_Name" xml:space="preserve">
+    <value>Naziv:</value>
+  </data>
+  <data name="ProductDetails_Window_Title" xml:space="preserve">
+    <value>Detalji proizvoda</value>
+  </data>
+  <data name="SiteDetails_Label_Company" xml:space="preserve">
+    <value>Kompanija:</value>
+  </data>
+  <data name="SiteDetails_Label_Description" xml:space="preserve">
+    <value>Opis:</value>
+  </data>
+  <data name="SiteDetails_Label_Id" xml:space="preserve">
+    <value>Id:</value>
+  </data>
+  <data name="SiteDetails_Label_Name" xml:space="preserve">
+    <value>Naziv:</value>
+  </data>
+  <data name="SiteDetails_Window_Title" xml:space="preserve">
+    <value>Detalji lokacije</value>
+  </data>
+  <data name="UserDetails_Contact_Label_Email" xml:space="preserve">
+    <value>E-mail:</value>
+  </data>
+  <data name="UserDetails_Contact_Label_Fix1" xml:space="preserve">
+    <value>Fiksni1:</value>
+  </data>
+  <data name="UserDetails_Contact_Label_Fix2" xml:space="preserve">
+    <value>Fiksni2:</value>
+  </data>
+  <data name="UserDetails_Contact_Label_Id" xml:space="preserve">
+    <value>Id kontakta:</value>
+  </data>
+  <data name="UserDetails_Contact_Label_Mobile1" xml:space="preserve">
+    <value>Mobilni1:</value>
+  </data>
+  <data name="UserDetails_Contact_Label_Mobile2" xml:space="preserve">
+    <value>Mobilni2:</value>
+  </data>
+  <data name="UserDetails_Label_Company" xml:space="preserve">
+    <value>Kompanija:</value>
+  </data>
+  <data name="UserDetails_Label_FirstName" xml:space="preserve">
+    <value>Ime:</value>
+  </data>
+  <data name="UserDetails_Label_Id" xml:space="preserve">
+    <value>Id:</value>
+  </data>
+  <data name="UserDetails_Label_Language" xml:space="preserve">
+    <value>Jezik:</value>
+  </data>
+  <data name="UserDetails_Label_LastName" xml:space="preserve">
+    <value>Prezime:</value>
+  </data>
+  <data name="UserDetails_Label_Password" xml:space="preserve">
+    <value>Lozinka:</value>
+  </data>
+  <data name="UserDetails_Label_Type" xml:space="preserve">
+    <value>Tip:</value>
+  </data>
+  <data name="UserDetails_Label_Username" xml:space="preserve">
+    <value>Korisničko ime:</value>
+  </data>
+  <data name="UserDetails_Window_Title" xml:space="preserve">
+    <value>Detalji korisnika</value>
+  </data>
+  <data name="UserTypeDetails_Label_Description" xml:space="preserve">
+    <value>Opis:</value>
+  </data>
+  <data name="UserTypeDetails_Label_Id" xml:space="preserve">
+    <value>Id:</value>
+  </data>
+  <data name="UserTypeDetails_Label_Name" xml:space="preserve">
+    <value>Naziv:</value>
+  </data>
+  <data name="UserTypeDetails_Window_Title" xml:space="preserve">
+    <value>Detalji tipa korisnika</value>
+  </data>
+  <data name="CsrReport_RequiredInput" xml:space="preserve">
+    <value>Obavezan unos!</value>
+  </data>
+  <data name="CSRReport_Button_Clear" xml:space="preserve">
+    <value>Počisti formu</value>
+  </data>
+  <data name="Dialog_ConfirmDelete_Text" xml:space="preserve">
+    <value>Dali stvarno želite obrisati odabranu stavku?</value>
+  </data>
+  <data name="Dialog_ConfirmDelete_Title" xml:space="preserve">
+    <value>Brisanje</value>
+  </data>
+  <data name="CSRReport_BusyIndicator_Saving" xml:space="preserve">
+    <value>Spremanje CSR-a ...</value>
+  </data>
+  <data name="CSRReport_BusyIndicator_Uploading" xml:space="preserve">
+    <value>Spremanje priloga ...</value>
+  </data>
+  <data name="ChangeSettings_Label_Saved" xml:space="preserve">
+    <value>Spremljeno</value>
+  </data>
+  <data name="ChangeSettings_PasswordsEqual" xml:space="preserve">
+    <value>Lozinke nisu jednake ili je lozinka prekratka (min. 6 znakova)!</value>
+  </data>
+  <data name="UserDetails_PasswordValid" xml:space="preserve">
+    <value>Lozinka prekratka! (min. 6 znakova)</value>
+  </data>
+  <data name="UserDetails_DuplicateUser_Text" xml:space="preserve">
+    <value>Već postoji korisnik sa ovim korisničkim imenom! Promjenite korisničko ime i pokušajte ponovno.</value>
+  </data>
+  <data name="UserDetails_DuplicateUser_Title" xml:space="preserve">
+    <value>Postojeće korisničko ime</value>
+  </data>
+  <data name="CSRReview_Label_Location" xml:space="preserve">
+    <value>Lokacija:</value>
+  </data>
+  <data name="IssueDomain_Button_Delete" xml:space="preserve">
+    <value>Briši</value>
+  </data>
+  <data name="IssueDomain_Button_Edit" xml:space="preserve">
+    <value>Uredi...</value>
+  </data>
+  <data name="IssueDomain_Button_New" xml:space="preserve">
+    <value>Novi...</value>
+  </data>
+  <data name="CompanyDetails_Tab_IssueDomain" xml:space="preserve">
+    <value>Domena zahtjeva</value>
+  </data>
+  <data name="CompanyDetails_Tab_TypeOfRequester" xml:space="preserve">
+    <value>Tip podnositelja zahtjeva</value>
+  </data>
+  <data name="MainMenu_Node_IssueDomain" xml:space="preserve">
+    <value>Domena zahtjeva</value>
+  </data>
+  <data name="MainMenu_Node_IssueDomains" xml:space="preserve">
+    <value>Domene zahtjeva</value>
+  </data>
+  <data name="MainMenu_Node_TypeOfRequester" xml:space="preserve">
+    <value>Tip podnositelja zahtjeva</value>
+  </data>
+  <data name="MainMenu_Node_TypeOfRequesters" xml:space="preserve">
+    <value>Tipovi podnositelja zahtjeva</value>
+  </data>
+  <data name="TypeOfRequester_Button_Delete" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="TypeOfRequester_Button_Edit" xml:space="preserve">
+    <value>Edit...</value>
+  </data>
+  <data name="TypeOfRequester_Button_New" xml:space="preserve">
+    <value>New...</value>
+  </data>
+  <data name="TypeOfRequester_Grid_Description" xml:space="preserve">
+    <value>Opis</value>
+  </data>
+  <data name="TypeOfRequester_Grid_Id" xml:space="preserve">
+    <value>Id</value>
+  </data>
+  <data name="TypeOfRequester_Grid_Name" xml:space="preserve">
+    <value>Naziv</value>
+  </data>
+  <data name="CompanyDetails_TypeOfRequester_Add" xml:space="preserve">
+    <value>Dodaj</value>
+  </data>
+  <data name="CompanyDetails_TypeOfRequester_AllTypeOfRequester" xml:space="preserve">
+    <value>Svi tipovi podnositelja zahtjeva</value>
+  </data>
+  <data name="CompanyDetails_TypeOfRequester_Description" xml:space="preserve">
+    <value>Opis</value>
+  </data>
+  <data name="CompanyDetails_TypeOfRequester_Name" xml:space="preserve">
+    <value>Naziv</value>
+  </data>
+  <data name="CompanyDetails_TypeOfRequester_Remove" xml:space="preserve">
+    <value>Ukloni</value>
+  </data>
+  <data name="CompanyDetails_TypeOfRequester_TypeOfRequesters" xml:space="preserve">
+    <value>Tipovi podnositelja zahtjeva</value>
+  </data>
+  <data name="CSRReport_IssueDomain" xml:space="preserve">
+    <value>Domena zahtjeva</value>
+  </data>
+  <data name="CSRReport_TypeOfRequester" xml:space="preserve">
+    <value>Tip podnositelja zahtjeva</value>
+  </data>
+  <data name="CompanyDetails_IssueDomain_Add" xml:space="preserve">
+    <value>Dodaj</value>
+  </data>
+  <data name="CompanyDetails_IssueDomain_AllIssueDomain" xml:space="preserve">
+    <value>Sve domene zhtjeva</value>
+  </data>
+  <data name="CompanyDetails_IssueDomain_Description" xml:space="preserve">
+    <value>Opis</value>
+  </data>
+  <data name="CompanyDetails_IssueDomain_IssueDomain" xml:space="preserve">
+    <value>Domene zahtjeva</value>
+  </data>
+  <data name="CompanyDetails_IssueDomain_Name" xml:space="preserve">
+    <value>Naziv</value>
+  </data>
+  <data name="CompanyDetails_IssueDomain_Remove" xml:space="preserve">
+    <value>Ukloni</value>
+  </data>
+  <data name="CSRReview_IssueDomain_Label" xml:space="preserve">
+    <value>Domena zahtjeva</value>
+  </data>
+  <data name="CSRReview_TypeOfRequester_Label" xml:space="preserve">
+    <value>Tip podnositelja zatjeva</value>
+  </data>
+  <data name="IssueDomain_Grid_Description" xml:space="preserve">
+    <value>Opis</value>
+  </data>
+  <data name="IssueDomain_Grid_Id" xml:space="preserve">
+    <value>Id</value>
+  </data>
+  <data name="IssueDomain_Grid_Name" xml:space="preserve">
+    <value>Domena zahtjeva naziv</value>
+  </data>
+  <data name="RequesterType_Grid_Description" xml:space="preserve">
+    <value>Opis</value>
+  </data>
+  <data name="RequesterType_Grid_Id" xml:space="preserve">
+    <value>Id</value>
+  </data>
+  <data name="RequesterType_Grid_Name" xml:space="preserve">
+    <value>Tip podnositelja zahtjeva naziv</value>
+  </data>
+  <data name="IssueDomainDetails_Window_Title" xml:space="preserve">
+    <value>Detalji domene zahtjeva</value>
+  </data>
+  <data name="TypeOfRequesterDetails_Window_Title" xml:space="preserve">
+    <value>Detalji tipa podnositelja zahtjeva</value>
+  </data>
+  <data name="CSRReview_Label_Remedy" xml:space="preserve">
+    <value>Privremeno rješenje(remedy)</value>
+  </data>
+  <data name="CSRReview_Label_RemedyTime" xml:space="preserve">
+    <value>Vrijeme privremenog rješenja</value>
+  </data>
+</root>
